@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="case-two__content">
-                                <h4><a href="case-details.html" class="text-white">Web Development</a></h4>
+                                <h4><a href="{{ route('project-details') }}" class="text-white">Web Development</a></h4>
                                 <p style="color: #ddd; margin: 10px 10px 10px 0;">
                                     Designed and developed a responsive website with dynamic content management, enhancing user experience and site speed.
                                 </p>
@@ -48,7 +48,7 @@
                                     <strong>Technologies:</strong> Laravel, HTML5, CSS3, JavaScript
                                 </div>
                             </div>
-                            <a href="case-details.html" class="case-two__btn">
+                            <a href="{{ route('project-details') }}" class="case-two__btn">
                                 <i class="fa-regular fa-arrow-right"></i>
                             </a>
                         </div>
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="case-two__content">
-                                <h4><a href="case-details.html" class="text-white">ERP System Development</a></h4>
+                                <h4><a href="{{ route('project-details') }}" class="text-white">ERP System Development</a></h4>
                                 <p style="color: #ddd; margin: 10px 10px 10px 0;">
                                    Created a custom ERP system to automate HR, inventory, and finance processes, improving overall business efficiency.
                                 </p>
@@ -70,7 +70,7 @@
                                     <strong>Technologies:</strong>PHP, Laravel, MySQL, Bootstrap
                                 </div>
                             </div>
-                            <a href="case-details.html" class="case-two__btn">
+                            <a href="{{ route('project-details') }}" class="case-two__btn">
                                 <i class="fa-regular fa-arrow-right"></i>
                             </a>
                         </div>
@@ -83,7 +83,7 @@
                             </div>
 
                             <div class="case-two__content">
-                                <h4><a href="case-details.html" class="text-white">Digital Marketing</a></h4>
+                                <h4><a href="{{ route('project-details') }}" class="text-white">Digital Marketing</a></h4>
                                 <p style="color: #ddd; margin: 10px 10px 10px 0;">
                                    Executed targeted ad campaigns and content strategies to drive engagement, conversions, and brand visibility across digital channels.
                                 </p>
@@ -91,7 +91,7 @@
                                     <strong>Technologies:</strong>Google Ads, Canva
                                 </div>
                             </div>
-                            <a href="case-details.html" class="case-two__btn">
+                            <a href="{{ route('project-details') }}" class="case-two__btn">
                                 <i class="fa-regular fa-arrow-right"></i>
                             </a>
                         </div>

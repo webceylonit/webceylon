@@ -43,11 +43,11 @@
                                 </div>
                                 <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
                                         alt="shape"></div>
-                                <h4><a href="service-details.html" class="primary-hover">Web Development</a></h4>
+                                <h4><a href="{{ route('service-details')}}" class="primary-hover">Web Development</a></h4>
                                 <p>We build high-performance, secure, and scalable websites and
                                 web applications tailored to your business needs using modern
                                 frameworks like Laravel, Vue.js, and more.</p>
-                                <a class="read-more-btn" href="service-details.html">Read More <i
+                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
                                         class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -63,11 +63,11 @@
                                 </div>
                                 <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
                                         alt="shape"></div>
-                                <h4><a href="service-details.html" class="primary-hover">ERP System Development</a></h4>
+                                <h4><a href="{{ route('service-details')}}" class="primary-hover">ERP System Development</a></h4>
                                 <p>We develop custom ERP systems to streamline your business
 processes — from HR to inventory and sales — tailored to your
 operations and workflow.</p>
-                                <a class="read-more-btn" href="service-details.html">Read More <i
+                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
                                         class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -83,12 +83,12 @@ operations and workflow.</p>
                                 </div>
                                 <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
                                         alt="shape"></div>
-                                <h4><a href="service-details.html" class="primary-hover">SEO (Search Engine Optimization)</a></h4>
+                                <h4><a href="{{ route('service-details')}}" class="primary-hover">SEO (Search Engine Optimization)</a></h4>
                                 <p>Boost your website’s visibility on search engines with our expert
 SEO services. From on-page SEO to technical optimization and
 backlink strategies, we help your site rank higher and reach your
 audience.</p>
-                                <a class="read-more-btn" href="service-details.html">Read More <i
+                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
                                         class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -104,11 +104,11 @@ audience.</p>
                                 </div>
                                 <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
                                         alt="shape"></div>
-                                <h4><a href="service-details.html" class="primary-hover">Digital Marketing</a></h4>
+                                <h4><a href="{{ route('service-details')}}" class="primary-hover">Digital Marketing</a></h4>
                                 <p>Drive traffic and conversions through our digital marketing
 services including content strategy, social media marketing, email
 campaigns, and paid advertising (Google Ads, Facebook Ads)</p>
-                                <a class="read-more-btn" href="service-details.html">Read More <i
+                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
                                         class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
                         </div>

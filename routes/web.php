@@ -15,6 +15,10 @@ Route::get('/services', function () {
     return view('frontend.services');
 })->name('services');
 
+Route::get('/service-details', function () {
+    return view('frontend.service-details');
+})->name('service-details');
+
 Route::get('/blogs', function () {
     return view('frontend.blog');
 })->name('blogs');
@@ -27,9 +31,17 @@ Route::get('/portfolio', function () {
     return view('frontend.portfolio');
 })->name('portfolio');
 
+Route::get('/project-details', function () {
+    return view('frontend.project-details');
+})->name('project-details');
+
 Route::get('/careers', function () {
     return view('frontend.careers');
 })->name('careers');
+
+Route::get('/contact', function () {
+    return view('frontend.contact');
+})->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -72,11 +72,11 @@
                                    We build web, mobile, and cloud applications <br>to
                                     drive growth and digital transformation.
                                 </p>
-                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('services') }}"
                                     class="btn-one mt-60">Our Services
                                      <i class="fa-regular fa-arrow-right-long"></i></a>
 
-                                      <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                      <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('portfolio') }}"
                                     class="btn-two mt-60">
                                     View Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
@@ -140,11 +140,11 @@
                                   We build web, mobile, and cloud applications <br> to
                                 drive growth and digital transformation.
                                 </p>
-                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('services') }}"
                                     class="btn-one mt-60">
                                     Our Services <i class="fa-regular fa-arrow-right-long"></i></a>
 
-                                     <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                     <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('portfolio') }}"
                                     class="btn-two mt-60">
                                     View Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
@@ -208,11 +208,11 @@
                                   We build web, mobile, and cloud applications <br> to
                                     drive growth and digital transformation.
                                 </p>
-                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('services') }}"
                                     class="btn-one mt-60">
                                     Our Services <i class="fa-regular fa-arrow-right-long"></i></a>
                                     
-                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="about.html"
+                                <a data-animation="slideInRight" data-duration="2s" data-delay=".9s" href="{{ route('portfolio') }}"
                                     class="btn-two mt-60">
                                     View Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
                             </div>
@@ -246,7 +246,7 @@
                         Services <i class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
+                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
                         <div class="service__item">
                             <div class="service-shape">
                                 <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
@@ -254,13 +254,11 @@
                             <div class="service__icon">
                                 <img src="frontend/assets/images/icon/service-icon1.png" alt="icon">
                             </div>
-                            <h4><a href="service-details.html">Web Development</a></h4>
-                            <p>We build secure, scalable websites and web apps designed for your business. 
-                                Using modern tools like Laravel and Vue.js and more, 
-                                we ensure top performance, flexibility, and user experience.</p>
+                           <h4><a href="service-details.html">Web Development</a></h4>
+<p>We create secure, high-performance websites and web apps using modern frameworks like Laravel and Vue.js.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
                         <div class="service__item active">
                             <div class="service-shape">
                                 <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
@@ -268,13 +266,11 @@
                             <div class="service__icon">
                                 <img src="frontend/assets/images/icon/service-icon2.png" alt="icon">
                             </div>
-                            <h4><a href="service-details.html">ERP System Development</a></h4>
-                            <p>We build custom ERP systems to streamline your business 
-                                — from HR and inventory to sales — fully tailored to match 
-                                your workflow and improve day-to-day operations efficiently.</p>
+                         <h4><a href="service-details.html">ERP System Development</a></h4>
+<p>Custom ERP systems to manage HR, inventory, sales, and more—tailored to fit your workflow.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
+                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
                         <div class="service__item">
                             <div class="service-shape">
                                 <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
@@ -282,9 +278,21 @@
                             <div class="service__icon">
                                 <img src="frontend/assets/images/icon/service-icon3.png" alt="icon">
                             </div>
-                            <h4><a href="service-details.html">SEO </a></h4>
-                            <p>Boost your website’s visibility on search engines with expert SEO. We handle on-page optimization, 
-                                technical fixes, and smart backlink strategies to help your site rank better and attract the right audience.</p>
+                            <h4><a href="service-details.html">SEO</a></h4>
+<p>Improve your search rankings with expert on-page SEO, technical fixes, and smart link strategies.</p>
+ttract the right audience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
+                        <div class="service__item">
+                            <div class="service-shape">
+                                <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
+                            </div>
+                            <div class="service__icon">
+                                <img src="frontend/assets/images/icon/service-icon3.png" alt="icon">
+                            </div>
+                           <h4><a href="service-details.html">Digital Marketing</a></h4>
+<p>Boost traffic and conversions through content, social media, email campaigns, and paid ads  (Google Ads, Facebook Ads).</p>
                         </div>
                     </div>
                 </div>

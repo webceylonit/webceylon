@@ -58,7 +58,7 @@
                             <li><a href="{{ route('blogs') }}">Blog</a></li>
                             <li><a href="{{ route('careers') }}">Careers</a></li>
                             <li><a href="{{ route('about') }}">About Us</a></li>
-                             <li><a href="">Contact</a></li>
+                             <li><a href="{{ route('contact') }}">Contact</a></li>
                             <li class="ml-20 d-none d-lg-block"><a class="search-trigger" href="#0"><svg width="17"
                                         height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_307_344)">
@@ -77,7 +77,7 @@
                     </nav>
                 </div>
                  <div class="d-none d-lg-inline-block">
-                    <a href="contact.html" class="btn-two">Get A Quote <i
+                    <a href="{{ route('contact') }}" class="btn-one">Get A Quote <i
                             class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
                 <div class="bars d-block d-lg-none">
