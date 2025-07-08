@@ -61,23 +61,20 @@
                         <li><span>Location:</span> {{ $project->location }}</li>
                     </ul>
 
-                    <div class="case-challenge-list mt-30">
-                        @if (is_array($project->technologies_used))
-                            @foreach (array_chunk($project->technologies_used, 2) as $chunk)
-                                <ul class="case-challenge">
-                                    @foreach ($chunk as $tech)
-                                        <li class="mb-3"><i class="fa-solid fa-check"></i> {{ $tech }}</li>
-                                    @endforeach
-                                </ul>
-                            @endforeach
-                        @elseif (is_string($project->technologies_used))
-                            @foreach (explode(',', $project->technologies_used) as $tech)
-                                <ul class="case-challenge">
+                   <div class="case-challenge-list mt-30">
+                        <ul class="case-challenge">
+                            @if (is_array($project->technologies_used))
+                                @foreach ($project->technologies_used as $tech)
+                                    <li class="mb-3"><i class="fa-solid fa-check"></i> {{ $tech }}</li>
+                                @endforeach
+                            @elseif (is_string($project->technologies_used))
+                                @foreach (explode(',', $project->technologies_used) as $tech)
                                     <li class="mb-3"><i class="fa-solid fa-check"></i> {{ trim($tech) }}</li>
-                                </ul>
-                            @endforeach
-                        @endif
+                                @endforeach
+                            @endif
+                        </ul>
                     </div>
+
                 </div>
 
                 <div class="row g-4 mt-4">

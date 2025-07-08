@@ -32,88 +32,32 @@
         <section class="service-inner-area pt-120 pb-120">
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service-two__item">
-                            <div class="image">
-                                <img src="frontend/assets/images/service/service1.jpg" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
-                            </div>
-                            <div class="service-two__content">
-                                <div class="icon">
-                                    <img src="frontend/assets/images/icon/service-two-icon1.png" alt="icon">
+                    @foreach($services as $service)
+                        <div class="col-lg-6 col-md-6">
+                            <div class="service-two__item">
+                                <div class="image">
+                                    <img src="{{ asset('storage/' . $service->image) }}" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
                                 </div>
-                                <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
-                                        alt="shape"></div>
-                                <h4><a href="{{ route('service-details')}}" class="primary-hover">Web Development</a></h4>
-                                <p>We build high-performance, secure, and scalable websites and
-                                web applications tailored to your business needs using modern
-                                frameworks like Laravel, Vue.js, and more.</p>
-                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
-                                        class="fa-regular fa-arrow-right-long"></i></a>
+                                <div class="service-two__content">
+                                    <div class="icon">
+                                        <img src="{{ asset('frontend/assets/images/icon/service-two-icon1.png') }}" alt="icon">
+                                    </div>
+                                    <div class="shape">
+                                        <img src="{{ asset('frontend/assets/images/shape/service-two-item-shape.png') }}" alt="shape">
+                                    </div>
+                                    <h4>
+                                        <a href="{{ route('service.details', $service->id) }}" class="primary-hover">{{ $service->name }}</a>
+                                    </h4>
+                                    <p>{{ \Illuminate\Support\Str::limit(strip_tags($service->description), 200, '...') }}</p>
+                                    <a class="read-more-btn" href="{{ route('service.details', $service->id) }}">
+                                        Read More <i class="fa-regular fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service-two__item">
-                            <div class="image">
-                                <img src="frontend/assets/images/service/service2.jpg" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
-                            </div>
-                            <div class="service-two__content">
-                                <div class="icon">
-                                    <img src="frontend/assets/images/icon/service-two-icon2.png" alt="icon">
-                                </div>
-                                <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
-                                        alt="shape"></div>
-                                <h4><a href="{{ route('service-details')}}" class="primary-hover">ERP System Development</a></h4>
-                                <p>We develop custom ERP systems to streamline your business
-processes — from HR to inventory and sales — tailored to your
-operations and workflow.</p>
-                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
-                                        class="fa-regular fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service-two__item">
-                            <div class="image">
-                                <img src="frontend/assets/images/service/service3.jpg" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
-                            </div>
-                            <div class="service-two__content">
-                                <div class="icon">
-                                    <img src="frontend/assets/images/icon/service-two-icon3.png" alt="icon">
-                                </div>
-                                <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
-                                        alt="shape"></div>
-                                <h4><a href="{{ route('service-details')}}" class="primary-hover">SEO (Search Engine Optimization)</a></h4>
-                                <p>Boost your website’s visibility on search engines with our expert
-SEO services. From on-page SEO to technical optimization and
-backlink strategies, we help your site rank higher and reach your
-audience.</p>
-                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
-                                        class="fa-regular fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service-two__item">
-                            <div class="image">
-                                <img src="frontend/assets/images/service/service4.jpg" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
-                            </div>
-                            <div class="service-two__content">
-                                <div class="icon">
-                                    <img src="frontend/assets/images/icon/service-two-icon4.png" alt="icon">
-                                </div>
-                                <div class="shape"><img src="frontend/assets/images/shape/service-two-item-shape.png"
-                                        alt="shape"></div>
-                                <h4><a href="{{ route('service-details')}}" class="primary-hover">Digital Marketing</a></h4>
-                                <p>Drive traffic and conversions through our digital marketing
-services including content strategy, social media marketing, email
-campaigns, and paid advertising (Google Ads, Facebook Ads)</p>
-                                <a class="read-more-btn" href="{{ route('service-details')}}">Read More <i
-                                        class="fa-regular fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
+
             </div>
         </section>
         <!-- Service area end here -->

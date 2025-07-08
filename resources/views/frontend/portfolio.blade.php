@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row g-4">
                     @foreach($projects as $project)
-                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="case-two__item">
                                 <div class="image case-two__image" style="position: relative; overflow: hidden;">
                                     <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}" style="width: 100%; height: 250px; object-fit: cover; display: block;">

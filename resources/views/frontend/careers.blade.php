@@ -4,6 +4,25 @@
 
 @section('content')
 
+<style>
+    .career-box:hover {
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+    transform: translateY(-5px);
+}
+ .career-box::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(90deg, #007793, #00060c);
+        transform-origin: left;
+    }
+
+ 
+
+</style>
 
  <main>
          <!-- Page banner area start here -->
@@ -27,34 +46,35 @@
         </section>
         <!-- Page banner area end here -->
 
-       
+
       <section class="case-area pt-50 pb-120">
-            <div class="container">
-                <div class="section-header mb-40 text-center">
-                    <h2>Join Our Team — Current Vacancies</h2>
-                </div>
-                <div class="row g-4">
-                    @foreach ($careers as $career)
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="case__item d-flex flex-column justify-content-between" 
-                                style="border: 1px solid #e0e0e0; padding: 25px; border-radius: 10px; height: 100%; min-height: 180px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: 0.3s;">
-                                <div>
-                                    <h4>
-                                        <a href="" class="text-black primary-hover">
-                                            {{ $career->job_title }}
-                                        </a>
-                                    </h4>
-                                    <p>{{ $career->location }}</p>
-                                </div>
-                                <a href="" class="btn btn-outline-primary btn-sm mt-3 align-self-start">
-                                    Apply
+    <div class="container">
+        <div class="section-header mb-40 text-center">
+            <h2>Join Our Team — Current Vacancies</h2>
+        </div>
+        <div class="row g-4">
+            @foreach ($careers as $career)
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="case__item career-box d-flex flex-column justify-content-between"
+                        style="border: 1px solid #e0e0e0; padding: 30px;  height: 100%; min-height: 200px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); background: #fff; transition: all 0.3s ease-in-out; position: relative;">
+                        <div>
+                            <h4 style="font-weight: 600; font-size: 20px;">
+                                <a href="#" class="text-black primary-hover" style="text-decoration: none;">
+                                    {{ $career->job_title }}
                                 </a>
-                            </div>
+                            </h4>
+                            <p class="text-muted mb-0" style="font-size: 14px;">📍 {{ $career->location }}</p>
                         </div>
-                    @endforeach
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-4 align-self-start" style="border-radius: 30px; padding: 6px 20px;">
+                            Apply Now
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 
     </main>
    

@@ -18,12 +18,11 @@
         <div class="container">
             <div class="footer__wrp pt-100 pb-100">
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <a href="{{ route('index') }}" class="logo mb-30">
+                    <a href="{{ route('index') }}" class="logo mb-10">
                         <img src="{{ asset('webceylon.png') }}" alt="Webceylon">
                     </a>
-                    <p>Phasellus ultricies aliquam volutpat
-                        ullamcorper laoreet neque, a lacinia
-                        curabitur lacinia mollis</p>
+                    <p style="text-align:justify">Webceylon is an IT service provider offering web development, software solutions, and digital marketing to help businesses thrive in the digital age.
+</p>
                     <div class="social-icon">
                         <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#0"><i class="fa-brands fa-twitter"></i></a>
@@ -52,7 +51,6 @@
                         </li>
                         <li><a href="{{ route('careers') }}"><i class="fa-regular fa-angles-right me-1"></i> Careers</a></li>
                         <li><a href="{{ route('about') }}"><i class="fa-regular fa-angles-right me-1"></i>  About Us</a></li>
-                          <!--<li><a href="{{ route('contact') }}"><i class="fa-regular fa-angles-right me-1"></i>  Contact</a></li>-->
                     </ul>
                 </div>
                 <div class="footer__item item-big wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">

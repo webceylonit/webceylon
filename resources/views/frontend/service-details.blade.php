@@ -4,25 +4,42 @@
 
 @section('content')
 
+<style>
+    .tech-tag {
+    border: 1px solid #ccc;
+    padding: 6px 14px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    background: #ff7f00;;
+    color: #fff;
+    border-color: transparent;
+}
+
+</style>
 
 <main>
-         <!-- Page banner area start here -->
+        <!-- Page banner area start here -->
         <section class="banner__inner-page bg-image pt-180 pb-180 bg-image"
-            data-background="frontend/assets/images/about/aboutus.jpg">
+            data-background="{{ asset('frontend/assets/images/about/aboutus.jpg') }}">
             <div class="shape2 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-                <img src="frontend/assets/images/banner/inner-banner-shape2.png" alt="shape">
+                <img src="{{ asset('frontend/assets/images/banner/inner-banner-shape2.png') }}" alt="shape">
             </div>
             <div class="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img src="frontend/assets/images/banner/inner-banner-shape.png" alt="shape" style="width:400px">
+                <img src="{{ asset('frontend/assets/images/banner/inner-banner-shape.png') }}" alt="shape" style="width:400px">
             </div>
             <div class="shape3 wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img class="sway__animationX" src="frontend/assets/images/banner/inner-banner-shape3.png" alt="shape">
+                <img class="sway__animationX" src="{{ asset('frontend/assets/images/banner/inner-banner-shape3.png') }}" alt="shape">
             </div>
             <div class="container">
                 <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Service Details</h2>
                 <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <a href="index.html">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Service Details
-                        </span>
+                    <a href="index.html">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Service Details</span>
                 </div>
             </div>
         </section>
@@ -34,108 +51,110 @@
                 <div class="row g-4">
                     <div class="col-lg-8 order-2 order-lg-1">
                         <div class="service-single__left-item">
-                            <div class="image mb-50">
-                                <img src="frontend/assets/images/service/service-single-image1.jpg" alt="image">
-                                <div class="service-single__video-btn">
-                                    <div class="video-btn video-pulse wow fadeIn" data-wow-delay="200ms"
-                                        data-wow-duration="1500ms">
-                                        <a class="video-popup" href="https://www.youtube.com/watch?v=iVqz_4M5mA0"><i
-                                                class="fa-solid fa-play"></i></a>
-                                    </div>
-                                </div>
+                           <div class="image mb-50">
+                                <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid">
                             </div>
-                            <h3 class="title mb-30">Web Development</h3>
-                            <p class="mb-20">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce is eleifend
-                                porta
-                                arcu In hac habitasse the platea
-                                thelorem turpoi dictumst. In lacus libero faucibus malesuada sagittis placerat eros sed
-                                istincidunt augue ac ante rutrum
-                                sed the is sodales augue consequat.</p>
-                            <p>lacus sed pretium pretium justo. Integer is vitae venenatis lorem. Maecenas lacinia
-                                turpis the in
-                                nunc quam hendrerit
-                                scelerisque at finibus enim sagittis. Aliquam erat is volutpat nam nec purus at is orci
-                                volutpat
-                                semper vel id turpis In
-                                a malesuada arcu ac hendrerit.</p>
-                            
-                            <p class="mb-40">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore of
-                                magna
-                                aliqua. Ut enim ad minim
-                                veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                dolor
-                                commodo consequat. Duis
-                                aute irure and dolor in reprehenderit.</p>
-                            <h3 class="title mb-30">Most Comment Question?</h3>
-                            <p class="mb-30">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce is eleifend
-                                porta
-                                arcu In hac
-                                habitasse the platea
-                                thelorem turpoi dictumst. In lacus libero faucibus malesuada sagittis placerat eros sed
-                                istincidunt augue ac ante rutrum
-                                sed the is sodales augue consequat.</p>
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="00ms"
-                                    data-wow-duration="1500ms">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            Where should I incorporate my business?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>It is a long established fact that a reader be distracted by
-                                                the readable content of a page when looking a its layout.
-                                                Many desktop publishing packages and web page editors now use Lorem
-                                                Ipsum
-                                            </p>
+
+                            <h3 class="title mb-30">{{ $service->name }}</h3>
+
+                            <p class="mb-20">
+                                {{ $service->description }}
+                            </p>
+
+                            @if($service->additional_info)
+                                
+                                <p>{{ $service->additional_info }}</p>
+                            @endif
+
+                           <div class="case-challenge-list mt-30">
+                                <ul class="case-challenge d-flex flex-wrap gap-2 p-0 m-0" style="list-style: none;">
+                                    @if (is_array($service->technologies))
+                                        @foreach ($service->technologies as $tech)
+                                            <li class="tech-tag">{{ $tech }}</li>
+                                        @endforeach
+                                    @elseif (is_string($service->technologies))
+                                        @foreach (explode(',', $service->technologies) as $tech)
+                                            <li class="tech-tag">{{ trim($tech) }}</li>
+                                        @endforeach
+                                    @endif
+                                </ul>
+                            </div>
+              
+                            <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
+                                <p class="mb-30">Below are some of the most frequently asked questions from our clients. If you have any other questions, feel free to contact us!</p>
+                                <div class="accordion" id="accordionExample">
+                                    <!-- Question 1 -->
+                                    <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                What IT services do you offer?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>We offer a wide range of IT services, including web development, mobile app development, IT consulting, cloud solutions, cybersecurity, and software development, tailored to meet the unique needs of your business.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="200ms"
-                                    data-wow-duration="1500ms">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            What happens my free trial?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>It is a long established fact that a reader be distracted by
-                                                the readable content of a page when looking a its layout.
-                                                Many desktop publishing packages and web page editors now use Lorem
-                                                Ipsum
-                                            </p>
+
+                                    <!-- Question 2 -->
+                                    <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                How long does it take to build a website or application?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>The timeline for building a website or application depends on the complexity of the project. Typically, a basic website may take a few weeks, while more complex projects, such as web applications or e-commerce platforms, may take several months.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="400ms"
-                                    data-wow-duration="1500ms">
-                                    <h2 class="accordion-header" id="headingthree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapsethree"
-                                            aria-expanded="false" aria-controls="collapsethree">
-                                            What is included in your services?
-                                        </button>
-                                    </h2>
-                                    <div id="collapsethree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingthree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>It is a long established fact that a reader be distracted by
-                                                the readable content of a page when looking a its layout.
-                                                Many desktop publishing packages and web page editors now use Lorem
-                                                Ipsum
-                                            </p>
+
+                                    <!-- Question 3 -->
+                                    <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                What is the cost of your IT services?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>The cost of our IT services depends on the type of project and the scope of work involved. We provide custom quotes based on your specific requirements, and we are happy to discuss your budget and goals to find a solution that fits.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
+                                    <!-- Question 4 -->
+                                    <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                Do you offer support and maintenance after the project is completed?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>Yes, we offer ongoing support and maintenance for all the projects we complete. This includes bug fixes, updates, and any other assistance you may need to ensure your system continues running smoothly.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 5 -->
+                                    <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="800ms" data-wow-duration="1500ms">
+                                        <h2 class="accordion-header" id="headingFive">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                How secure are the IT solutions you provide?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>We prioritize security in all our IT solutions. From secure coding practices to encryption and regular security audits, we ensure that your website or application is protected from potential threats and vulnerabilities.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+
                                 
                             </div>
                         </div>

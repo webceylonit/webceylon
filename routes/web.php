@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -17,15 +18,9 @@ Route::get('/about-us', function () {
     return view('frontend.about');
 })->name('about');
 
-Route::get('/services', function () {
-    return view('frontend.services');
-})->name('services');
 
-Route::get('/service-details', function () {
-    return view('frontend.service-details');
-})->name('service-details');
-
-
+Route::get('/services', [ServiceController::class, 'services'])->name('services');
+Route::get('/service-details/{id}', [ServiceController::class, 'show'])->name('service.details');
 
 Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
 Route::get('/blog-details/{id}', [BlogController::class, 'show'])->name('blog-details');
@@ -39,7 +34,14 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+
+//admin dashboard
 Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/adminlogin', function () {
+    return view('AdminDashboard.login');
+})->name('login');
+
 
 Route::get('/ProjectIndex', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/ProjectCreate', [ProjectController::class, 'create'])->name('projects.create');
@@ -63,6 +65,13 @@ Route::post('/Careerstore', [JobController::class, 'store'])->name('careers.stor
 Route::get('/careers/{career}/edit', [JobController::class, 'edit'])->name('careers.edit');
 Route::put('/careers/{career}', [JobController::class, 'update'])->name('careers.update');
 Route::delete('/careers/{career}', [JobController::class, 'destroy'])->name('careers.destroy');
+
+Route::get('/ServiceIndex', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/ServiceCreate', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/Servicestore', [ServiceController::class, 'store'])->name('services.store');
+Route::get('/services/{service}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+Route::put('/services/{service}', [ServiceController::class, 'update'])->name('services.update');
+Route::delete('/services/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 Route::get('/Inquiries', [InquiryController::class, 'index'])->name('inquiries.index');
 

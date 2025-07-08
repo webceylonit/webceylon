@@ -5,9 +5,8 @@
 <style>
 .case__image img {
     width: 100%;
-    height: 270px;
+    height: 350px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 </style>
@@ -254,57 +253,24 @@
                         data-wow-duration="1500ms">View All
                         Services <i class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
-                        <div class="service__item">
-                            <div class="service-shape">
-                                <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
+              <div class="row g-4" style="display: flex; flex-wrap: wrap; ">
+                @foreach($services as $service)
+                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms" style="display: flex; flex: 1 1 23%; align-items: stretch;">
+                        <a href="{{ route('service.details', $service->id) }}" class="service__link" style="display: block; height: 100%;">
+                            <div class="service__item" style="display: flex; flex-direction: column; height: 100%;  transition: all 0.3s ease-in-out;">
+                                <div class="service-shape" style="margin-bottom: 15px;">
+                                    <img src="{{ asset('frontend/assets/images/shape/service-item-shape.png') }}" alt="shape">
+                                </div>
+                                <div class="service__icon" style="margin: 10px 0;">
+                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" style="width: 60px; height: 60px;">
+                                </div>
+                                <h4 style="">{{ $service->name }}</h4>
+                                <p style="flex-grow: 1;">{{ \Illuminate\Support\Str::limit(strip_tags($service->description), 150, '...') }}</p>
                             </div>
-                            <div class="service__icon">
-                                <img src="frontend/assets/images/icon/service-icon1.png" alt="icon">
-                            </div>
-                           <h4><a href="service-details.html">Web Development</a></h4>
-<p>We create secure, high-performance websites and web apps using modern frameworks like Laravel and Vue.js.</p>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-                        <div class="service__item active">
-                            <div class="service-shape">
-                                <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
-                            </div>
-                            <div class="service__icon">
-                                <img src="frontend/assets/images/icon/service-icon2.png" alt="icon">
-                            </div>
-                         <h4><a href="service-details.html">ERP System Development</a></h4>
-<p>Custom ERP systems to manage HR, inventory, sales, and more—tailored to fit your workflow.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-                        <div class="service__item">
-                            <div class="service-shape">
-                                <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
-                            </div>
-                            <div class="service__icon">
-                                <img src="frontend/assets/images/icon/service-icon3.png" alt="icon">
-                            </div>
-                            <h4><a href="service-details.html">SEO</a></h4>
-<p>Improve your search rankings with expert on-page SEO, technical fixes, and smart link strategies.</p>
-ttract the right audience.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-                        <div class="service__item">
-                            <div class="service-shape">
-                                <img src="frontend/assets/images/shape/service-item-shape.png" alt="shape">
-                            </div>
-                            <div class="service__icon">
-                                <img src="frontend/assets/images/icon/service-icon3.png" alt="icon">
-                            </div>
-                           <h4><a href="service-details.html">Digital Marketing</a></h4>
-<p>Boost traffic and conversions through content, social media, email campaigns, and paid ads  (Google Ads, Facebook Ads).</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+            </div>
             </div>
         </section>
         <!-- Service area end here -->
@@ -437,7 +403,7 @@ ttract the right audience.</p>
                     </div>
                     <a href="{{ route('portfolio') }}" class="btn-one wow fadeInUp" data-wow-delay="200ms"
                         data-wow-duration="1500ms">view All
-                        Case <i class="fa-regular fa-arrow-right-long"></i></a>
+                        Projects <i class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
             </div>
 
