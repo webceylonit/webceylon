@@ -3,8 +3,8 @@
     <div>
         <div class="logo-wrapper">
             <a href="{{ route('dashboard') }}">
-                <img class="img-fluid for-light" src="{{ asset('frontend/assets/images/eSupport Logo.png') }}" alt="">
-                <img class="img-fluid for-dark" src="{{ asset('frontend/assets/images/eSupport Logo.png') }}" alt="">
+                <img class="img-fluid for-light" src="{{ asset('webceylon.png') }}" alt="webceylon" style="height:50px">
+                <img class="img-fluid for-dark" src="{{ asset('webceylon.png') }}" alt="webceylon" style="height:50px">
             </a>
             <div class="back-btn"><i class="fa fa-angle-left"></i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"></i></div>
@@ -12,7 +12,7 @@
 
         <div class="logo-icon-wrapper">
             <a href="{{ route('dashboard') }}">
-                <img class="img-fluid" src="{{ asset('frontend/assets/images/logo/logo-icon.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt="">
             </a>
         </div>
 
@@ -22,99 +22,84 @@
                 <ul class="sidebar-links" id="simple-bar">
                     <li class="back-btn">
                         <a href="{{ route('dashboard') }}">
-                            <img class="img-fluid" src="{{ asset('frontend/assets/images/logo/logo-icon.png') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt="">
                         </a>
                         <div class="mobile-back text-end">
                             <span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
                         </div>
                     </li>
 
-                    <li class="sidebar-main-title">
-                        <div><h6 class="lan-1">General</h6></div>
-                    </li>
 
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title" href="{{ route('dashboard') }}">
                             <svg class="stroke-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
                             </svg>
                             <svg class="fill-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#fill-home') }}"></use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#fill-home') }}"></use>
                             </svg>
                             <span class="lan-3">Dashboard</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-main-title">
-                        <div><h6 class="lan-8">Management</h6></div>
-                    </li>
 
-                    {{-- ✅ Show Employee Management Only for Admin & Manager --}}
-                    @if(Auth::user()->role->name === 'Admin' || Auth::user()->role->name === 'Manager')
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title" href="#">
-                                <svg class="stroke-icon">
-                                    <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#stroke-user') }}"></use>
+                    <li class="sidebar-list">
+                           <a class="sidebar-link sidebar-title" href="#">
+                                <svg class="stroke-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                                 </svg>
-                                <svg class="fill-icon">
-                                    <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#fill-user') }}"></use>
-                                </svg>
-                                <span>Employee Management</span>
+                                <span>Projects</span>
                             </a>
                             <ul class="sidebar-submenu">
-                                <li><a href="{{ route('employees.index') }}">Employee List</a></li>
-                                <li><a href="{{ route('employees.create') }}">Add Employee</a></li>
+                                <li><a href="{{ route('projects.index') }}">Project List</a></li>
+                                <li><a href="{{ route('projects.create') }}">Add Projects</a></li>
                             </ul>
                         </li>
-                    @endif
 
-                    {{-- ✅ Project Management --}}
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title" href="#">
-                            <svg class="stroke-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#stroke-user') }}"></use>
-                            </svg>
-                            <svg class="fill-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#fill-user') }}"></use>
-                            </svg>
-                            <span>Project Management</span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li><a href="{{ route('projects.index') }}">Project List</a></li>
+                        <li class="sidebar-list">
+                          <a class="sidebar-link sidebar-title" href="#">
+                                <svg class="stroke-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M4 4h16v16H4z" />
+                                    <path d="M8 8h8M8 12h6M8 16h4" /> 
+                                </svg>
+                                <span>Blogs</span>
+                            </a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="{{ route('blogs.index') }}">Blog List</a></li>
+                                <li><a href="{{ route('blogs.create') }}">Add Blogs</a></li>
+                            </ul>
+                        </li>
 
-                            {{-- ✅ Only Admin & Manager Can Add Projects --}}
-                            @if(Auth::user()->role->name === 'Admin' || Auth::user()->role->name === 'Manager')
-                                <li><a href="{{ route('projects.create') }}">Add Projects</a></li>
-                            @endif
-                        </ul>
-                    </li>
+                         <li class="sidebar-list">
+                           <a class="sidebar-link sidebar-title" href="#">
+                                <svg class="stroke-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                    <path d="M16 3h-8v4h8V3z" /> 
+                                </svg>
+                                <span>Careers</span>
+                            </a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="{{ route('careers.index') }}">Job List</a></li>
+                                <li><a href="{{ route('careers.create') }}">Add Job Opening</a></li>
+                            </ul>
+                        </li>
 
-                    {{-- ✅ Message Management --}}
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title" href="#">
-                            <svg class="stroke-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#stroke-user') }}"></use>
-                            </svg>
-                            <svg class="fill-icon">
-                                <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#fill-user') }}"></use>
-                            </svg>
-                            <span>Message Management</span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            @foreach(auth()->user()->projects as $project)
-                                <li>
-                                    <a href="{{ route('messages.index', ['project' => $project->id]) }}">
-                                        {{ $project->name }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
+                         <li class="sidebar-list">
+                          <a class="sidebar-link sidebar-title" href="#">
+                                <svg class="stroke-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM2 6h20v2l-10 6-10-6V6z" />
+                                </svg>
+                                <span>Inquiries</span>
+                            </a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="{{ route('inquiries.index') }}">Message List</a></li>
+                            </ul>
+                        </li>
 
-
-                    
-
-                    
 
                 </ul>
             </div>

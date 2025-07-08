@@ -4,24 +4,40 @@
 
 @section('content')
 
+<style>
+    .img-fixed-size {
+        width: 100%;
+        height: 300px; /* Adjust as needed */
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .img-fixed-size img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
+
  
     <main>
         <!-- Page banner area start here -->
         <section class="banner__inner-page bg-image pt-180 pb-180 bg-image"
-            data-background="frontend/assets/images/about/aboutus.jpg">
+            data-background="{{ asset('frontend/assets/images/about/aboutus.jpg') }}">
             <div class="shape2 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-                <img src="frontend/assets/images/banner/inner-banner-shape2.png" alt="shape">
+                <img src="{{ asset('frontend/assets/images/banner/inner-banner-shape2.png') }}" alt="shape">
             </div>
             <div class="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img src="frontend/assets/images/banner/inner-banner-shape.png" alt="shape" style="width:400px">
+                <img src="{{ asset('frontend/assets/images/banner/inner-banner-shape.png') }}" alt="shape" style="width:400px">
             </div>
             <div class="shape3 wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img class="sway__animationX" src="frontend/assets/images/banner/inner-banner-shape3.png" alt="shape">
+                <img class="sway__animationX" src="{{ asset('frontend/assets/images/banner/inner-banner-shape3.png') }}" alt="shape">
             </div>
             <div class="container">
                 <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Project - Details</h2>
                 <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <a href="index.html">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Project - Details
+                    <a href="{{ route('index') }}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Project - Details
                         </span>
                 </div>
             </div>
@@ -33,70 +49,57 @@
             <div class="container">
                 <div class="case-single__item">
                     <div class="image">
-                        <img src="frontend/assets/images/case/case-details-image1.jpg" alt="image">
+                        <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}">
                     </div>
-                    <h3 class="case-single__title mt-40 mb-30">Web Development Solution</h3>
-                    <p>Nulla faucibus malesuada. In placerat feugiat eros ac tempor. Integer euismod massa sapien, et
-                        consequat enim laoreet
-                        et. Nulla sit amet nisi dapibus, gravida turpis sit amet, accumsan nisl. Fusce vel semper risus.
-                        Morbi congue eros
-                        sagittis, sodales turpis venenatis, iaculis dui. Proin ac purus sed nibh dapibus neque.
-                        scelerisque sed quis ante.
-                        Suspendisse potenti. Mauris vitae sagittis diam. Vivamus imperdiet nulla ut nisi fermentum,
-                        vitae euismod mi
-                        egestas. In
-                        quis auctor magna. Maecenas sodales nunc tellus, non iaculis est iaculis placerat. Morbi
-                        suscipit,</p>
+                    <h3 class="case-single__title mt-40 mb-30">{{ $project->title }}</h3>
+                    <p>{{ $project->description }}</p>
+
                     <ul class="case-date py-4 bor-top bor-bottom mt-40">
-                        <li><span>Completed Date:</span> 23-12-2023</li>
-                        <li><span>Client:</span> Robert Fox</li>
-                        <li><span>Location:</span> fot kde, USA</li>
+                        <li><span>Completed Date:</span> {{ $project->completed_date?->format('d-m-Y') }}</li>
+                        <li><span>Client:</span> {{ $project->client }}</li>
+                        <li><span>Category:</span> {{ $project->type }}</li>
+                        <li><span>Location:</span> {{ $project->location }}</li>
                     </ul>
-                    <h3 class="case-single__title mt-40 mb-30">Our Challenge</h3>
-                    <p>Pellentesque egestas rutrum nibh facilisis ultrices. Phasellus in magna ut orci malesuada
-                        sollicitudin. Aenean faucibus
-                        scelerisque convallis. Quisque interdum mauris id nunc molestie, ac tincidunt erat gravida.
-                        Nullam dui libero, mollis ac
-                        quam et, venenatis tincidunt quam. Proin nec volutpat ligula, id porttitor augue. Proin id
-                        volutpat massa. Vivamus
-                        tincidunt nunc justo, ac aliquam ex molestie id.</p>
+
                     <div class="case-challenge-list mt-30">
-                        <ul class="case-challenge">
-                            <li class="mb-3"><i class="fa-solid fa-check"></i>Technology Consultancy</li>
-                            <li><i class="fa-solid fa-check"></i>Maintenance And Support</li>
-                        </ul>
-                        <ul class="case-challenge">
-                            <li class="mb-3"><i class="fa-solid fa-check"></i>We Provide best services</li>
-                            <li><i class="fa-solid fa-check"></i>Requirements Gathering</li>
-                        </ul>
-                        <ul class="case-challenge">
-                            <li class="mb-3"><i class="fa-solid fa-check"></i>Maintenance And Support</li>
-                            <li><i class="fa-solid fa-check"></i>Technology Consultancy</li>
-                        </ul>
-                    </div>
-                    <h3 class="case-single__title mt-40 mb-30">Project Overview</h3>
-                    <p>Pellentesque egestas rutrum nibh facilisis ultrices. Phasellus in magna ut orci malesuada
-                        sollicitudin. Aenean faucibus
-                        scelerisque convallis. Quisque interdum mauris id nunc molestie, ac tincidunt erat gravida.
-                        Nullam dui libero, mollis ac
-                        quam et, venenatis tincidunt quam. Proin nec volutpat ligula, id porttitor augue. Proin id
-                        volutpat massa. Vivamus
-                        tincidunt nunc justo, ac aliquam ex molestie id.</p>
-                </div>
-                <div class="row g-4 mt-10">
-                    <div class="col-md-6">
-                        <div class="image">
-                            <img src="frontend/assets/images/case/case-details-image2.jpg" alt="image">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="image">
-                            <img src="frontend/assets/images/case/case-details-image3.jpg" alt="image">
-                        </div>
+                        @if (is_array($project->technologies_used))
+                            @foreach (array_chunk($project->technologies_used, 2) as $chunk)
+                                <ul class="case-challenge">
+                                    @foreach ($chunk as $tech)
+                                        <li class="mb-3"><i class="fa-solid fa-check"></i> {{ $tech }}</li>
+                                    @endforeach
+                                </ul>
+                            @endforeach
+                        @elseif (is_string($project->technologies_used))
+                            @foreach (explode(',', $project->technologies_used) as $tech)
+                                <ul class="case-challenge">
+                                    <li class="mb-3"><i class="fa-solid fa-check"></i> {{ trim($tech) }}</li>
+                                </ul>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
+
+                <div class="row g-4 mt-4">
+                    @if ($project->subimage1)
+                        <div class="col-md-6">
+                            <div class="image img-fixed-size">
+                                <img src="{{ asset('storage/' . $project->subimage1) }}" alt="sub image 1">
+                            </div>
+                        </div>
+                    @endif
+                    @if ($project->subimage2)
+                        <div class="col-md-6">
+                            <div class="image img-fixed-size">
+                                <img src="{{ asset('storage/' . $project->subimage2) }}" alt="sub image 2">
+                            </div>
+                        </div>
+                    @endif
+                </div>
+
             </div>
         </section>
+
         <!-- Case area end here -->
     </main>
 

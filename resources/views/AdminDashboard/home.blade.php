@@ -7,17 +7,15 @@
 <div class="container-fluid">        
             <div class="page-title">
               <div class="row">
-                <div class="col-6">
-                  <h4>Default </h4>
+                <div class="col-6 mt-3">
+                  <h4>Dashboard </h4>
                 </div>
                 <div class="col-6">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">                                       
                         <svg class="stroke-icon">
-                          <use href="frontend/assets/svg/icon-sprite.svg#stroke-home"></use>
+                          <use href="backend/assets/svg/icon-sprite.svg#stroke-home"></use>
                         </svg></a></li>
-                    <li class="breadcrumb-item">Dashboard</li>
-                    <li class="breadcrumb-item active">Default      </li>
                   </ol>
                 </div>
               </div>
@@ -32,7 +30,7 @@
                     <div class="media media-wrapper justify-content-between">
                       <div class="media-body"> 
                         <div class="greeting-user">
-                          <h4 class="f-w-600">Welcome to Esupport</h4>
+                          <h4 class="f-w-600">Welcome to Webceylon</h4>
                           <p>Here whats happing in your account today</p>
                           <div class="whatsnew-btn"><a class="btn btn-outline-white">Whats New !</a></div>
                         </div>
@@ -62,7 +60,7 @@
                         <div class="badge f-10 p-0" id="txt"></div>
                       </div>
                     </div>
-                    <div class="cartoon"><img class="img-fluid" src="frontend/assets/images/dashboard/cartoon.svg" alt="vector women with leptop"></div>
+                    <div class="cartoon"><img class="img-fluid" src="backend/assets/images/dashboard/cartoon.svg" alt="vector women with leptop"></div>
                   </div>
                 </div>
               </div>
@@ -75,10 +73,10 @@
                           <div class="widget-round secondary">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="frontend/assets/svg/icon-sprite.svg#cart"> </use>
+                                <use href="backend/assets/svg/icon-sprite.svg#cart"> </use>
                               </svg>
                               <svg class="half-circle svg-fill">
-                                <use href="frontend/assets/svg/icon-sprite.svg#halfcircle"></use>
+                                <use href="backend/assets/svg/icon-sprite.svg#halfcircle"></use>
                               </svg>
                             </div>
                           </div>
@@ -96,10 +94,10 @@
                             <div class="widget-round primary">
                               <div class="bg-round">
                                 <svg class="svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#tag"> </use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#tag"> </use>
                                 </svg>
                                 <svg class="half-circle svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#halfcircle"></use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#halfcircle"></use>
                                 </svg>
                               </div>
                             </div>
@@ -123,10 +121,10 @@
                           <div class="widget-round warning">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="frontend/assets/svg/icon-sprite.svg#return-box"> </use>
+                                <use href="backend/assets/svg/icon-sprite.svg#return-box"> </use>
                               </svg>
                               <svg class="half-circle svg-fill">
-                                <use href="frontend/assets/svg/icon-sprite.svg#halfcircle"></use>
+                                <use href="backend/assets/svg/icon-sprite.svg#halfcircle"></use>
                               </svg>
                             </div>
                           </div>
@@ -144,10 +142,10 @@
                             <div class="widget-round success">
                               <div class="bg-round">
                                 <svg class="svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#rate"> </use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#rate"> </use>
                                 </svg>
                                 <svg class="half-circle svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#halfcircle"></use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#halfcircle"></use>
                                 </svg>
                               </div>
                             </div>
@@ -220,7 +218,7 @@
                             <div class="light-card balance-card widget-hover">
                               <div class="svg-box">
                                 <svg class="svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#income"></use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#income"></use>
                                 </svg>
                               </div>
                               <div> <span class="f-light">Income</span>
@@ -238,7 +236,7 @@
                             <div class="light-card balance-card widget-hover">
                               <div class="svg-box">
                                 <svg class="svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#expense"></use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#expense"></use>
                                 </svg>
                               </div>
                               <div> <span class="f-light">Expense</span>
@@ -256,7 +254,7 @@
                             <div class="light-card balance-card widget-hover">
                               <div class="svg-box">
                                 <svg class="svg-fill">
-                                  <use href="frontend/assets/svg/icon-sprite.svg#doller-return"></use>
+                                  <use href="backend/assets/svg/icon-sprite.svg#doller-return"></use>
                                 </svg>
                               </div>
                               <div> <span class="f-light">Cashback</span>
@@ -376,35 +374,35 @@
                         <table class="table table-bordernone">
                           <tbody>
                             <tr>
-                              <td><img class="img-fluid img-40 rounded-circle" src="frontend/assets/images/dashboard/user/1.jpg" alt="user"></td>
+                              <td><img class="img-fluid img-40 rounded-circle" src="backend/assets/images/dashboard/user/1.jpg" alt="user"></td>
                               <td class="img-content-box"><a class="d-block f-w-500" href="user-profile.html">Jane Cooper</a><span class="f-light">10 minutes ago</span></td>
                               <td class="text-end">
                                 <p class="m-0 font-success">$200.00</p>
                               </td>
                             </tr>
                             <tr>
-                              <td><img class="img-fluid img-40 rounded-circle" src="frontend/assets/images/dashboard/user/2.jpg" alt="user"></td>
+                              <td><img class="img-fluid img-40 rounded-circle" src="backend/assets/images/dashboard/user/2.jpg" alt="user"></td>
                               <td class="img-content-box"><a class="d-block f-w-500" href="user-profile.html">Brooklyn Simmons</a><span class="f-light">19 minutes ago</span></td>
                               <td class="text-end">
                                 <p class="m-0 font-success">$970.00</p>
                               </td>
                             </tr>
                             <tr>
-                              <td><img class="img-fluid img-40 rounded-circle" src="frontend/assets/images/dashboard/user/3.jpg" alt="user"></td>
+                              <td><img class="img-fluid img-40 rounded-circle" src="backend/assets/images/dashboard/user/3.jpg" alt="user"></td>
                               <td class="img-content-box"><a class="d-block f-w-500" href="user-profile.html">Leslie Alexander</a><span class="f-light">2 hours ago</span></td>
                               <td class="text-end">
                                 <p class="m-0 font-success">$300.00</p>
                               </td>
                             </tr>
                             <tr>
-                              <td><img class="img-fluid img-40 rounded-circle" src="frontend/assets/images/dashboard/user/4.jpg" alt="user"></td>
+                              <td><img class="img-fluid img-40 rounded-circle" src="backend/assets/images/dashboard/user/4.jpg" alt="user"></td>
                               <td class="img-content-box"><a class="d-block f-w-500" href="user-profile.html">Travis Wright</a><span class="f-light">8 hours ago</span></td>
                               <td class="text-end">
                                 <p class="m-0 font-success">$450.00</p>
                               </td>
                             </tr>
                             <tr>
-                              <td><img class="img-fluid img-40 rounded-circle" src="frontend/assets/images/dashboard/user/5.jpg" alt="user"></td>
+                              <td><img class="img-fluid img-40 rounded-circle" src="backend/assets/images/dashboard/user/5.jpg" alt="user"></td>
                               <td class="img-content-box"><a class="d-block f-w-500" href="user-profile.html">Mark Green</a><span class="f-light">1 day ago</span></td>
                               <td class="text-end">
                                 <p class="m-0 font-success">$768.00</p>
@@ -438,7 +436,7 @@
                 </div>
               </div>
               <div class="col-xxl-3 col-md-6 box-col-6 col-ed-none wow zoomIn">
-                <div class="card purchase-card"><img class="img-fluid" src="frontend/assets/images/dashboard/purchase.png" alt="vector mens with leptop">
+                <div class="card purchase-card"><img class="img-fluid" src="backend/assets/images/dashboard/purchase.png" alt="vector mens with leptop">
                   <div class="card-body pt-3"> 
                     <h6 class="mb-3">Buy <a href="#">Pro Account </a>to Explore Primium Features</h6><a class="purchase-btn btn btn-primary btn-hover-effect f-w-500" href="https://1.envato.market/3GVzd" target="_blank">Purchase Now</a>
                   </div>
@@ -506,7 +504,7 @@
                       <h5>PaperNote</h5><a class="f-light d-flex align-items-center" href="#">View project <i class="f-w-700 icon-arrow-top-right"></i></a>
                     </div>
                   </div>
-                  <div class="card-body pt-0"> <img class="banner-img img-fluid" src="frontend/assets/images/dashboard/papernote.jpg" alt="multicolor background">
+                  <div class="card-body pt-0"> <img class="banner-img img-fluid" src="backend/assets/images/dashboard/papernote.jpg" alt="multicolor background">
                     <div class="note-content mt-sm-4 mt-2">
                       <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
                       <div class="note-labels">
@@ -523,11 +521,11 @@
                       <div class="mt-sm-4 mt-2 user-details">
                         <div class="customers">
                           <ul> 
-                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="frontend/assets/images/dashboard/user/1.jpg" alt="user"></li>
-                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="frontend/assets/images/dashboard/user/6.jpg" alt="user"></li>
-                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="frontend/assets/images/dashboard/user/7.jpg" alt="user"></li>
-                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="frontend/assets/images/dashboard/user/3.jpg" alt="user"></li>
-                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="frontend/assets/images/dashboard/user/8.jpg" alt="user"></li>
+                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="backend/assets/images/dashboard/user/1.jpg" alt="user"></li>
+                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="backend/assets/images/dashboard/user/6.jpg" alt="user"></li>
+                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="backend/assets/images/dashboard/user/7.jpg" alt="user"></li>
+                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="backend/assets/images/dashboard/user/3.jpg" alt="user"></li>
+                            <li class="d-inline-block"><img class="img-40 rounded-circle" src="backend/assets/images/dashboard/user/8.jpg" alt="user"></li>
                             <li class="d-inline-block">
                               <div class="light-card"><span class="f-w-500">+5</span></div>
                             </li>

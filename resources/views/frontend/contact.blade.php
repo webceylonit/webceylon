@@ -122,32 +122,29 @@
 
                             </div>
                             <div class="contact__form">
-                                <form action="#">
+                                <form action="{{ route('inquiry.store') }}" method="POST">
+                                    @csrf 
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="name">Your Name*</label>
-                                            <input id="name" class="bg-transparent bor" type="text"
-                                                placeholder="Your Name">
+                                            <input id="name" name="name" class="bg-transparent bor" type="text" placeholder="Your Name" required>
                                         </div>
                                         <div class="col-6">
                                             <label for="email">Your Email*</label>
-                                            <input class="bg-transparent bor" id="email" type="email"
-                                                placeholder="Your Email">
+                                            <input class="bg-transparent bor" id="email" name="email" type="email" placeholder="Your Email" required>
                                         </div>
                                     </div>
                                     <div class="text-area">
-                                        <label for="massage">Write Message*</label>
-                                        <textarea class="bg-transparent bor" id="massage"
-                                            placeholder="Write Message"></textarea>
+                                        <label for="message">Write Message*</label>
+                                        <textarea class="bg-transparent bor" id="message" name="message" placeholder="Write Message" required></textarea>
                                     </div>
                                     <div class="btn">
-                                        <span class="btn-circle">
-                                        </span>
-                                        <a href="#" class="btn-one">Send Message <i
-                                                class="fa-regular fa-arrow-right-long"></i></a>
+                                        <span class="btn-circle"></span>
+                                        <button type="submit" class="btn-one">Send Message <i class="fa-regular fa-arrow-right-long"></i></button>
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

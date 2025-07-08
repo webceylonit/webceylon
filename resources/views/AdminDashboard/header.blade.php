@@ -14,7 +14,7 @@
           </form>
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="{{ route('dashboard') }}">
-                    <img class="img-fluid" src="{{ asset('frontend/assets/images/logo/user.png') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('backend/assets/images/logo/user.png') }}" alt="">
                 </a></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
           </div>
@@ -26,13 +26,13 @@
               
               <li>                         <span class="header-search">
                   <svg>
-                    <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#search') }}"></use>
+                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#search') }}"></use>
                   </svg></span></li>
 
               <li>
                 <div class="mode">
                   <svg>
-                    <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#moon') }}"></use>
+                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#moon') }}"></use>
                   </svg>
                 </div>
               </li>
@@ -40,7 +40,7 @@
               <li class="onhover-dropdown">
                 <div class="notification-box">
                   <svg>
-                    <use href="{{ asset('frontend/assets/svg/icon-sprite.svg#notification') }}"></use>
+                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#notification') }}"></use>
                   </svg><span class="badge rounded-pill badge-secondary">4 </span>
                 </div>
                 <div class="onhover-show-div notification-dropdown">
@@ -52,11 +52,11 @@
               </li>
               <li class="profile-nav onhover-dropdown pe-0 py-0">
                     <div class="media profile-media">
-                        <img class="b-r-10" src="{{ asset('frontend/assets/images/user/user.png') }}" alt="">
+                        <img class="b-r-10" src="{{ asset('backend/assets/images/user/user.png') }}" alt="">
                         <div class="media-body">
-                            <span>{{ Auth::user()->name }}</span> {{-- ✅ Display Employee Name --}}
+                            <span>User Name</span>
                             <p class="mb-0">
-                                {{ Auth::user()->role->name }} {{-- ✅ Display Role Name --}}
+                                Role name 
                                 <i class="middle fa fa-angle-down"></i>
                             </p>
                         </div>

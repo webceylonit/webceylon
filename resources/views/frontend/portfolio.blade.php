@@ -28,78 +28,33 @@
         </section>
         <!-- Page banner area end here -->
 
- <!-- Case area start here -->
         <section class="case-area pt-120 pb-120">
             <div class="container">
                 <div class="row g-4">
-                   <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="case-two__item">
-                          <div class="image case-two__image" style="position: relative; overflow: hidden;">
-                                <img src="frontend/assets/images/case/case-image44.jpg" alt="Web Development" style="width: 100%; display: block;">
-                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
-                            </div>
-
-                            <div class="case-two__content">
-                                <h4><a href="{{ route('project-details') }}" class="text-white">Web Development</a></h4>
-                                <p style="color: #ddd; margin: 10px 10px 10px 0;">
-                                    Designed and developed a responsive website with dynamic content management, enhancing user experience and site speed.
-                                </p>
-                                <div style="color: #aaa; font-size: 14px;">
-                                    <strong>Technologies:</strong> Laravel, HTML5, CSS3, JavaScript
+                    @foreach($projects as $project)
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="case-two__item">
+                                <div class="image case-two__image" style="position: relative; overflow: hidden;">
+                                    <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
                                 </div>
-                            </div>
-                            <a href="{{ route('project-details') }}" class="case-two__btn">
-                                <i class="fa-regular fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="case-two__item">
-                          <div class="image case-two__image" style="position: relative; overflow: hidden;">
-                                <img src="frontend/assets/images/case/case-image22.jpg" alt="Web Development" style="width: 100%; display: block;">
-                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
-                            </div>
+                                <div class="case-two__content">
+                                    <h4><a href="{{ route('project-details', $project->id) }}" class="text-white">{{ $project->title }}</a></h4>
 
-                            <div class="case-two__content">
-                                <h4><a href="{{ route('project-details') }}" class="text-white">ERP System Development</a></h4>
-                                <p style="color: #ddd; margin: 10px 10px 10px 0;">
-                                   Created a custom ERP system to automate HR, inventory, and finance processes, improving overall business efficiency.
-                                </p>
-                                <div style="color: #aaa; font-size: 14px;">
-                                    <strong>Technologies:</strong>PHP, Laravel, MySQL, Bootstrap
+                                    <div style="color: #aaa; font-size: 14px;">
+                                        <strong>{{ $project->type }} </strong> 
+                                    </div>
                                 </div>
+                                <a href="{{ route('project-details', $project->id) }}" class="case-two__btn">
+                                    <i class="fa-regular fa-arrow-right"></i>
+                                </a>
                             </div>
-                            <a href="{{ route('project-details') }}" class="case-two__btn">
-                                <i class="fa-regular fa-arrow-right"></i>
-                            </a>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="case-two__item">
-                          <div class="image case-two__image" style="position: relative; overflow: hidden;">
-                                <img src="frontend/assets/images/case/case-image33.jpg" alt="Web Development" style="width: 100%; display: block;">
-                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
-                            </div>
-
-                            <div class="case-two__content">
-                                <h4><a href="{{ route('project-details') }}" class="text-white">Digital Marketing</a></h4>
-                                <p style="color: #ddd; margin: 10px 10px 10px 0;">
-                                   Executed targeted ad campaigns and content strategies to drive engagement, conversions, and brand visibility across digital channels.
-                                </p>
-                                <div style="color: #aaa; font-size: 14px;">
-                                    <strong>Technologies:</strong>Google Ads, Canva
-                                </div>
-                            </div>
-                            <a href="{{ route('project-details') }}" class="case-two__btn">
-                                <i class="fa-regular fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
+                    @endforeach
                 </div>
             </div>
         </section>
-        <!-- Case area end here -->
+
     </main>
 @endsection

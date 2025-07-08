@@ -196,7 +196,7 @@ CSS TABLE OF CONTENTS
 
 	// Case slider area start here ***
 	var swiper = new Swiper(".case__slider", {
-		loop: "true",
+		loop: false,
 		spaceBetween: 24,
 		speed: 800,
 		autoplay: {
@@ -223,7 +223,7 @@ CSS TABLE OF CONTENTS
 		},
 	});
 	var swiper = new Swiper(".case-two__slider", {
-		loop: "true",
+		loop: "false",
 		spaceBetween: 24,
 		speed: 500,
 		autoplay: {

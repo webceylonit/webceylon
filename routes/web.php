@@ -1,11 +1,17 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
 
 Route::get('/about-us', function () {
     return view('frontend.about');
@@ -19,33 +25,47 @@ Route::get('/service-details', function () {
     return view('frontend.service-details');
 })->name('service-details');
 
-Route::get('/blogs', function () {
-    return view('frontend.blog');
-})->name('blogs');
 
-Route::get('/blog-details', function () {
-    return view('frontend.blog-details');
-})->name('blog-details');
 
-Route::get('/portfolio', function () {
-    return view('frontend.portfolio');
-})->name('portfolio');
+Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
+Route::get('/blog-details/{id}', [BlogController::class, 'show'])->name('blog-details');
+Route::get('/portfolio', [ProjectController::class, 'portfolio'])->name('portfolio');
+Route::get('/project-details/{id}', [ProjectController::class, 'projectDetails'])->name('project-details');
+Route::get('/careers', [JobController::class, 'jobs'])->name('careers');
 
-Route::get('/project-details', function () {
-    return view('frontend.project-details');
-})->name('project-details');
-
-Route::get('/careers', function () {
-    return view('frontend.careers');
-})->name('careers');
-
+Route::post('/submit-inquiry', [InquiryController::class, 'store'])->name('inquiry.store');
 Route::get('/contact', function () {
     return view('frontend.contact');
 })->name('contact');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/ProjectIndex', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/ProjectCreate', [ProjectController::class, 'create'])->name('projects.create');
+Route::post('/Projectstore', [ProjectController::class, 'store'])->name('projects.store');
+Route::get('/Project{projects}', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::put('/{projects}', [ProjectController::class, 'update'])->name('projects.update');
+Route::delete('/{projects}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+
+
+Route::get('/BlogIndex', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/BlogCreate', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/Blogstore', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::put('/blogs/{blog}', [BlogController::class, 'update'])->name('blogs.update');
+Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blogs.destroy');
+
+
+Route::get('/CareerIndex', [JobController::class, 'index'])->name('careers.index');
+Route::get('/CareerCreate', [JobController::class, 'create'])->name('careers.create');
+Route::post('/Careerstore', [JobController::class, 'store'])->name('careers.store');
+Route::get('/careers/{career}/edit', [JobController::class, 'edit'])->name('careers.edit');
+Route::put('/careers/{career}', [JobController::class, 'update'])->name('careers.update');
+Route::delete('/careers/{career}', [JobController::class, 'destroy'])->name('careers.destroy');
+
+Route::get('/Inquiries', [InquiryController::class, 'index'])->name('inquiries.index');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
