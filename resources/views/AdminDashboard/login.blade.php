@@ -9,29 +9,22 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon"  href="{{ asset('icon.png') }}" type="image/x-icon">
     <link rel="shortcut icon"  href="{{ asset('icon.png') }}" type="image/x-icon">
-    <title>WeCeylon</title>
+    <title>WebCeylon</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/font-awesome.css">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/icofont.css">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/themify.css">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/flag-icon.css">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/feather-icon.css">
-    <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/sweetalert2.css">
-    <!-- Plugins css Ends-->
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/vendors/bootstrap.css">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/style.css">
-    <link id="color" rel="stylesheet" href="backend/assets/css/color-1.css" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="backend/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/icofont.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/themify.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/flag-icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/feather-icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/sweetalert2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/vendors/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
+    <link id="color" rel="stylesheet" href="{{ asset('backend/assets/css/color-1.css') }}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/responsive.css') }}">
+
   </head>
   <body>
     <!-- login page start-->
@@ -40,7 +33,7 @@
         <div class="col-12 p-0">
           <div class="login-card login-dark">
             <div>
-              <div><a class="logo text-start" href=""><img class="img-fluid for-light" style="height:80px;" src="{{ asset('webceylon.png') }}" alt="looginpage"><img class="img-fluid for-dark" src="{{ asset('icon.png') }}" alt="looginpage"></a></div>
+              <div><a class="logo text-start" href=""><img class="img-fluid for-light" style="height:80px;" src="{{ asset('webceylon.png') }}" alt="looginpage"><img class="img-fluid for-dark" src="{{ asset('icon.png') }}" alt="loginpage"></a></div>
               <div class="login-main"> 
               <form class="theme-form" method="POST" action="">
                     @csrf  {{-- CSRF Protection --}}
@@ -58,16 +51,16 @@
                     </div>
 
                     {{-- Password Field --}}
-                    <div class="form-group">
-                        <label class="col-form-label">Password</label>
-                        <div class="form-input position-relative">
-                            <input class="form-control" type="password" name="password" required placeholder="********">
-                            <div class="show-hide"><span class="show"></span></div>
-                        </div>
-                        @error('password')
-                            <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
+                  <div class="form-group">
+                      <label class="col-form-label">Password</label>
+                      <div class="form-input position-relative">
+                          <input class="form-control password-field" type="password" name="password" required placeholder="********">
+                          <div class="show-hide"><span class="show"></span></div>
+                      </div>
+                      @error('password')
+                          <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                  </div>
 
                     {{-- Remember Me & Forgot Password --}}
                     <!--<div class="form-group mb-0">
@@ -89,21 +82,14 @@
           </div>
         </div>
       </div>
-      <!-- latest jquery-->
-      <script src="backend/assets/js/jquery.min.js"></script>
-      <!-- Bootstrap js-->
-      <script src="backend/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-      <!-- feather icon js-->
-      <script src="backend/assets/js/icons/feather-icon/feather.min.js"></script>
-      <script src="backend/assets/js/icons/feather-icon/feather-icon.js"></script>
-      <!-- scrollbar js-->
-      <!-- Sidebar jquery-->
-      <script src="backend/assets/js/config.js"></script>
-      <!-- Plugins JS start-->
-      <script src="backend/assets/js/sweet-alert/sweetalert.min.js"></script>
-      <!-- Plugins JS Ends-->
-      <!-- Theme js-->
-      <script src="backend/assets/js/script.js"></script>
+    <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/icons/feather-icon/feather.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/icons/feather-icon/feather-icon.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/config.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/sweet-alert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/script.js') }}"></script>
+
       <script>
         $(document).on('click', '#error', function(e) {
           if($('.email').val() == '' || $('.pwd').val() == ''){
@@ -113,6 +99,25 @@
           }
         });
       </script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.show-hide').forEach(function(toggle) {
+            toggle.addEventListener('click', function () {
+                const input = this.closest('.form-input').querySelector('.password-field');
+                const icon = this.querySelector('.show');
+                
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.textContent = ""; // you can use eye-off icon or custom style
+                } else {
+                    input.type = "password";
+                    icon.textContent = "";
+                }
+            });
+        });
+    });
+</script>
+
     </div>
   </body>
 </html>

@@ -54,26 +54,25 @@
                     <div class="media profile-media">
                         <img class="b-r-10" src="{{ asset('backend/assets/images/user/user.png') }}" alt="">
                         <div class="media-body">
-                            <span>User Name</span>
+                            <span>{{ session('name', 'Guest') }}</span>
                             <p class="mb-0">
-                                Role name 
+                                {{ session('name', 'Admin') }}
                                 <i class="middle fa fa-angle-down"></i>
                             </p>
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
                         <li><a href="#"><i data-feather="user"></i><span>Account</span></a></li>
-                        <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
                         {{-- ✅ Logout Link --}}
                         <li>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a href="#"
+                               onclick="event.preventDefault(); document.getElementById('admin-logout-form').submit();">
                                 <i data-feather="log-out"></i>
                                 <span>Log out</span>
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                           <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
                         </li>
                     </ul>
                 </li>

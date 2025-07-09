@@ -249,7 +249,7 @@
                         <h2 class="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">Excellent IT
                             Services</h2>
                     </div>
-                    <a href="service.html" class="btn-one wow fadeInUp" data-wow-delay="200ms"
+                    <a href="{{ route('services') }}" class="btn-one wow fadeInUp" data-wow-delay="200ms"
                         data-wow-duration="1500ms">View All
                         Services <i class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
@@ -262,7 +262,7 @@
                                     <img src="{{ asset('frontend/assets/images/shape/service-item-shape.png') }}" alt="shape">
                                 </div>
                                 <div class="service__icon" style="margin: 10px 0;">
-                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" style="width: 60px; height: 60px;">
+                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" style="width: 80px; height: 60px;">
                                 </div>
                                 <h4 style="">{{ $service->name }}</h4>
                                 <p style="flex-grow: 1;">{{ \Illuminate\Support\Str::limit(strip_tags($service->description), 150, '...') }}</p>
@@ -339,7 +339,7 @@
                             </div>
                         </div>
                         <div class="about__info mt-50 wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <a href="about.html" class="btn-one">Explore More <i
+                            <a href="{{ route('about') }}" class="btn-one">Explore More <i
                                     class="fa-regular fa-arrow-right-long"></i></a>
                             
                         </div>

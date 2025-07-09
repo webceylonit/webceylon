@@ -24,7 +24,7 @@
                     <p style="text-align:justify">Webceylon is an IT service provider offering web development, software solutions, and digital marketing to help businesses thrive in the digital age.
 </p>
                     <div class="social-icon">
-                        <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#0"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#0"><i class="fa-brands fa-youtube"></i></a>

@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <ul class="link-info">
-                    <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href="#0"><i class="fa-brands fa-twitter"></i></a></li>
                     <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     <li><a href="#0"><i class="fa-brands fa-youtube"></i></a></li>
@@ -109,7 +109,7 @@
             <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="#0">info@webceylon.com</a></li>
         </ul>
         <div class="social-icon mt-20">
-            <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#0"><i class="fa-brands fa-twitter"></i></a>
             <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#0"><i class="fa-brands fa-youtube"></i></a>
