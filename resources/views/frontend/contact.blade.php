@@ -52,7 +52,7 @@
                                     </i>
                                     <div>
                                         <span class="text-white">Call Us 7/24</span>
-                                        <h3 class="mt-1"><a class="text-white" href="tel:+94 77 178 8080">+94 77 178 8080</a>
+                                        <h3 class="mt-1"><a class="text-white" href="tel:+94 77 995 4063">+94 77 995 4063</a>
                                         </h3>
                                     </div>
                                 </li>
@@ -91,7 +91,7 @@
                                     </i>
                                     <div>
                                         <span class="text-white">Location</span>
-                                        <h4 class="mt-1"><a class="text-white" href="tel:+94 77 178 8080">Kaduwela Road, Athurugiriya</a>
+                                        <h4 class="mt-1"><a class="text-white" href="tel:+94 77 995 4063">Kaduwela Road, Athurugiriya</a>
                                         </h4>
                                     </div>
                                 </li>
@@ -109,10 +109,6 @@
                     <div class="col-lg-6">
                         <div class="contact__right-item">
                             <div class="section-header mb-20">
-                                <h5 class="wow fadeInUp pb-2" data-wow-delay="00ms" data-wow-duration="1500ms">
-                                    <img class="me-1" src="frontend/assets/images/icon/section-title.png" alt="icon">
-                                    GET IN TOUCH
-                                </h5>
                                 <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Ready to Get
                                     Started?</h2>
                                <p class="wow fadeInUp mt-3" data-wow-delay="400ms" data-wow-duration="1500ms">
@@ -132,6 +128,16 @@
                                         <div class="col-6">
                                             <label for="email">Your Email*</label>
                                             <input class="bg-transparent bor" id="email" name="email" type="email" placeholder="Your Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="subject">Subject*</label>
+                                            <input id="subject" name="subject" class="bg-transparent bor" type="text" placeholder="Subject">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="email">Your Phone</label>
+                                            <input class="bg-transparent bor" id="number" name="phone" type="number" placeholder="Your Phone">
                                         </div>
                                     </div>
                                     <div class="text-area">

@@ -24,6 +24,32 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}" >
     <!-- Style css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" >
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 24px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        color: white;
+    }
+</style>
+
 </head>
 
 <body>
@@ -35,6 +61,14 @@
     @include('frontend.footer')
 
  
+
+    <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94779954063" 
+            class="whatsapp-float" 
+            target="_blank" 
+            aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp" style="font-size:35px"></i>
+        </a>
 
    
     <!-- Back to top area start here -->
