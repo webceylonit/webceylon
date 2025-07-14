@@ -63,6 +63,7 @@
 
                    <div class="case-challenge-list mt-30">
                         <ul class="case-challenge">
+                              <li class="mb-3" style="color:#007793">Technologies Used:</li>
                             @if (is_array($project->technologies_used))
                                 @foreach ($project->technologies_used as $tech)
                                     <li class="mb-3"><i class="fa-solid fa-check"></i> {{ $tech }}</li>

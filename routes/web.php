@@ -14,10 +14,17 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
+Route::get('/terms_and_conditions', function () {
+    return view('frontend.terms_and_conditions');
+})->name('terms_and_conditions');
+
+Route::get('/privacy_policy', function () {
+    return view('frontend.privacy_policy');
+})->name('privacy_policy');
+
 Route::get('/about-us', function () {
     return view('frontend.about');
 })->name('about');
-
 
 Route::get('/services', [ServiceController::class, 'services'])->name('services');
 Route::get('/service-details/{id}', [ServiceController::class, 'show'])->name('service.details');

@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Inquiry;
+ use App\Models\Inquiry;
+use App\Mail\InquiryNotification;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class InquiryController extends Controller
@@ -14,7 +16,7 @@ class InquiryController extends Controller
 
 
     //frontend
-      public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -24,15 +26,18 @@ class InquiryController extends Controller
             'subject' => 'nullable|string|max:255',
         ]);
 
-        Inquiry::create([
+        $inquiry = Inquiry::create([
             'name' => $request->name,
             'email' => $request->email,
             'message' => $request->message,
             'phone' => $request->phone,
             'subject' => $request->subject,
-            'status' => 'new', 
+            'status' => 'new',
         ]);
+
+        Mail::to('info@webceylon.com')->send(new InquiryNotification($inquiry));
 
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
+
 }

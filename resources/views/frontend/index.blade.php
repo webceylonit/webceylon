@@ -254,22 +254,36 @@
                         Services <i class="fa-regular fa-arrow-right-long"></i></a>
                 </div>
               <div class="row g-4" style="display: flex; flex-wrap: wrap; ">
-                @foreach($services as $service)
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms" style="display: flex; flex: 1 1 23%; align-items: stretch;">
-                        <a href="{{ route('service.details', $service->id) }}" class="service__link" style="display: block; height: 100%;">
-                            <div class="service__item" style="display: flex; flex-direction: column; height: 100%;  transition: all 0.3s ease-in-out;">
-                                <div class="service-shape" style="margin-bottom: 15px;">
-                                    <img src="{{ asset('frontend/assets/images/shape/service-item-shape.png') }}" alt="shape">
-                                </div>
-                                <div class="service__icon" style="margin: 10px 0;">
-                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" style="width: 80px; height: 60px;">
-                                </div>
-                                <h4 style="">{{ $service->name }}</h4>
-                                <p style="flex-grow: 1;">{{ \Illuminate\Support\Str::limit(strip_tags($service->description), 150, '...') }}</p>
+               @foreach($services as $service)
+                @php
+                    // Map service names to specific icons
+                    $iconMap = [
+                        'Web Development' => 'service-icon3.png',
+                        'ERP System Development' => 'service-three-icon1.png',
+                        'Digital Marketing' => 'service-icon1.png',
+                        'SEO Optimization' => 'service-icon2.png',
+                    ];
+
+                    // Fallback icon
+                    $iconFile = $iconMap[$service->name] ?? 'service-icon2.png';
+                @endphp
+
+                <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms" style="display: flex; flex: 1 1 23%; align-items: stretch;">
+                    <a href="{{ route('service.details', $service->id) }}" class="service__link" style="display: block; height: 100%;">
+                        <div class="service__item" style="display: flex; flex-direction: column; height: 100%; transition: all 0.3s ease-in-out;">
+                            <div class="service-shape" style="margin-bottom: 15px;">
+                                <img src="{{ asset('frontend/assets/images/shape/service-item-shape.png') }}" alt="shape">
                             </div>
-                        </a>
-                    </div>
-                @endforeach
+                            <div class="service__icon" style="margin: 10px 0;">
+                                <img src="{{ asset('frontend/assets/images/icon/' . $iconFile) }}" alt="{{ $service->name }}">
+                            </div>
+                            <h4>{{ $service->name }}</h4>
+                            <p style="flex-grow: 1;">{{ \Illuminate\Support\Str::limit(strip_tags($service->description), 150, '...') }}</p>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+
             </div>
             </div>
         </section>

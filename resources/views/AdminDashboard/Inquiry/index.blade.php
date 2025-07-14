@@ -35,7 +35,9 @@
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Image</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Subject</th>
                   <th>Message</th>
                 </tr>
               </thead>
@@ -45,6 +47,8 @@
                   <tr>
                     <td>{{ $inquiry->name }}</td>
                     <td>{{ $inquiry->email }}</td>
+                    <td>{{ $inquiry->phone }}</td>
+                    <td>{{ $inquiry->subject }}</td>
                     <td>{{ $inquiry->message }}</td>
                   </tr>
                 @endforeach

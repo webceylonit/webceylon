@@ -30,15 +30,17 @@
                         <a href="#0"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer__item item-sm wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+               <div class="footer__item item-sm wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <h3 class="footer-title">IT Services</h3>
                     <ul>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> Web Development</a></li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> ERP System Development</a>
-                        </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> SEO (Search Engine Optimization)</a>
-                        </li>
-                        <li><a href="service-details.html"><i class="fa-regular fa-angles-right me-1"></i> Digital Marketing</a></li>
+                        @foreach ($footerServices as $service)
+                            <li>
+                                <a href="{{ route('service.details', $service->id) }}">
+                                    <i class="fa-regular fa-angles-right me-1"></i>
+                                    {{ $service->name }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="footer__item item-sm wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
@@ -72,7 +74,7 @@
                                 <h5>
                                     Phone Call:
                                 </h5>
-                                <p>077 178 8080</p>
+                                <p>+94 77 995 4063</p>
                             </div>
                         </li>
                     </ul>
@@ -83,12 +85,13 @@
             <div class="container">
                 <div
                     class="d-flex gap-1 flex-wrap align-items-center justify-content-md-between justify-content-center">
-                    <p class="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">&copy; All Copyright 2025
-                        by <a href="#0"> Webceylon</a></p>
+                 <p class="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
+  Copyright &copy; 2024 <a href="https://webceylon.com" target="_blank" rel="noopener noreferrer">Webceylon</a>. All rights reserved.
+</p>
                     <ul class="d-flex align-items-center gap-4 wow fadeInDown" data-wow-delay="200ms"
                         data-wow-duration="1500ms">
-                        <li><a href="#0">Terms & Condition</a></li>
-                        <li><a href="#0">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms_and_conditions') }}">Terms & Condition</a></li>
+                        <li><a href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>

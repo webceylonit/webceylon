@@ -89,21 +89,27 @@
 
                                         <h3 class="blog-single__title mt-20">{{ $blog->title }}</h3>
                                         
-                                        <p class="mb-20 mt-20">{{ $blog->description }}</p>
+                                        <p class="mb-20 mt-20" style="text-align:justify">{{ $blog->description }}</p>
                                         
                                         <!-- Displaying images -->
-                                       <div class="row">
+                                      <div class="row">
+                                        @if($blog->subimage1)
                                             <div class="col-6">
                                                 <div class="image" style="width: 100%; height: 200px; object-fit: cover;">
                                                     <img src="{{ asset('storage/'.$blog->subimage1) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
                                                 </div>
                                             </div>
+                                        @endif
+
+                                        @if($blog->subimage2)
                                             <div class="col-6">
                                                 <div class="image" style="width: 100%; height: 200px; object-fit: cover;">
                                                     <img src="{{ asset('storage/'.$blog->subimage2) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
+                                    </div>
+
 
                                         <!-- Tags and Share Section -->
                                         <div class="tags-share mt-40">
