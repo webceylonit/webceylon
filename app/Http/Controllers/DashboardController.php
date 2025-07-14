@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $totalServices = Service::count();
         $totalProjects = Project::count();
 
-        return view('AdminDashboard.Home', compact('totalBlogs', 'totalCareers', 'totalServices', 'totalProjects'));
+        return view('AdminDashboard.home', compact('totalBlogs', 'totalCareers', 'totalServices', 'totalProjects'));
     }
 
 
