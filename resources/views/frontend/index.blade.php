@@ -427,7 +427,7 @@
                         <div class="swiper-slide">
                             <div class="case__item">
                                 <div class="image case__image">
-                                    <img src="{{ safe_asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}">
+                                    <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}">
                                 </div>
                                 <div class="case__content">
                                     <span class="primary-color sm-font">{{ $project->type }}</span>

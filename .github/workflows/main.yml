@@ -32,7 +32,6 @@ jobs:
             composer install
             git reset --hard
             git pull origin main
-            composer dump-autoload
             php artisan migrate
             php artisan storage:link
             php artisan optimize:clear
