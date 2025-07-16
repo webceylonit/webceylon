@@ -33,5 +33,6 @@ jobs:
             git reset --hard
             git pull origin main
             php artisan migrate
+            php artisan storage:link
             php artisan optimize:clear
           "
