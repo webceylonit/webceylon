@@ -85,9 +85,11 @@
             <div class="container">
                 <div
                     class="d-flex gap-1 flex-wrap align-items-center justify-content-md-between justify-content-center">
-                 <p class="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
-  Copyright &copy; 2024 <a href="https://webceylon.com" target="_blank" rel="noopener noreferrer">Webceylon</a>. All rights reserved.
-</p>
+                    <p class="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    All Rights Reserved. &copy; 2024 - 2025 
+                    <a href="https://webceylon.com" target="_blank" rel="noopener noreferrer">webceylon.com</a>
+                    </p>
+
                     <ul class="d-flex align-items-center gap-4 wow fadeInDown" data-wow-delay="200ms"
                         data-wow-duration="1500ms">
                         <li><a href="{{ route('terms_and_conditions') }}">Terms & Condition</a></li>
