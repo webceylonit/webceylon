@@ -58,7 +58,7 @@
                             <li class="has-megamenu"><a href="{{ route('index') }}">Home</a></li>
                              <li>
                                 <a href="{{ route('services') }}">Services</a>
-                                <ul class="sub-menu">
+                                <ul class="sub-menu" style="margin-left:0;">
                                       @foreach ($footerServices as $service)
                                         <li>
                                             <a href="{{ route('service.details', $service->id) }}">{{ $service->name }}</a>

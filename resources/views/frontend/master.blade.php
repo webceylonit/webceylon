@@ -29,7 +29,7 @@
     .whatsapp-float {
         position: fixed;
         bottom: 20px;
-        left: 20px;
+        right: 15px;
         background-color: #25D366;
         color: white;
         border-radius: 50%;
@@ -62,22 +62,17 @@
 
  
 
-    <!-- WhatsApp Floating Button -->
-        <a href="https://wa.me/94779954063" 
-            class="whatsapp-float" 
-            target="_blank" 
-            aria-label="Chat with us on WhatsApp">
-            <i class="fab fa-whatsapp" style="font-size:35px"></i>
-        </a>
+   <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/94779954063" target="_blank" class="whatsapp-float">
+        <img src="{{ asset('frontend/assets/images/icon/whatsapp-business1.png') }}" alt="WhatsApp Business" style="width: 40px; height: 40px;">
+    </a>
 
-   
-    <!-- Back to top area start here -->
-    <div class="scroll-up">
-        <svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <!-- Back to Top Scroll Icon -->
+    <div class="scroll-up" style="bottom: 100px;">
+        <svg class="scroll-circle svg-content" viewBox="-1 -1 102 102" fill="white">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-    <!-- Back to top area end here -->
 
     <!-- Jquery 3.7.0 Min Js -->
     <script src="{{ asset('frontend/assets/js/jquery-3.7.1.min.js') }}"></script>
