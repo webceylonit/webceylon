@@ -94,6 +94,7 @@ Route::get('/Projectshow/{projects}', [ProjectController::class, 'show'])->name(
     Route::delete('/services/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
     Route::get('/feedbacks', [FeedbackController::class, 'index'])->name('feedbacks.index');
     Route::put('/admin/feedbacks/{id}', [FeedbackController::class, 'update'])->name('feedbacks.update');
+    Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('feedbacks.destroy');
     Route::get('/Inquiries', [InquiryController::class, 'index'])->name('inquiries.index');
     Route::patch('/inquiries/{id}/status', [InquiryController::class, 'updateStatus'])->name('inquiries.updateStatus');
 });
