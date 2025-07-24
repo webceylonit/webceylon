@@ -60,4 +60,10 @@ class FeedBackController extends Controller
 
         return redirect()->back()->with('success', 'Feedback status updated successfully.');
     }
+
+    public function destroy(Feedback $feedback)
+    {
+        $feedback->delete();
+        return back()->with('success', 'Feedback deleted successfully.');
+    }
 }

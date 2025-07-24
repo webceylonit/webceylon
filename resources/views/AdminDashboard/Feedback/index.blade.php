@@ -54,7 +54,7 @@
                     @if ($fb->company_logo)
                     <img src="{{ asset('public/storage/' . $fb->company_logo) }}" alt="Logo" style="height: 50px; width: auto; border-radius: 5px;">
                     @else
-                    <img src="{{ asset('frontend/assets/images/person.png') }}" alt="No Image" style="height: 50px; width: auto; opacity: 0.6;">
+                    <img src="{{ asset('public/frontend/assets/images/person.png') }}" alt="No Image" style="height: 50px; width: auto; opacity: 0.6;">
                     @endif
                   </td>
                   <td>{{ $fb->name }}</td>
@@ -74,13 +74,38 @@
                       {{ $fb->status }}
                     </span>
                   </td>
-
-
                   <td>
-                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
+                    <ul class="action">
+
+                      <li class="edit">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal{{ $fb->id }}">
+                          <i class="icon-eye" style="color:blue;"></i>
+                        </a>
+                      </li>
+
+                      <li class="delete">
+                        <form id="delete-form-{{ $fb->id }}" action="{{ route('feedbacks.destroy', $fb->id) }}" method="POST" class="delete-form">
+                          @csrf
+                          @method('DELETE')
+                          <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $fb->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                            <i class="icon-trash" style="color:red;"></i>
+                          </button>
+                        </form>
+                      </li>
+
+                    </ul>
+
+                    <!-- <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
                       data-bs-target="#feedbackModal{{ $fb->id }}">
                       View
                     </button>
+                    <form id="delete-form-{{ $fb->id }}" action="{{ route('blogs.destroy', $fb->id) }}" method="POST" class="delete-form">
+                      @csrf
+                      @method('DELETE')
+                      <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $fb->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                        <i class="icon-trash" style="color:red;"></i>
+                      </button>
+                    </form> -->
                   </td>
 
                 </tr>
