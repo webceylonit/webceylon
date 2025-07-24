@@ -28,15 +28,13 @@
             </div>
           </div>
 
-          <div class="list-project">
-            <table class="table" id="service-list">
+          <div class="table-responsive">
+            <table class="display" id="basic-1">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Name</th>
-                  <th>Description</th>
                   <th>Image</th>
-                  <th>Technologies</th>
-                  <th>Additional Info</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -44,8 +42,8 @@
               <tbody>
                 @foreach ($services as $service)
                   <tr>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $service->name }}</td>
-                    <td>{{ \Illuminate\Support\Str::limit($service->description, 60) }}</td>
                     <td>
                       @if ($service->image)
                         <img src="{{ asset('storage/' . $service->image) }}" width="100">
@@ -53,29 +51,27 @@
                         N/A
                       @endif
                     </td>
+                    
                     <td>
-                      @if (is_array($service->technologies))
-                        <ul style="padding-left: 1rem;">
-                          @foreach ($service->technologies as $tech)
-                            <li>{{ $tech }}</li>
-                          @endforeach
-                        </ul>
-                      @else
-                        N/A
-                      @endif
-                    </td>
-                    <td>{{ $service->additional_info ?? '—' }}</td>
-                    <td>
-                      <a href="{{ route('services.edit', $service->id) }}" class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit"></i> Edit
-                      </a>
-                      <form action="{{ route('services.destroy', $service->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this service?')">
-                          <i class="fa fa-trash"></i> Delete
-                        </button>
-                      </form>
+                      <ul class="action">
+
+                        <li class="edit">
+                          <a href="{{ route('services.edit', $service->id) }}">
+                            <i class="icon-pencil-alt"></i>
+                          </a>
+                        </li>
+
+                        <li class="delete">
+                          <form id="delete-form-{{ $service->id }}" action="{{ route('services.destroy', $service->id) }}" method="POST" class="delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $service->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                              <i class="icon-trash" style="color:red;"></i>
+                            </button>
+                          </form>
+                        </li>
+
+                      </ul>
                     </td>
                   </tr>
                 @endforeach

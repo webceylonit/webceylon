@@ -1,6 +1,6 @@
 @extends('AdminDashboard.master')
 
-@section('title', 'Career')
+@section('title', 'Team Members')
 
 @section('content')
 
@@ -8,7 +8,7 @@
   <div class="page-title">
     <div class="row">
       <div class="col-6 mt-3">
-        <h4>Career List</h4>
+        <h4>Team Members</h4>
       </div>
 
     </div>
@@ -27,8 +27,8 @@
                 <a data-bs-toggle="collapse" href="#collapsecareer" role="button" aria-expanded="false" aria-controls="collapsecareer">
                 </a>
               </div>
-              <a class="btn btn-primary mb-2" href="{{ route('careers.create') }}">
-                <i class="fa fa-plus"></i> Add Job Opening
+              <a class="btn btn-primary mb-2" href="{{ route('team.create') }}">
+                <i class="fa fa-plus"></i> Add Team Member
               </a>
             </div>
           </div>
@@ -39,34 +39,37 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Job Title</th>
-                    <th>Location</th>
-                    <th>Deadline</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Position</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  @foreach ($careers as $career)
+                  @foreach ($team as $t)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $career->job_title }}</td>
-                    <td>{{ $career->location }}</td>
-                    <td>{{ $career->deadline_date->toDateString() }}</td>
+                    <td>{{ $t->name }}</td>
+                    <td>
+                      <img src="{{ asset('storage/' . $t->image) }}" alt="Team Member Image" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;">
+                    </td>
+
+                    <td>{{ $t->position }}</td>
                     <td>
                       <ul class="action">
 
                         <li class="edit">
-                          <a href="{{ route('careers.edit', $career->id) }}">
+                          <a href="{{ route('team.edit', $t->id) }}">
                             <i class="icon-pencil-alt"></i>
                           </a>
                         </li>
 
                         <li class="delete">
-                          <form id="delete-form-{{ $career->id }}" action="{{ route('careers.destroy', $career->id) }}" method="POST" class="delete-form">
+                          <form id="delete-form-{{ $t->id }}" action="{{ route('team.destroy', $t->id) }}" method="POST" class="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $career->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                            <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $t->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
                               <i class="icon-trash" style="color:red;"></i>
                             </button>
                           </form>

@@ -10,7 +10,7 @@
       <div class="col-6 mt-3">
         <h4>Project List</h4>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -33,45 +33,58 @@
             </div>
           </div>
 
-          <div class="list-project">
-            <table class="table" id="project-list">
+          <div class="table-responsive">
+            <table class="display" id="basic-1">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Title</th>
                   <th>Image</th>
                   <th>Client</th>
-                  <th>Location</th>
-                  <th>Completed Date</th>
                   <th>Type</th>
+                  <th>Start Date</th>
+                  <th>Completed Date</th>
                   <th>Actions</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($projects as $project)
-                  <tr>
-                    <td>{{ $project->title }}</td>
-                    <td><img src="{{ asset('storage/' . $project->main_image) }}" width="100"></td>
-                    <td>{{ $project->client }}</td>
-                    <td>{{ $project->location }}</td>
-                    <td>{{ $project->completed_date->toDateString() }}</td>
-                    <td>{{ $project->type }}</td>
-                    <td>
-                      <div class="project-action">
-                        <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning btn-sm">
-                          <i class="fa fa-edit"></i> Edit
+                <tr>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $project->title }}</td>
+                  <td><img src="{{ asset('storage/' . $project->main_image) }}" width="100"></td>
+                  <td>{{ $project->client }}</td>
+                  <td>{{ $project->type }}</td>
+                    <td>{{ $project->started_date->toDatestring() }}</td>
+                  <td>{{ $project->completed_date->toDatestring()}}</td>
+                  <td>
+                    <ul class="action">
+                      <li class="edit">
+                        <a href="{{ route('projects.show', $project->id) }}">
+                          <i class="icon-eye" style="color: blue;"></i>
                         </a>
-                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display: inline;">
+                      </li>
+                      <li class="edit">
+                        <a href="{{ route('projects.edit', $project->id) }}">
+                          <i class="icon-pencil-alt"></i>
+                        </a>
+                      </li>
+
+                      <li class="delete">
+                        <form id="delete-form-{{ $project->id }}" action="{{ route('projects.destroy', $project->id) }}" method="POST" class="delete-form">
                           @csrf
                           @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this project?')">
-                            <i class="fa fa-trash"></i> Delete
+                          <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $project->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                            <i class="icon-trash" style="color:red;"></i>
                           </button>
                         </form>
-                      </div>
-                    </td>
+                      </li>
 
-                  </tr>
+                    </ul>
+                  </td>
+
+                </tr>
                 @endforeach
               </tbody>
 

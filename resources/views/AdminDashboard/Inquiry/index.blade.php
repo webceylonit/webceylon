@@ -10,7 +10,7 @@
       <div class="col-6 mt-3">
         <h4>Message List</h4>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -30,27 +30,42 @@
             </div>
           </div>
 
-          <div class="list-inquiry">
-            <table class="table" id="inquiry-list">
+          <div class="table-responsive">
+            <table class="display" id="basic-1">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Phone</th>
+                  <th>Contact</th>
                   <th>Subject</th>
                   <th>Message</th>
+                  <th>Status</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($inquiries as $inquiry)
-                  <tr>
-                    <td>{{ $inquiry->name }}</td>
-                    <td>{{ $inquiry->email }}</td>
-                    <td>{{ $inquiry->phone }}</td>
-                    <td>{{ $inquiry->subject }}</td>
-                    <td>{{ $inquiry->message }}</td>
-                  </tr>
+                <tr>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $inquiry->name }}</td>
+                  <td>{{ $inquiry->email }}</td>
+                  <td>{{ $inquiry->phone ?? '-'}}</td>
+                  <td>{{ $inquiry->subject ?? '-'}}</td>
+                  <td>{{ $inquiry->message }}</td>
+                  <td>
+                    @if($inquiry->status === 'New')
+                    <form method="POST" action="{{ route('inquiries.updateStatus', $inquiry->id) }}">
+                      @csrf
+                      @method('PATCH')
+                      <button type="submit" class="btn btn-sm btn-warning">Mark as Viewed</button>
+                    </form>
+                    @else
+                    <span class="badge bg-success">Viewed</span>
+                    @endif
+                  </td>
+
+                </tr>
                 @endforeach
               </tbody>
 
@@ -60,6 +75,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 @endsection

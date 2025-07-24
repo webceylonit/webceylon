@@ -8,7 +8,7 @@ class BlogController extends Controller
 {
      public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::latest()->get();
         return view('AdminDashboard.Blog.index', compact('blogs'));
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InquiryController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -22,10 +24,8 @@ Route::get('/privacy_policy', function () {
     return view('frontend.privacy_policy');
 })->name('privacy_policy');
 
-Route::get('/about-us', function () {
-    return view('frontend.about');
-})->name('about');
 
+Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about');
 Route::get('/services', [ServiceController::class, 'services'])->name('services');
 Route::get('/service-details/{id}', [ServiceController::class, 'show'])->name('service.details');
 
@@ -34,6 +34,7 @@ Route::get('/blog-details/{id}', [BlogController::class, 'show'])->name('blog-de
 Route::get('/portfolio', [ProjectController::class, 'portfolio'])->name('portfolio');
 Route::get('/project-details/{id}', [ProjectController::class, 'projectDetails'])->name('project-details');
 Route::get('/careers', [JobController::class, 'jobs'])->name('careers');
+Route::post('/feedback/store', [FeedBackController::class, 'store'])->name('feedback.store');
 
 Route::post('/submit-inquiry', [InquiryController::class, 'store'])->name('inquiry.store');
 Route::get('/contact', function () {
@@ -61,7 +62,7 @@ Route::middleware([App\Http\Middleware\AdminAuth::class])->group(function () {
     Route::get('/Project{projects}', [ProjectController::class, 'edit'])->name('projects.edit');
     Route::put('/{projects}', [ProjectController::class, 'update'])->name('projects.update');
     Route::delete('/{projects}', [ProjectController::class, 'destroy'])->name('projects.destroy');
-
+Route::get('/Projectshow/{projects}', [ProjectController::class, 'show'])->name('projects.show');
 
     Route::get('/BlogIndex', [BlogController::class, 'index'])->name('blogs.index');
     Route::get('/BlogCreate', [BlogController::class, 'create'])->name('blogs.create');
@@ -78,15 +79,23 @@ Route::middleware([App\Http\Middleware\AdminAuth::class])->group(function () {
     Route::put('/careers/{career}', [JobController::class, 'update'])->name('careers.update');
     Route::delete('/careers/{career}', [JobController::class, 'destroy'])->name('careers.destroy');
 
+    Route::get('/TeamIndex', [TeamController::class, 'index'])->name('team.index');
+    Route::get('/TeamCreate', [TeamController::class, 'create'])->name('team.create');
+    Route::post('/Teamrstore', [TeamController::class, 'store'])->name('team.store');
+    Route::get('/team/{team}/edit', [TeamController::class, 'edit'])->name('team.edit');
+    Route::put('/team/{team}', [TeamController::class, 'update'])->name('team.update');
+    Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('team.destroy');
+
     Route::get('/ServiceIndex', [ServiceController::class, 'index'])->name('services.index');
     Route::get('/ServiceCreate', [ServiceController::class, 'create'])->name('services.create');
     Route::post('/Servicestore', [ServiceController::class, 'store'])->name('services.store');
     Route::get('/services/{service}/edit', [ServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{service}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
-
+    Route::get('/feedbacks', [FeedbackController::class, 'index'])->name('feedbacks.index');
+    Route::put('/admin/feedbacks/{id}', [FeedbackController::class, 'update'])->name('feedbacks.update');
     Route::get('/Inquiries', [InquiryController::class, 'index'])->name('inquiries.index');
-
+    Route::patch('/inquiries/{id}/status', [InquiryController::class, 'updateStatus'])->name('inquiries.updateStatus');
 });
 
 
@@ -98,4 +107,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

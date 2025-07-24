@@ -21,7 +21,7 @@
             <div class="container">
                 <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Contact Us</h2>
                 <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <a href="index.html">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Contact
+                    <a href="{{ route('index') }}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Contact
                         Us</span>
                 </div>
             </div>
@@ -133,16 +133,16 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="subject">Subject*</label>
-                                            <input id="subject" name="subject" class="bg-transparent bor" type="text" placeholder="Subject">
+                                            <input id="subject" name="subject" class="bg-transparent bor" type="text" placeholder="Subject" required>
                                         </div>
                                         <div class="col-6">
-                                            <label for="email">Your Phone</label>
-                                            <input class="bg-transparent bor" id="number" name="phone" type="number" placeholder="Your Phone">
+                                            <label for="email">Your Contact</label>
+                                            <input class="bg-transparent bor" id="number" name="phone" type="number" placeholder="Your Contact">
                                         </div>
                                     </div>
                                     <div class="text-area">
                                         <label for="message">Write Message*</label>
-                                        <textarea class="bg-transparent bor" id="message" name="message" placeholder="Write Message" required></textarea>
+                                        <textarea class="bg-transparent bor" id="message" name="message" style="height: 100px;" placeholder="Write Message" required></textarea>
                                     </div>
                                     <div class="btn">
                                         <span class="btn-circle"></span>
@@ -160,7 +160,7 @@
 
         <!-- Contact map area start here -->
         <div class="contact__map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.848245871838!2d79.93879497736641!3d6.908742575275452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae256d6465c59a3%3A0xbf41e4169e18e72f!2sKaduwela%20Rd!5e0!3m2!1sen!2slk!4v1751946371166!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3961.0786242217814!2d79.98885557499617!3d6.881184393117704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTInNTIuMyJOIDc5wrA1OScyOS4yIkU!5e0!3m2!1sen!2slk!4v1753263134691!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 
             </iframe>
         </div>

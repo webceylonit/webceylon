@@ -19,46 +19,118 @@
     <div class="col-sm-12">
       <div class="card">
         <div class="card-body">
-            <form method="POST" action="{{ route('services.store') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="row">
+          <form method="POST" action="{{ route('services.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
 
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Service Name</label>
-                        <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-                        @error('name') <small class="text-danger">{{ $message }}</small> @enderror
-                    </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-label">Service Name *</label>
+                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                @error('name') <small class="text-danger">{{ $message }}</small> @enderror
+              </div>
 
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea name="description" class="form-control">{{ old('description') }}</textarea>
-                    </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-label">Description *</label>
+                <div id="quill-editor" style="height: 300px;"></div>
+                <input type="hidden" value="{{ old('description') }}" name="description" id="description" required>
+                @error('description')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+              </div>
 
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Technologies Used (comma separated)</label>
-                        <input type="text" name="technologies" class="form-control" placeholder="Laravel, Vue.js, MySQL">
-                    </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-label">Technologies Used (comma separated)</label>
+                <input type="text" name="technologies" class="form-control" placeholder="Laravel, Vue.js, MySQL">
+              </div>
 
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Additional Info</label>
-                        <textarea name="additional_info" class="form-control">{{ old('additional_info') }}</textarea>
-                    </div>
+              <!-- <div class="col-md-12 mb-3">
+                <label class="form-label">Additional Info</label>
+                <textarea name="additional_info" class="form-control">{{ old('additional_info') }}</textarea>
+              </div> -->
 
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Image</label>
-                        <input type="file" name="image" class="form-control">
-                    </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-label">Image *</label>
+                <input type="file" name="image" class="form-control" required>
+              </div>
 
-                </div>
+            </div>
 
-                <div class="card-footer text-end">
-                    <button type="submit" class="btn btn-primary">Create Service</button>
-                </div>
-            </form>
+            <div class="card-footer text-end">
+              <button type="submit" class="btn btn-primary">Create Service</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<!-- Quill CSS -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<!-- Quill JS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var quill = new Quill('#quill-editor', {
+      theme: 'snow',
+      placeholder: 'Enter document description...',
+      modules: {
+        toolbar: [
+          [{
+            'font': []
+          }],
+          [{
+            'size': ['small', false, 'large', 'huge']
+          }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{
+            'color': []
+          }, {
+            'background': []
+          }],
+          [{
+            'script': 'sub'
+          }, {
+            'script': 'super'
+          }],
+          [{
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+          [{
+            'align': []
+          }],
+          ['blockquote', 'code-block'],
+          [{
+            'list': 'ordered'
+          }, {
+            'list': 'bullet'
+          }],
+          [{
+            'indent': '-1'
+          }, {
+            'indent': '+1'
+          }],
+          ['link', 'image', 'video'],
+          ['clean']
+        ]
+      }
+    });
+
+    $("form").on("submit", function(event) {
+
+
+      $("#description").val(quill.root.innerHTML.trim());
+
+
+    });
+
+  });
+</script>
+
 
 @endsection
