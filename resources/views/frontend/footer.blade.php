@@ -34,7 +34,7 @@
                  <h3 class="footer-title">IT Services</h3>
                  <ul>
                      @foreach ($footerServices as $service)
-                     <li>
+                     <li style="margin-bottom: 9px;">
                          <a href="{{ route('service.details', $service->id) }}">
                              <i class="fa-regular fa-angles-right me-1"></i>
                              {{ $service->name }}
@@ -46,14 +46,14 @@
              <div class="footer__item item-sm wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                  <h3 class="footer-title">Quick Link</h3>
                  <ul>
-                     <li><a href="{{ route('services') }}l"><i class="fa-regular fa-angles-right me-1"></i> Services</a></li>
-                     <li><a href="{{ route('portfolio') }}"><i class="fa-regular fa-angles-right me-1"></i> Portfolio</a>
+                     <li style="margin-bottom: 7px;"><a href="{{ route('services') }}l"><i class="fa-regular fa-angles-right me-1"></i> Services</a></li>
+                     <li style="margin-bottom: 7px;"><a href="{{ route('portfolio') }}"><i class="fa-regular fa-angles-right me-1"></i> Portfolio</a>
                      </li>
-                     <li><a href="{{ route('blogs') }}"><i class="fa-regular fa-angles-right me-1"></i> Blog</a>
+                     <li style="margin-bottom: 7px;"><a href="{{ route('blogs') }}"><i class="fa-regular fa-angles-right me-1"></i> Blog</a>
                      </li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal"><i class="fa-regular fa-angles-right me-1"></i> Feedback</a></li>
-                     <li><a href="{{ route('careers') }}"><i class="fa-regular fa-angles-right me-1"></i> Careers</a></li>
-                     <li><a href="{{ route('about') }}"><i class="fa-regular fa-angles-right me-1"></i> About Us</a></li>
+                     <li style="margin-bottom: 7px;"><a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal"><i class="fa-regular fa-angles-right me-1"></i> Feedback</a></li>
+                     <li style="margin-bottom: 7px;"><a href="{{ route('careers') }}"><i class="fa-regular fa-angles-right me-1"></i> Careers</a></li>
+                     <li ><a href="{{ route('about') }}"><i class="fa-regular fa-angles-right me-1"></i> About Us</a></li>
                  </ul>
              </div>
              <div class="footer__item item-big wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
