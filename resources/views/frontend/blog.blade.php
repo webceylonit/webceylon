@@ -45,7 +45,7 @@
                     <div class="blog__item">
                         <!-- Blog Image -->
                         <a href="{{ route('blog-details', $blog->id) }}" class="blog__image d-block image">
-                            <img src="{{ asset('storage/' . $blog->main_image) }}" alt="image" style="height: 250px;">
+                            <img src="{{ asset('public/storage/' . $blog->main_image) }}" alt="image" style="height: 250px;">
                             <div class="blog-tag">
                                 <h3 class="text-white">{{ \Carbon\Carbon::parse($blog->date)->format('d') }}</h3>
                                 <span class="text-white">{{ \Carbon\Carbon::parse($blog->date)->format('M') }}</span>

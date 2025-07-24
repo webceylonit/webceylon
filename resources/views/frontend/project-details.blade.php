@@ -49,7 +49,7 @@
             <div class="container">
                 <div class="case-single__item">
                     <div class="image">
-                        <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}">
+                        <img src="{{ asset('public/storage/' . $project->main_image) }}" alt="{{ $project->title }}">
                     </div>
                     <h3 class="case-single__title mt-40 mb-30">{{ $project->title }}</h3>
                     <p>{{ $project->description }}</p>
@@ -82,14 +82,14 @@
                     @if ($project->subimage1)
                         <div class="col-md-6">
                             <div class="image img-fixed-size">
-                                <img src="{{ asset('storage/' . $project->subimage1) }}" alt="sub image 1">
+                                <img src="{{ asset('public/storage/' . $project->subimage1) }}" alt="sub image 1">
                             </div>
                         </div>
                     @endif
                     @if ($project->subimage2)
                         <div class="col-md-6">
                             <div class="image img-fixed-size">
-                                <img src="{{ asset('storage/' . $project->subimage2) }}" alt="sub image 2">
+                                <img src="{{ asset('public/storage/' . $project->subimage2) }}" alt="sub image 2">
                             </div>
                         </div>
                     @endif

@@ -77,7 +77,7 @@
                                     <input type="file" name="main_image" class="form-control" id="mainImageInput">
                                     @if($project->main_image)
                                     <p class="mt-2">Current Image:</p>
-                                    <img src="{{ asset('storage/' . $project->main_image) }}" id="mainImagePreviewOld" alt="Current Main Image" class="img-thumbnail mb-2" style="max-height: 150px;">
+                                    <img src="{{ asset('public/storage/' . $project->main_image) }}" id="mainImagePreviewOld" alt="Current Main Image" class="img-thumbnail mb-2" style="max-height: 150px;">
                                     @endif
                                     <img id="mainImagePreview" src="#" alt="Preview" class="img-thumbnail d-none" style="max-height: 150px;">
                                 </div>
@@ -88,7 +88,7 @@
                                     <input type="file" name="subimage1" class="form-control" id="subImage1Input">
                                     @if($project->subimage1)
                                     <p class="mt-2">Current Image:</p>
-                                    <img src="{{ asset('storage/' . $project->subimage1) }}" id="subImage1PreviewOld" alt="Current Sub Image 1" class="img-thumbnail mb-2" style="max-height: 150px;">
+                                    <img src="{{ asset('public/storage/' . $project->subimage1) }}" id="subImage1PreviewOld" alt="Current Sub Image 1" class="img-thumbnail mb-2" style="max-height: 150px;">
                                     @endif
                                     <img id="subImage1Preview" src="#" alt="Preview" class="img-thumbnail d-none" style="max-height: 150px;">
                                 </div>
@@ -99,7 +99,7 @@
                                     <input type="file" name="subimage2" class="form-control" id="subImage2Input">
                                     @if($project->subimage2)
                                     <p class="mt-2">Current Image:</p>
-                                    <img src="{{ asset('storage/' . $project->subimage2) }}" id="subImage2PreviewOld" alt="Current Sub Image 2" class="img-thumbnail mb-2" style="max-height: 150px;">
+                                    <img src="{{ asset('public/storage/' . $project->subimage2) }}" id="subImage2PreviewOld" alt="Current Sub Image 2" class="img-thumbnail mb-2" style="max-height: 150px;">
                                     @endif
                                     <img id="subImage2Preview" src="#" alt="Preview" class="img-thumbnail d-none" style="max-height: 150px;">
                                 </div>

@@ -71,7 +71,7 @@
 
                             <h5><strong>Main Image:</strong></h5>
                             @if($project->main_image)
-                            <img src="{{ asset('storage/' . $project->main_image) }}" class="img-fluid rounded mb-3" style="max-height: 200px;">
+                            <img src="{{ asset('public/storage/' . $project->main_image) }}" class="img-fluid rounded mb-3" style="max-height: 200px;">
                             @else
                             <p>No main image uploaded.</p>
                             @endif
@@ -79,10 +79,10 @@
                             <h5><strong>Sub Images:</strong></h5>
                             <div class="d-flex gap-3 flex-wrap">
                                 @if($project->subimage1)
-                                <img src="{{ asset('storage/' . $project->subimage1) }}" class="img-thumbnail" style="max-height: 120px;">
+                                <img src="{{ asset('public/storage/' . $project->subimage1) }}" class="img-thumbnail" style="max-height: 120px;">
                                 @endif
                                 @if($project->subimage2)
-                                <img src="{{ asset('storage/' . $project->subimage2) }}" class="img-thumbnail" style="max-height: 120px;">
+                                <img src="{{ asset('public/storage/' . $project->subimage2) }}" class="img-thumbnail" style="max-height: 120px;">
                                 @endif
                                 @if(!$project->subimage1 && !$project->subimage2)
                                 <p>No sub images uploaded.</p>

@@ -53,7 +53,7 @@
                 <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $project->title }}</td>
-                  <td><img src="{{ asset('storage/' . $project->main_image) }}" width="100"></td>
+                  <td><img src="{{ asset('public/storage/' . $project->main_image) }}" width="100"></td>
                   <td>{{ $project->client }}</td>
                   <td>{{ $project->type }}</td>
                     <td>{{ $project->started_date->toDatestring() }}</td>

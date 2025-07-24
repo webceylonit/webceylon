@@ -44,7 +44,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="case-two__item">
                         <div class="image case-two__image" style="position: relative; overflow: hidden;">
-                            <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                            <img src="{{ asset('public/storage/' . $project->main_image) }}" alt="{{ $project->title }}" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
                         </div>
 
