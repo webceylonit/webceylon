@@ -64,7 +64,7 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/94779954063" target="_blank" class="whatsapp-float">
-        <img src="{{ asset('frontend/assets/images/icon/whatsapp.png') }}" alt="WhatsApp Business" style="width: 55px; height: 55px;">
+        <img src="{{ asset('public/frontend/assets/images/icon/whatsapp.png') }}" alt="WhatsApp Business" style="width: 55px; height: 55px;">
     </a>
 
     <!-- Back to Top Scroll Icon -->

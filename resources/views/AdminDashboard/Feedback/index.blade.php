@@ -52,7 +52,7 @@
                   <td>{{ $loop->iteration }}</td>
                   <td>
                     @if ($fb->company_logo)
-                    <img src="{{ asset('storage/' . $fb->company_logo) }}" alt="Logo" style="height: 50px; width: auto; border-radius: 5px;">
+                    <img src="{{ asset('public/storage/' . $fb->company_logo) }}" alt="Logo" style="height: 50px; width: auto; border-radius: 5px;">
                     @else
                     <img src="{{ asset('frontend/assets/images/person.png') }}" alt="No Image" style="height: 50px; width: auto; opacity: 0.6;">
                     @endif

@@ -52,7 +52,7 @@
                     <div class="col-lg-8 order-2 order-lg-1">
                         <div class="service-single__left-item">
                            <div class="image mb-50">
-                                <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid">
+                                <img src="{{ asset('public/storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid">
                             </div>
 
                             <h3 class="title mb-30">{{ $service->name }}</h3>

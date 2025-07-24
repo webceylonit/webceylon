@@ -35,7 +35,7 @@
                 <div class="col-lg-8 order-2 order-lg-1">
                     <div class="blog__item blog-single__left-item shadow-none">
                         <div class="image">
-                            <img src="{{ asset('storage/'.$blog->main_image) }}" alt="image">
+                            <img src="{{ asset('public/storage/'.$blog->main_image) }}" alt="image">
                         </div>
 
                         <div class="blog__content p-0">
@@ -96,7 +96,7 @@
                                 @if($blog->subimage1)
                                 <div class="col-6">
                                     <div class="image" style="width: 100%; height: 200px; object-fit: cover;">
-                                        <img src="{{ asset('storage/'.$blog->subimage1) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <img src="{{ asset('public/storage/'.$blog->subimage1) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                 </div>
                                 @endif
@@ -104,7 +104,7 @@
                                 @if($blog->subimage2)
                                 <div class="col-6">
                                     <div class="image" style="width: 100%; height: 200px; object-fit: cover;">
-                                        <img src="{{ asset('storage/'.$blog->subimage2) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <img src="{{ asset('public/storage/'.$blog->subimage2) }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                 </div>
                                 @endif
@@ -203,7 +203,7 @@
                             <ul class="single-post">
                                 @foreach($relatedBlogs as $relatedBlog)
                                 <li>
-                                    <img src="{{ asset('storage/'.$relatedBlog->main_image) }}" alt="image" style="width:100px;">
+                                    <img src="{{ asset('public/storage/'.$relatedBlog->main_image) }}" alt="image" style="width:100px;">
                                     <div class="con">
                                         <span>
                                             <svg class="me-1" width="20" height="20" viewBox="0 0 20 20"

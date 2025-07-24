@@ -52,7 +52,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $t->name }}</td>
                     <td>
-                      <img src="{{ asset('storage/' . $t->image) }}" alt="Team Member Image" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;">
+                      <img src="{{ asset('public/storage/' . $t->image) }}" alt="Team Member Image" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;">
                     </td>
 
                     <td>{{ $t->position }}</td>

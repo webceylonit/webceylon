@@ -46,7 +46,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="service-two__item">
                         <div class="image">
-                            <img src="{{ asset('storage/' . $service->image) }}" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
+                            <img src="{{ asset('public/storage/' . $service->image) }}" alt="image" style="width: 100%; height: 250px; object-fit: cover;">
                         </div>
                         <div class="service-two__content">
                             <div class="icon">

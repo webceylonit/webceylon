@@ -477,7 +477,7 @@
                     <div class="swiper-slide">
                         <div class="case__item">
                             <div class="image case__image">
-                                <img src="{{ asset('storage/' . $project->main_image) }}" alt="{{ $project->title }}">
+                                <img src="{{ asset('public/storage/' . $project->main_image) }}" alt="{{ $project->title }}">
                             </div>
                             <div class="case__content">
                                 <span class="primary-color sm-font">{{ $project->type }}</span>
@@ -652,7 +652,7 @@
                                             fill="#3C72FC" />
                                     </svg>
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="{{ $feedback->company_logo ? asset('storage/' . $feedback->company_logo) : asset('frontend/assets/images/person.png') }}"
+                                        <img src="{{ $feedback->company_logo ? asset('public/storage/' . $feedback->company_logo) : asset('public/frontend/assets/images/person.png') }}"
                                             style="width:70px; height:auto; border-radius: 50%;" alt="image">
                                         <div class="testi-info">
                                             <h4>{{$feedback->name}}</h4>
@@ -714,7 +714,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="blog__item">
                         <a href="{{ route('blog-details', $blog->id) }}" class="blog__image d-block image">
-                            <img src="{{ asset('storage/' . $blog->main_image) }}" alt="{{ $blog->title }}" style="height: 250px;">
+                            <img src="{{ asset('public/storage/' . $blog->main_image) }}" alt="{{ $blog->title }}" style="height: 250px;">
                             <div class="blog-tag">
                                 <h3 class="text-white">{{ $blog->date->format('d') }}</h3>
                                 <span class="text-white">{{ $blog->date->format('M') }}</span>

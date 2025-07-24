@@ -44,7 +44,7 @@
                   <label class="form-label">Image</label>
                   <input type="file" name="image" class="form-control" accept="image/*" onchange="previewImage(event)">
                   <div class="mt-3">
-                    <img id="imagePreview" src="{{ asset('storage/' . $team->image) }}" style="max-height: 200px;">
+                    <img id="imagePreview" src="{{ asset('public/storage/' . $team->image) }}" style="max-height: 200px;">
                   </div>
                 </div>
 

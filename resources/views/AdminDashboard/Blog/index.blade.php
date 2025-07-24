@@ -53,7 +53,7 @@
                   @foreach ($blogs as $blog)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td><img src="{{ asset('storage/' . $blog->main_image) }}" width="100"></td>
+                    <td><img src="{{ asset('public/storage/' . $blog->main_image) }}" width="100"></td>
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->author }}</td>
                     <td>{{ $blog->date->toDateString() }}</td>

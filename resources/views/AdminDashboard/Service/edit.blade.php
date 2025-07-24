@@ -54,7 +54,7 @@
                   <input type="file" name="image" class="form-control">
                   @if ($service->image)
                   <div class="mt-2">
-                    <img src="{{ asset('storage/' . $service->image) }}" alt="Service Image" class="img-thumbnail" width="300">
+                    <img src="{{ asset('public/storage/' . $service->image) }}" alt="Service Image" class="img-thumbnail" width="300">
                   </div>
                   @endif
                 </div>

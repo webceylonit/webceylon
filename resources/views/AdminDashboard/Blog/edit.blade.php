@@ -59,7 +59,7 @@
                 <label class="form-label">Main Image</label>
                 <input type="file" name="main_image" class="form-control">
                 @if ($blog->main_image)
-                  <img src="{{ asset('storage/' . $blog->main_image) }}" class="img-thumbnail mt-2" width="150">
+                  <img src="{{ asset('public/storage/' . $blog->main_image) }}" class="img-thumbnail mt-2" width="150">
                 @endif
               </div>
 
@@ -67,7 +67,7 @@
                 <label class="form-label">Sub Image 1</label>
                 <input type="file" name="subimage1" class="form-control">
                 @if ($blog->subimage1)
-                  <img src="{{ asset('storage/' . $blog->subimage1) }}" class="img-thumbnail mt-2" width="150">
+                  <img src="{{ asset('public/storage/' . $blog->subimage1) }}" class="img-thumbnail mt-2" width="150">
                 @endif
               </div>
 
@@ -75,7 +75,7 @@
                 <label class="form-label">Sub Image 2</label>
                 <input type="file" name="subimage2" class="form-control">
                 @if ($blog->subimage2)
-                  <img src="{{ asset('storage/' . $blog->subimage2) }}" class="img-thumbnail mt-2" width="150">
+                  <img src="{{ asset('public/storage/' . $blog->subimage2) }}" class="img-thumbnail mt-2" width="150">
                 @endif
               </div>
 

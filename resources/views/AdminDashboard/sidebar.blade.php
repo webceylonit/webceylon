@@ -12,7 +12,7 @@
 
         <div class="logo-icon-wrapper">
             <a href="{{ route('dashboard') }}">
-                <img class="img-fluid" src="{{ asset('frontend/assets/images/wcicon.png') }}" alt="" style="height:50px">
+                <img class="img-fluid" src="{{ asset('public/frontend/assets/images/wcicon.png') }}" alt="" style="height:50px">
             </a>
         </div>
 
