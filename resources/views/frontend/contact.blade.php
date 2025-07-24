@@ -101,7 +101,7 @@
                             </h4>
                             <div class="social">
                                 <a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#0"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="https://wa.me/94779954063"><i class="fa-brands fa-whatsapp fw-bold"></i></a>
                                 <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
                             </div>
                         </div>
