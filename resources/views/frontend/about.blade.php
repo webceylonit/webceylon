@@ -143,7 +143,7 @@
                     data-wow-duration="1500ms">
                     <div class="team__item">
                         <div class="image">
-                            <img src="{{ asset('public/storage/' . $member->image) }}" alt="{{ $member->name }}">
+                            <img src="{{ asset('public/storage/' . $member->image) }}" alt="{{ $member->name }}" style="height:370px;">
                         </div>
                         <div class="team__content">
                             <h4><a class="text-white" href="#">{{ $member->name }}</a></h4>
