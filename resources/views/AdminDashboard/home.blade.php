@@ -32,7 +32,9 @@
                         <div class="greeting-user">
                           <h4 class="f-w-600">Welcome to Webceylon</h4>
                           <p>Here whats happing in your account today</p>
-                          <div class="whatsnew-btn"><a class="btn btn-outline-white">Whats New !</a></div>
+                          <div class="whatsnew-btn">
+                            <!-- <a class="btn btn-outline-white">Whats New !</a> -->
+                          </div>
                         </div>
                       </div>
                       <div>  
@@ -97,7 +99,7 @@
                             </div>
                           </div>
                           <div> 
-                            <h4>{{ $totalServices }}</h4><span class="f-light">Total Services</span>
+                            <h4>{{ $totalFeedbacks }}</h4><span class="f-light">Total Feedbacks</span>
                           </div>
                         </div>
                       </div>

@@ -26,26 +26,32 @@
               <div class="row">
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Job Title</label>
-                  <input type="text" name="job_title" class="form-control" value="{{ old('job_title') }}">
+                  <label class="form-label">Job Title *</label>
+                  <input type="text" name="job_title" class="form-control" placeholder="Add Title" value="{{ old('job_title') }}" required>
                   @error('job_title') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Location</label>
-                  <input type="text" name="location" class="form-control" value="{{ old('location') }}">
+                  <label class="form-label">Location *</label>
+                  <input type="text" name="location" class="form-control" placeholder=" Add Location" value="{{ old('location') }}" required>
                   @error('location') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Description</label>
-                  <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+                  <textarea name="description" class="form-control" placeholder="Add Description">{{ old('description') }}</textarea>
                   @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Deadline Date</label>
-                  <input type="date" name="deadline_date" class="form-control" value="{{ old('deadline_date') }}">
+                  <label class="form-label">Applying Link </label>
+                  <input type="text" name="link" class="form-control" placeholder="Add Web link" value="{{ old('link') }}">
+                  @error('link') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Deadline Date *</label>
+                  <input type="date" name="deadline_date" class="form-control" value="{{ old('deadline_date') }}" required>
                   @error('deadline_date') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 

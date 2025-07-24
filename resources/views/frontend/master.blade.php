@@ -11,60 +11,60 @@
     <!-- Bootstarp min css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
     <!-- Mean menu css -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.css') }}">
     <!-- All min css -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}">
     <!-- Swiper bundle min css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper-bundle.min.css') }}">
     <!-- Magnigic popup css -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css') }}">
     <!-- Animate css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}">
     <!-- Nice select css -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}">
     <!-- Style css -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
 
     <style>
-    .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 15px;
-        background-color: #25D366;
-        color: white;
-        border-radius: 50%;
-        padding: 15px;
-        font-size: 24px;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-    }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 21px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            padding: 1px;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
 
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-        color: white;
-    }
-</style>
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
 
 </head>
 
 <body>
 
- @include('frontend.header')
-    
+    @include('frontend.header')
+
     @yield('content')
 
     @include('frontend.footer')
 
- 
 
-   <!-- WhatsApp Floating Button -->
+
+    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/94779954063" target="_blank" class="whatsapp-float">
-        <img src="{{ asset('frontend/assets/images/icon/whatsapp-business1.png') }}" alt="WhatsApp Business" style="width: 40px; height: 40px;">
+        <img src="{{ asset('frontend/assets/images/icon/whatsapp.png') }}" alt="WhatsApp Business" style="width: 55px; height: 55px;">
     </a>
 
     <!-- Back to Top Scroll Icon -->
@@ -73,6 +73,8 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
+
+    @yield('scripts')
 
     <!-- Jquery 3.7.0 Min Js -->
     <script src="{{ asset('frontend/assets/js/jquery-3.7.1.min.js') }}"></script>

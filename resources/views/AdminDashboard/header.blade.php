@@ -37,7 +37,7 @@
                 </div>
               </li>
 
-              <li class="onhover-dropdown">
+              <!-- <li class="onhover-dropdown">
                 <div class="notification-box">
                   <svg>
                     <use href="{{ asset('backend/assets/svg/icon-sprite.svg#notification') }}"></use>
@@ -49,7 +49,7 @@
                     
                   </ul>
                 </div>
-              </li>
+              </li> -->
               <li class="profile-nav onhover-dropdown pe-0 py-0">
                     <div class="media profile-media">
                         <img class="b-r-10" src="{{ asset('backend/assets/images/user/user.png') }}" alt="">

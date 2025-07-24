@@ -26,33 +26,33 @@
             <div class="row">
 
               <div class="col-md-6 mb-3">
-                <label class="form-label">Blog Title</label>
-                <input type="text" name="title" class="form-control" value="{{ old('title', $blog->title) }}">
+                <label class="form-label">Blog Title *</label>
+                <input type="text" name="title" class="form-control" value="{{ old('title', $blog->title) }}" required>
               </div>
 
               <div class="col-md-6 mb-3">
-                <label class="form-label">Author</label>
-                <input type="text" name="author" class="form-control" value="{{ old('author', $blog->author) }}">
+                <label class="form-label">Author *</label>
+                <input type="text" name="author" class="form-control" value="{{ old('author', $blog->author) }}" required>
               </div>
 
               <div class="col-md-6 mb-3">
-                <label class="form-label">Category</label>
-                <input type="text" name="category" class="form-control" value="{{ old('category', $blog->category) }}">
+                <label class="form-label">Category *</label>
+                <input type="text" name="category" class="form-control" value="{{ old('category', $blog->category) }}" required>
               </div>
 
               <div class="col-md-6 mb-3">
                 <label class="form-label">Tags (comma separated)</label>
-                <input type="text" name="tags" class="form-control" value="{{ old('tags', is_array($blog->tags) ? implode(', ', $blog->tags) : $blog->tags) }}">
+                <input type="text" name="tags" class="form-control" value="{{ old('tags', is_array($blog->tags) ? implode(', ', $blog->tags) : $blog->tags) }}" >
               </div>
 
               <div class="col-md-6 mb-3">
-                <label class="form-label">Published Date</label>
-                <input type="date" name="date" class="form-control" value="{{ old('date', $blog->date->toDateString()) }}">
+                <label class="form-label">Published Date *</label>
+                <input type="date" name="date" class="form-control" value="{{ old('date', $blog->date->toDateString()) }}" required>
               </div>
 
               <div class="col-md-12 mb-3">
-                <label class="form-label">Description</label>
-                <textarea name="description" class="form-control">{{ old('description', $blog->description) }}</textarea>
+                <label class="form-label">Description *</label>
+                <textarea name="description" class="form-control" required>{{ old('description', $blog->description) }}</textarea>
               </div>
 
               <div class="col-md-6 mb-3">

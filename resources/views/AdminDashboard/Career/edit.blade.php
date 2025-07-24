@@ -27,15 +27,15 @@
 
               <!-- Job Title -->
               <div class="col-md-6 mb-3">
-                <label class="form-label">Job Title</label>
-                <input type="text" name="job_title" class="form-control" value="{{ old('job_title', $career->job_title) }}">
+                <label class="form-label">Job Title *</label>
+                <input type="text" name="job_title" class="form-control" value="{{ old('job_title', $career->job_title) }}" required>
                 @error('job_title') <small class="text-danger">{{ $message }}</small> @enderror
               </div>
 
               <!-- Location -->
               <div class="col-md-6 mb-3">
-                <label class="form-label">Location</label>
-                <input type="text" name="location" class="form-control" value="{{ old('location', $career->location) }}">
+                <label class="form-label">Location *</label>
+                <input type="text" name="location" class="form-control" value="{{ old('location', $career->location) }}" required>
                 @error('location') <small class="text-danger">{{ $message }}</small> @enderror
               </div>
 
@@ -46,10 +46,16 @@
                 @error('description') <small class="text-danger">{{ $message }}</small> @enderror
               </div>
 
+              <div class="col-md-6 mb-3">
+                  <label class="form-label">Applying Link </label>
+                  <input type="text" name="link" class="form-control"  value="{{ old('link', $career->link) }}">
+                  @error('link') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+
               <!-- Deadline Date -->
               <div class="col-md-6 mb-3">
-                <label class="form-label">Deadline Date</label>
-                <input type="date" name="deadline_date" class="form-control" value="{{ old('deadline_date', $career->deadline_date) }}">
+                <label class="form-label">Deadline Date *</label>
+                <input type="date" name="deadline_date" class="form-control" value="{{ old('deadline_date', $career->deadline_date->toDateString()) }}" required>
                 @error('deadline_date') <small class="text-danger">{{ $message }}</small> @enderror
               </div>
 

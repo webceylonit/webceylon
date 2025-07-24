@@ -25,14 +25,14 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'main_image' => 'nullable|image',
+            'main_image' => 'required|image',
             'subimage1' => 'nullable|image',
             'subimage2' => 'nullable|image',
             'started_date' => 'nullable|date',
             'completed_date' => 'nullable|date',
             'client' => 'nullable|string|max:255',
             'location' => 'nullable|string|max:255',
-            'type' => 'nullable|string|max:100',
+            'type' => 'required|string|max:100',
             'technologies_used' => 'nullable|string',
         ]);
 
@@ -73,15 +73,15 @@ class ProjectController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'main_image' => 'nullable|image',
+            'description' => 'required|string',
+            'main_image' => 'required|image',
             'subimage1' => 'nullable|image',
             'subimage2' => 'nullable|image',
             'started_date' => 'nullable|date',
             'completed_date' => 'nullable|date',
             'client' => 'nullable|string|max:255',
             'location' => 'nullable|string|max:255',
-            'type' => 'nullable|string|max:100',
+            'type' => 'required|string|max:100',
             'technologies_used' => 'nullable|string',
         ]);
 
@@ -114,6 +114,11 @@ class ProjectController extends Controller
         return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
     }
 
+     public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('AdminDashboard.Project.show', compact('project'));
+    }
 
     public function destroy($id)
     {

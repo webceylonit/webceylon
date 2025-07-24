@@ -39,14 +39,14 @@
             <div class="container">
                 <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Service Details</h2>
                 <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <a href="index.html">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Service Details</span>
+                    <a href="{{ route('index') }}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Service Details</span>
                 </div>
             </div>
         </section>
         <!-- Page banner area end here -->
 
          <!-- Service area start here -->
-        <section class="service-single-area pt-120 pb-120">
+        <section class="service-single-area pt-50 pb-120">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-8 order-2 order-lg-1">
@@ -58,13 +58,13 @@
                             <h3 class="title mb-30">{{ $service->name }}</h3>
 
                             <p class="mb-20">
-                                {{ $service->description }}
+                                {!! $service->description !!}
                             </p>
 
-                            @if($service->additional_info)
+                            <!-- @if($service->additional_info)
                                 
                                 <p>{{ $service->additional_info }}</p>
-                            @endif
+                            @endif -->
 
                            <div class="case-challenge-list mt-30">
                                 <ul class="case-challenge d-flex flex-wrap gap-2 p-0 m-0" style="list-style: none;">

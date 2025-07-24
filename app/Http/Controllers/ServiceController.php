@@ -26,7 +26,7 @@ class ServiceController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'technologies' => 'nullable|string',
-            'additional_info' => 'nullable|string',
+            // 'additional_info' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
         ]);
 
@@ -57,7 +57,7 @@ class ServiceController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'technologies' => 'nullable|string',
-            'additional_info' => 'nullable|string',
+            // 'additional_info' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
         ]);
 
