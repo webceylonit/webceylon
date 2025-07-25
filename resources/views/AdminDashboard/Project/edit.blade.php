@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Project Title</label>
+                                    <label class="form-label">Project Title *</label>
                                     <input type="text" name="title" class="form-control" value="{{ old('title', $project->title) }}" required>
                                     @error('title') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
@@ -36,13 +36,13 @@
                                 </div>
 
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label">Description</label>
+                                    <label class="form-label">Description *</label>
                                     <textarea name="description" rows="4" class="form-control" required>{{ old('description', $project->description) }}</textarea>
                                     @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Project Type</label>
+                                    <label class="form-label">Project Type *</label>
                                     <select name="type" class="form-control" required>
                                         <option value="Web Development" {{ $project->type == 'Web Development' ? 'selected' : '' }}>Web Development</option>
                                         <option value="ERP System Development" {{ $project->type == 'ERP System Development' ? 'selected' : '' }}>ERP System Development</option>
@@ -73,7 +73,7 @@
 
                                 {{-- Main Image --}}
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Main Image</label>
+                                    <label class="form-label">Main Image *</label>
                                     <input type="file" name="main_image" class="form-control" id="mainImageInput">
                                     @if($project->main_image)
                                     <p class="mt-2">Current Image:</p>

@@ -12,7 +12,7 @@
                             fill="white" />
                     </svg>
 
-                    <a href="#0" class="ms-1">info@webceylon.com</a>
+                    <a href="{{ isset($socialLinks->email) ? 'mailto:' . $socialLinks->email : '#' }}" class="ms-1">{{ $socialLinks->email ?? 'updated soon' }}</a>
                 </li>
                 <li class="ms-4"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -31,14 +31,34 @@
                         </defs>
                     </svg>
 
-                    <a href="#0" class="ms-1">+94 77 995 4063</a>
+                    <a class="ms-1">{{ $socialLinks->contact ?? 'unavailable'}}</a>
                 </li>
             </ul>
             <ul class="link-info">
-                <li><a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a href="https://wa.me/94779954063"><i class="fa-brands fa-whatsapp fw-bold"></i></a></li>
-                <li><a href="#0"><i class="fa-brands fa-instagram fw-bold"></i></a></li>
+                @if(!empty($socialLinks->facebook))
+                <li><a href="{{ $socialLinks->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                @endif
+
+                @if(!empty($socialLinks->instagram))
+                <li><a href="{{ $socialLinks->instagram }}"><i class="fa-brands fa-instagram fw-bold"></i></a></li>
+                @endif
+
+                @if(!empty($socialLinks->youtube))
+                <li><a href="{{ $socialLinks->youtube }}"><i class="fa-brands fa-youtube"></i></a></li>
+                @endif
+
+                @if(!empty($socialLinks->linkedin))
+                <li><a href="{{ $socialLinks->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                @endif
+
+                @if(!empty($socialLinks->tiktok))
+                <li><a href="{{ $socialLinks->tiktok }}"><i class="fa-brands fa-tiktok"></i></a></li>
+                @endif
+
+                @if(!empty($socialLinks->whatsapp))
+                <li><a href="{{ $socialLinks->whatsapp }}"><i class="fa-brands fa-whatsapp fw-bold"></i></a></li>
+                @endif
+
             </ul>
         </div>
     </div>
@@ -107,19 +127,37 @@
 
     <div class="mobile-menu overflow-hidden"></div>
     <ul class="info pt-40">
-        <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="#">No 156, Kaduwela Road,</a> 
+        <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="#">No 156, Kaduwela Road,</a>
             <a class="ps-4">Athurugiriya, Sri Lanka</a>
         </li>
-        <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a
-                href="tel:+94 77 995 4063">+94 77 995 4063</a>
+        <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a>{{$socialLinks->contact ?? 'unavailable'}}</a>
         </li>
-        <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="#0">info@webceylon.com</a></li>
+        <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="{{ isset($socialLinks->email) ? 'mailto:' . $socialLinks->email : '#' }}">{{ $socialLinks->email ?? 'unavailable' }}</a></li>
     </ul>
     <div class="social-icon mt-20">
-        <a href="https://web.facebook.com/facebook.com.webceylon"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://wa.me/94779954063"><i class="fa-brands fa-whatsapp fw-bold"></i></a>
-        <a href="#0"><i class="fa-brands fa-instagram fw-bold"></i></a>
+        @if(!empty($socialLinks->facebook))
+        <a href="{{ $socialLinks->facebook }}"><i class="fa-brands fa-facebook-f"></i></a>
+        @endif
+
+        @if(!empty($socialLinks->instagram))
+        <a href="{{ $socialLinks->instagram }}"><i class="fa-brands fa-instagram fw-bold"></i></a>
+        @endif
+
+        @if(!empty($socialLinks->youtube))
+        <a href="{{ $socialLinks->youtube }}"><i class="fa-brands fa-youtube"></i></a>
+        @endif
+
+        @if(!empty($socialLinks->linkedin))
+        <a href="{{ $socialLinks->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a>
+        @endif
+
+        @if(!empty($socialLinks->tiktok))
+        <a href="{{ $socialLinks->tiktok }}"><i class="fa-brands fa-tiktok"></i></a>
+        @endif
+
+        @if(!empty($socialLinks->whatsapp))
+        <a href="{{ $socialLinks->whatsapp }}"><i class="fa-brands fa-whatsapp fw-bold"></i></a>
+        @endif
     </div>
     <button id="closeButton" class="text-white"><i class="fa-solid fa-xmark"></i></button>
 </div>

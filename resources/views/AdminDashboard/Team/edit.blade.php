@@ -39,6 +39,12 @@
                   <input type="text" name="position" class="form-control" value="{{ old('position', $team->position) }}" required>
                 </div>
 
+                <!-- Position -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Section *</label>
+                  <input type="text" name="department" class="form-control" value="{{ old('department', $team->department) }}" required>
+                </div>
+
                 <!-- Image Upload -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Image</label>

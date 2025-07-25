@@ -35,8 +35,15 @@
                 <!-- Position -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Position *</label>
-                  <input type="text" name="position" class="form-control" placeholder="Ex: Web Developer" value="{{ old('position') }}" required>
+                  <input type="text" name="position" class="form-control" placeholder="Ex: Software Developer" value="{{ old('position') }}" required>
                   @error('position') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+
+                <!-- Position -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Section *</label>
+                  <input type="text" name="department" class="form-control" placeholder="Ex: Web Development" value="{{ old('department') }}" required>
+                  @error('department') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <!-- Image Upload with Preview -->

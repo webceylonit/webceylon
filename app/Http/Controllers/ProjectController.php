@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -74,7 +75,7 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'main_image' => 'required|image',
+            'main_image' => 'nullable|image',
             'subimage1' => 'nullable|image',
             'subimage2' => 'nullable|image',
             'started_date' => 'nullable|date',
@@ -87,20 +88,7 @@ class ProjectController extends Controller
 
         $project = Project::findOrFail($id);
 
-        // Handle image updates if uploaded
-        if ($request->hasFile('main_image')) {
-            $project->main_image = $request->file('main_image')->store('projects', 'public');
-        }
-
-        if ($request->hasFile('subimage1')) {
-            $project->subimage1 = $request->file('subimage1')->store('projects', 'public');
-        }
-
-        if ($request->hasFile('subimage2')) {
-            $project->subimage2 = $request->file('subimage2')->store('projects', 'public');
-        }
-
-        $project->update([
+        $data = [
             'title' => $request->title,
             'description' => $request->description,
             'started_date' => $request->started_date,
@@ -109,12 +97,27 @@ class ProjectController extends Controller
             'location' => $request->location,
             'type' => $request->type,
             'technologies_used' => $request->technologies_used ? array_map('trim', explode(',', $request->technologies_used)) : [],
-        ]);
+        ];
+
+        if ($request->hasFile('main_image')) {
+            $data['main_image'] = $request->file('main_image')->store('projects', 'public');
+        }
+
+        if ($request->hasFile('subimage1')) {
+            $data['subimage1'] = $request->file('subimage1')->store('projects', 'public');
+        }
+
+        if ($request->hasFile('subimage2')) {
+            $data['subimage2'] = $request->file('subimage2')->store('projects', 'public');
+        }
+
+        $project->update($data);
 
         return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
     }
 
-     public function show($id)
+
+    public function show($id)
     {
         $project = Project::findOrFail($id);
         return view('AdminDashboard.Project.show', compact('project'));
@@ -132,7 +135,7 @@ class ProjectController extends Controller
 
     //frontend
 
-      public function projectDetails($id)
+    public function projectDetails($id)
     {
         $project = Project::findOrFail($id);
         return view('frontend.project-details', compact('project'));
@@ -143,6 +146,4 @@ class ProjectController extends Controller
         $projects = Project::all();
         return view('frontend.portfolio', compact('projects'));
     }
-
-
 }
