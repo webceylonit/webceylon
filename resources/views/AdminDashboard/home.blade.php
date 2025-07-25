@@ -75,7 +75,7 @@
                           <div class="widget-round secondary">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#cart') }}"> </use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#dash') }}"> </use>
                               </svg>
                             </div>
                           </div>
@@ -94,7 +94,7 @@
                           <div class="widget-round primary">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#tag') }}"> </use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#notification') }}"> </use>
                               </svg>
                             </div>
                           </div>
@@ -118,7 +118,7 @@
                           <div class="widget-round warning">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#return-box') }}"> </use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#pencil') }}"> </use>
                               </svg>
                             </div>
                           </div>
@@ -137,7 +137,7 @@
                           <div class="widget-round success">
                             <div class="bg-round">
                               <svg class="svg-fill">
-                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#rate') }}"> </use>
+                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#user-visitor') }}"> </use>
                               </svg>
                             </div>
                           </div>

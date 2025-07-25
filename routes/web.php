@@ -8,6 +8,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -49,13 +50,13 @@ use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Middleware\AdminAuth;
 
 
-Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login.post');
-Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+Route::get('/cbpartners/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/cbpartners/admin/login', [AdminLoginController::class, 'login'])->name('admin.login.post');
+Route::post('/cbpartners/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
 
 Route::middleware([App\Http\Middleware\AdminAuth::class])->group(function () {
-    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/cbpartners', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/ProjectIndex', [ProjectController::class, 'index'])->name('projects.index');
     Route::get('/ProjectCreate', [ProjectController::class, 'create'])->name('projects.create');
     Route::post('/Projectstore', [ProjectController::class, 'store'])->name('projects.store');
@@ -97,6 +98,9 @@ Route::get('/Projectshow/{projects}', [ProjectController::class, 'show'])->name(
     Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('feedbacks.destroy');
     Route::get('/Inquiries', [InquiryController::class, 'index'])->name('inquiries.index');
     Route::patch('/inquiries/{id}/status', [InquiryController::class, 'updateStatus'])->name('inquiries.updateStatus');
+
+    Route::get('/social_media_settings', [SocialMediaController::class, 'index'])->name('social.index');
+Route::post('/admin/social-media', [SocialMediaController::class, 'storeOrUpdate'])->name('socail.storeOrUpdate');
 });
 
 

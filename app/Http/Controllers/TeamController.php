@@ -25,6 +25,7 @@ class TeamController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png',
             'fb_link' => 'nullable|url',
             'linkedin_link' => 'nullable|url',
@@ -40,6 +41,7 @@ class TeamController extends Controller
         Team::create([
             'name' => $request->name,
             'position' => $request->position,
+            'department' => $request->department,
             'image' => $imagePath ?? null,
             'fb_link' => $request->fb_link,
             'linkedin_link' => $request->linkedin_link,
@@ -63,6 +65,7 @@ class TeamController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'fb_link' => 'nullable|url',
             'linkedin_link' => 'nullable|url',
@@ -83,6 +86,7 @@ class TeamController extends Controller
         // Update other fields
         $team->name = $request->name;
         $team->position = $request->position;
+        $team->department = $request->department;
         $team->fb_link = $request->fb_link;
         $team->linkedin_link = $request->linkedin_link;
         $team->portfolio_link = $request->portfolio_link;

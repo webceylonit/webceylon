@@ -22,8 +22,8 @@ class AdminLoginController extends Controller
             'password' => 'required|min:6',
         ]);
     
-        $hardcodedAdminEmail = 'admin@example.com';
-        $hardcodedAdminPassword = '12345678'; 
+        $hardcodedAdminEmail = 'jeewan@jsgceylon.lk';
+        $hardcodedAdminPassword = 'start@2577'; 
     
         $admin = \App\Models\SystemUser::where('email', $request->email)
             ->first();

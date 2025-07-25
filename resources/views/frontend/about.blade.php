@@ -137,7 +137,23 @@
             </div>
             <div class="row g-4">
 
+                <style>
+                    .team__content {
+                        position: absolute;
+                        max-width: 270px;
+                        padding: 10px 20px;
+                        background: var(--gradient-bg);
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                    }
 
+                    .team__content span {
+                        display: block;
+                        margin-bottom: 3px;
+                        line-height: 1.5;
+                    }
+                </style>
                 @foreach($team as $member)
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="00ms"
                     data-wow-duration="1500ms">
@@ -148,6 +164,7 @@
                         <div class="team__content">
                             <h4><a class="text-white" href="#">{{ $member->name }}</a></h4>
                             <span class="text-white">{{ $member->position }}</span>
+                            <span class="text-white fs-6">{{ $member->department }}</span>
                         </div>
                         <div class="team__share">
                             <ul>

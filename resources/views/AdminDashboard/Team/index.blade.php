@@ -42,6 +42,7 @@
                     <th>Name</th>
                     <th>Image</th>
                     <th>Position</th>
+                    <th>Section</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -56,6 +57,7 @@
                     </td>
 
                     <td>{{ $t->position }}</td>
+                    <td>{{ $t->department }}</td>
                     <td>
                       <ul class="action">
 

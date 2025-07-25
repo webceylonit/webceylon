@@ -13,6 +13,7 @@ class Team extends Model
         'name',
         'image',
         'position',
+        'department',
         'fb_link',
         'linkedin_link',
         'portfolio_link',
