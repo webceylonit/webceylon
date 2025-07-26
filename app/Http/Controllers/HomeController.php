@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $projects = Project::latest()->take(7)->get();
         $blogs = Blog::latest()->take(3)->get();
-        $services = Service::latest()->take(4)->get();
+        $services = Service::all(); 
         $feedbacks = FeedBack::where('status', 'Approved')->latest()->get();
         return view('frontend.index', compact('projects', 'blogs', 'services', 'feedbacks'));
     }

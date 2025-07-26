@@ -92,7 +92,7 @@ class ServiceController extends Controller
 
      public function services()
     {
-        $services = Service::latest()->get();
+        $services = Service::all();
         return view('frontend.services', compact('services'));
     }
 
