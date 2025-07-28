@@ -31,12 +31,13 @@
 
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Description *</label>
-                  <div id="quill-editor" style="height: 300px;">{!! old('description', $service->description) !!}</div>
-                  <input type="hidden" name="description" id="description" required>
+                  <div id="quill-editor" style="height: 300px;"></div>
+                  <input type="hidden" name="description" id="description" value="{{ old('description', $service->description) }}" required>
                   @error('description')
                   <small class="text-danger">{{ $message }}</small>
                   @enderror
                 </div>
+
 
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Technologies Used (comma separated)</label>
@@ -79,54 +80,27 @@
 <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var quill = new Quill('#quill-editor', {
+  $(document).ready(function() {
+    const quill = new Quill('#quill-editor', {
       theme: 'snow',
       placeholder: 'Enter service description...',
       modules: {
         toolbar: [
-          [{
-            'font': []
-          }],
-          [{
-            'size': ['small', false, 'large', 'huge']
-          }],
-          ['bold', 'italic', 'underline', 'strike'],
-          [{
-            'color': []
-          }, {
-            'background': []
-          }],
-          [{
-            'script': 'sub'
-          }, {
-            'script': 'super'
-          }],
-          [{
-            'header': [1, 2, 3, 4, 5, 6, false]
-          }],
-          [{
-            'align': []
-          }],
-          ['blockquote', 'code-block'],
-          [{
-            'list': 'ordered'
-          }, {
-            'list': 'bullet'
-          }],
-          [{
-            'indent': '-1'
-          }, {
-            'indent': '+1'
-          }],
-          ['link', 'image', 'video'],
+          ['bold', 'italic', 'underline'],
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          ['link', 'image'],
           ['clean']
         ]
       }
     });
 
-    document.querySelector("form").addEventListener("submit", function() {
-      document.getElementById("description").value = quill.root.innerHTML.trim();
+    // Set existing description into editor
+    const existingDescription = {!! json_encode(old('description', $service->description)) !!};
+    quill.root.innerHTML = existingDescription;
+
+    // On form submit, assign back to hidden input
+    $("form").on("submit", function () {
+      $("#description").val(quill.root.innerHTML.trim());
     });
   });
 </script>
