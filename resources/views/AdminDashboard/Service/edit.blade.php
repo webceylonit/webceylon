@@ -80,15 +80,23 @@
 <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     const quill = new Quill('#quill-editor', {
       theme: 'snow',
       placeholder: 'Enter service description...',
       modules: {
         toolbar: [
-          ['bold', 'italic', 'underline'],
+          [{ 'font': [] }],
+          [{ 'size': ['small', false, 'large', 'huge'] }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{ 'color': [] }, { 'background': [] }],
+          [{ 'script': 'sub' }, { 'script': 'super' }],
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+          [{ 'align': [] }],
+          ['blockquote', 'code-block'],
           [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-          ['link', 'image'],
+          [{ 'indent': '-1' }, { 'indent': '+1' }],
+          ['link', 'image', 'video'],
           ['clean']
         ]
       }
@@ -98,10 +106,11 @@
     const existingDescription = {!! json_encode(old('description', $service->description)) !!};
     quill.root.innerHTML = existingDescription;
 
-    // On form submit, assign back to hidden input
+    // Sync content on form submit
     $("form").on("submit", function () {
       $("#description").val(quill.root.innerHTML.trim());
     });
   });
 </script>
+
 @endsection
