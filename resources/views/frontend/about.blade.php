@@ -1,6 +1,9 @@
 @extends ('frontend.master')
 
-@section('title', 'Webceylon - About us')
+@section('title', 'About Us - Webceylon')
+@section('meta_description', 'Discover Webceylon’s mission, values, and expert team delivering smart digital solutions including web development, ERP, SEO, and business automation.')
+@section('og_title', 'Webceylon - About Us')
+@section('og_description', 'Learn about Webceylon’s journey, vision, and commitment to helping businesses thrive through technology-driven solutions.')
 
 @section('content')
 <style>

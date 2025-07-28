@@ -1,6 +1,9 @@
 @extends ('frontend.master')
 
-@section('title', 'Webceylon - Services')
+@section('title', 'Our Services - Webceylon')
+@section('meta_description', 'Explore Webceylon’s full range of business-driven services including Website Development, ERP Systems, SEO, Digital Marketing, Payroll, HR, Inventory, and Analytics Dashboards.')
+@section('og_title', 'Webceylon Services')
+@section('og_description', 'We provide powerful digital solutions: web development, SEO, marketing, ERP, HR & Payroll systems, inventory and budgeting tools for business growth.')
 
 @section('content')
 

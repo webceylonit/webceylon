@@ -1,6 +1,9 @@
 @extends ('frontend.master')
 
-@section('title', 'Webceylon - Contact us')
+@section('title', 'Contact Us - Webceylon')
+@section('meta_description', 'Get in touch with Webceylon for website development, ERP systems, SEO, digital marketing, and business automation solutions in Sri Lanka.')
+@section('og_title', 'Webceylon - Contact Us')
+@section('og_description', 'Reach out to Webceylon for expert tech consultation and services. We’re here to help your business grow through smart digital solutions.')
 
 @section('content')
 

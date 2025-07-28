@@ -5,9 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Webceylon')</title>
-    <!-- Favicon img -->
-    <link rel="shortcut icon" href="{{ asset('icon.png') }}">
+
+    <!-- SEO Title & Description -->
+    <title>@yield('title', 'Webceylon - Smart Digital Solutions for Modern Businesses')</title>
+    <meta name="description" content="@yield('meta_description', 'Webceylon offers expert Website Development, ERP Systems, SEO, Digital Marketing, HR & Payroll Solutions, Inventory Management, and Sales Dashboards to drive business growth.')">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('icon.png') }}" type="image/x-icon">
+
+
+    <!-- Open Graph for Facebook/WhatsApp -->
+    <meta property="og:title" content="@yield('og_title', 'Webceylon - Smart Business Solutions')">
+    <meta property="og:description" content="@yield('og_description', 'Website Development, ERP Systems, SEO, Digital Marketing, HR & Payroll, Inventory Management and more.')">
+    <meta property="og:image" content="{{ asset('icon.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup (Structured Data) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Webceylon",
+      "url": "https://webceylon.com",
+      "logo": "https://webceylon.com/favicon.ico",
+      "sameAs": [
+        "https://facebook.com/webceylon",
+        "https://linkedin.com/company/webceylon"
+      ]
+    }
+    </script>
+
+
     <!-- Bootstarp min css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
     <!-- Mean menu css -->
@@ -49,6 +81,8 @@
             color: white;
         }
     </style>
+
+    
 
 </head>
 

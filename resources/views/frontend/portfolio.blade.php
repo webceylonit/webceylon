@@ -1,6 +1,10 @@
 @extends ('frontend.master')
 
-@section('title', 'Webceylon - Portfolio')
+@section('title', 'Portfolio - Webceylon')
+@section('meta_description', 'Explore Webceylon’s portfolio of successful projects including ERP systems, websites, HR software, sales dashboards, and digital solutions for growing businesses.')
+@section('og_title', 'Our Projects - Webceylon Portfolio')
+@section('og_description', 'Take a look at Webceylon’s past work in web development, ERP, inventory systems, and custom tech solutions. See how we’ve helped businesses succeed.')
+
 
 @section('content')
 
