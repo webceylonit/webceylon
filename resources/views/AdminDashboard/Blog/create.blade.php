@@ -4,6 +4,9 @@
 
 @section('content')
 
+<!-- Include Quill CSS (you can also host locally if preferred) -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 <div class="container-fluid">
   <div class="page-title">
     <div class="row">
@@ -57,7 +60,10 @@
 
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Description</label>
-                  <textarea name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
+                  <!-- Quill Editor Div -->
+                  <div id="editor8" style="height: 200px;">{!! old('description') !!}</div>
+                  <!-- Hidden Input to submit HTML content -->
+                  <input type="hidden" name="description" id="description">
                   @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
@@ -88,5 +94,35 @@
     </div>
   </div>
 </div>
+
+<!-- Include Quill JS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script>
+  var quill = new Quill('#editor8', {
+    theme: 'snow',
+    modules: {
+      toolbar: [
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'script': 'sub'}, { 'script': 'super' }],
+        ['blockquote', 'code-block'],
+        [{ 'header': 1 }, { 'header': 2 }],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'direction': 'rtl' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ]
+    }
+  });
+
+  // On form submit, set the HTML to the hidden input
+  document.querySelector('form').addEventListener('submit', function(e) {
+    document.querySelector('#description').value = quill.root.innerHTML;
+  });
+</script>
 
 @endsection
