@@ -29,41 +29,38 @@
               <div class="row">
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Blog Title</label>
-                  <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                  <label class="form-label">Blog Title *</label>
+                  <input type="text" name="title" class="form-control" placeholder="Title" value="{{ old('title') }}" required>
                   @error('title') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Author</label>
-                  <input type="text" name="author" class="form-control" value="{{ old('author') }}">
+                  <label class="form-label">Author *</label>
+                  <input type="text" name="author" class="form-control" placeholder="Author" value="{{ old('author') }}" required>
                   @error('author') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Date</label>
-                  <input type="date" name="date" class="form-control" value="{{ old('date') }}">
+                  <label class="form-label">Date *</label>
+                  <input type="date" name="date" class="form-control" value="{{ old('date') }}" required>
                   @error('date') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Category</label>
-                  <input type="text" name="category" class="form-control" value="{{ old('category') }}">
+                  <label class="form-label">Category *</label>
+                  <input type="text" name="category" class="form-control" placeholder="Category" value="{{ old('category') }}" required>
                   @error('category') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Tags (comma separated)</label>
-                  <input type="text" name="tags" class="form-control" placeholder="Tech, Laravel, SEO" value="{{ old('tags') }}">
+                  <input type="text" name="tags" class="form-control" placeholder="Business, Finance, IT" value="{{ old('tags') }}">
                   @error('tags') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="col-md-12 mb-3">
-                  <label class="form-label">Description</label>
-                  <!-- Quill Editor Div -->
-                  <div id="editor8" style="height: 200px;">{!! old('description') !!}</div>
-                  <!-- Hidden Input to submit HTML content -->
-                  <input type="hidden" name="description" id="description">
+                  <label class="form-label">Description *</label>
+                  <textarea name="description" class="form-control" placeholder="Add Description" rows="5" required>{{ old('description') }}</textarea>
                   @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 

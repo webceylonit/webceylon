@@ -6,6 +6,7 @@ use App\Models\Career;
 use App\Models\Service;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
+use App\Models\FeedBack;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -16,10 +17,10 @@ class DashboardController extends Controller
     {
         $totalBlogs = Blog::count();
         $totalCareers = Career::count(); 
-        $totalServices = Service::count();
+        $totalFeedbacks = FeedBack::count();
         $totalProjects = Project::count();
 
-        return view('AdminDashboard.home', compact('totalBlogs', 'totalCareers', 'totalServices', 'totalProjects'));
+        return view('AdminDashboard.home', compact('totalBlogs', 'totalCareers', 'totalFeedbacks', 'totalProjects'));
     }
 
 

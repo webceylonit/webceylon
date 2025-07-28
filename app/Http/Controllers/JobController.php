@@ -4,27 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Career;
+use Carbon\Carbon;
+
 class JobController extends Controller
 {
     public function index()
     {
-        $careers = Career::all();
+        $careers = Career::latest()->get();
         return view('AdminDashboard.Career.index', compact('careers'));
     }
 
 
-     public function create()
+    public function create()
     {
         return view('AdminDashboard.Career.create');
     }
 
 
-       public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'job_title' => 'required|string|max:255',
             'location' => 'required|string|max:255',
-            'description' => 'required|string',
+            'link' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
             'deadline_date' => 'required|date',
         ]);
 
@@ -32,6 +35,7 @@ class JobController extends Controller
             'job_title' => $request->job_title,
             'location' => $request->location,
             'description' => $request->description,
+            'link' => $request->link,
             'deadline_date' => $request->deadline_date,
         ]);
 
@@ -48,7 +52,8 @@ class JobController extends Controller
         $request->validate([
             'job_title' => 'required|string|max:255',
             'location' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
+            'link' => 'nullable|string|max:255',
             'deadline_date' => 'required|date',
         ]);
 
@@ -56,6 +61,7 @@ class JobController extends Controller
             'job_title' => $request->job_title,
             'location' => $request->location,
             'description' => $request->description,
+            'link' => $request->link,
             'deadline_date' => $request->deadline_date,
         ]);
 
@@ -71,9 +77,9 @@ class JobController extends Controller
 
 
     //frontend
-      public function jobs()
+    public function jobs()
     {
-        $careers = Career::all();
+        $careers = Career::whereDate('deadline_date', '>=', Carbon::today())->get();
         return view('frontend.careers', compact('careers'));
     }
 }

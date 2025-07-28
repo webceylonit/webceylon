@@ -10,7 +10,7 @@
       <div class="col-6 mt-3">
         <h4>Career List</h4>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -34,40 +34,52 @@
           </div>
 
           <div class="list-career">
-            <table class="table" id="career-list">
-              <thead>
-                <tr>
-                  <th>Job Title</th>
-                  <th>Location</th>
-                  <th>Application Deadline</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                @foreach ($careers as $career)
+            <div class="table-responsive">
+              <table class="display" id="basic-1">
+                <thead>
                   <tr>
+                    <th>#</th>
+                    <th>Job Title</th>
+                    <th>Location</th>
+                    <th>Deadline</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @foreach ($careers as $career)
+                  <tr>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $career->job_title }}</td>
                     <td>{{ $career->location }}</td>
                     <td>{{ $career->deadline_date->toDateString() }}</td>
                     <td>
-                      <div class="career-action">
-                        <a href="{{ route('careers.edit', $career->id) }}" class="btn btn-warning btn-sm me-2">
-                          <i class="fa fa-edit"></i> 
-                        </a>
-                        <form action="{{ route('careers.destroy', $career->id) }}" method="POST" style="display: inline;">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this Job Opening?')">
-                            <i class="fa fa-trash"></i> 
-                          </button>
-                        </form>
-                      </div>
+                      <ul class="action">
+
+                        <li class="edit">
+                          <a href="{{ route('careers.edit', $career->id) }}">
+                            <i class="icon-pencil-alt"></i>
+                          </a>
+                        </li>
+
+                        <li class="delete">
+                          <form id="delete-form-{{ $career->id }}" action="{{ route('careers.destroy', $career->id) }}" method="POST" class="delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" class="delete-btn" onclick="confirmDelete('delete-form-{{ $career->id }}');" style="border:none; background:none; cursor:pointer; padding:0;">
+                              <i class="icon-trash" style="color:red;"></i>
+                            </button>
+                          </form>
+                        </li>
+
+                      </ul>
+
                     </td>
                   </tr>
-                @endforeach
-              </tbody>
-            </table>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

@@ -2577,10 +2577,10 @@ input.main-search-input::placeholder {
   padding: 10px 20px;
   color: var(--heading-color) !important;
 }
-.header__main .main-menu ul li .sub-menu li a:hover {
+/* .header__main .main-menu ul li .sub-menu li a:hover {
   padding-left: 25px;
-  color: var(--primary-color) !important;
-}
+  color: white !important;
+} */
 .header__main .main-menu ul li:hover .sub-menu {
   opacity: 1;
   visibility: visible;
