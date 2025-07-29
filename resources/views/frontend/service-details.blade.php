@@ -81,7 +81,7 @@
                             </div>
 
                             @if ($service->name === 'ERP System Development')
-                            <div class="custom-erp-section mt-50">
+                            <div class="custom-erp-section mt-20">
                                 <h3 class="title mb-30">Our ERP Systems</h3>
 
                                 <div class="row">
