@@ -119,8 +119,8 @@
                                                     'url' => 'http://ehirs.ceylonbp.com/'
                                                 ],
                                                 [
-                                                    'title' => 'Inventory Systems',
-                                                    'desc' => 'Simple inventory tracking and control for SMEs.',
+                                                    'title' => 'Project Management Systems',
+                                                    'desc' => 'Plan, track, and collaborate on tasks and projects with timelines, milestones, file sharing, and real-time team updates.',
                                                     'url' => 'http://ehirs.ceylonbp.com/'
                                                 ],
                                                 [
@@ -180,101 +180,131 @@
                             @endif
 
                             @if ($service->name === 'Digital Marketing')
-                                <div class="custom-dm-section mt-10">
-                                    <h3 class="title mb-30">Our Digital Marketing Process</h3>
+    <div class="custom-dm-section mt-10">
+        <h3 class="title mb-30 text-center">Our Digital Marketing Process</h3>
+        <p class="text-center mb-60">We follow a structured step-by-step strategy that ensures impactful marketing and consistent results.</p>
 
-                                    <!-- 📍 Step-by-Step Marketing Process -->
-                                    <div class="step-process-wrapper mb-5">
-                                        @php
-                                            $steps = [
-                                                'Study and Research',
-                                                'Voice and Content Creation',
-                                                'Execution',
-                                                'Reputation Management',
-                                                'Analysis and Reporting',
-                                            ];
-                                        @endphp
+        <div class="timeline-wrapper position-relative">
+            @php
+                $steps = [
+                    [
+                        'title' => 'Study and Research',
+                        'desc' => 'We analyze your brand, audience, and competitors to understand what works best for your niche.'
+                    ],
+                    [
+                        'title' => 'Voice and Content Creation',
+                        'desc' => 'We develop tailored content using the right tone and message that fits your brand identity.'
+                    ],
+                    [
+                        'title' => 'Execution',
+                        'desc' => 'Campaigns are launched across relevant digital platforms for maximum visibility and engagement.'
+                    ],
+                    [
+                        'title' => 'Reputation Management',
+                        'desc' => 'We monitor responses, engage with your audience, and ensure your online reputation remains strong.'
+                    ],
+                    [
+                        'title' => 'Analysis and Reporting',
+                        'desc' => 'We assess results through analytics and deliver reports to help you track growth and ROI.'
+                    ],
+                ];
+            @endphp
 
-                                        <div class="steps-timeline position-relative">
-                                            @foreach ($steps as $index => $step)
-                                                <div class="step-item d-flex">
-                                                    <div class="step-circle me-3">
-                                                        <span>{{ $index + 1 }}</span>
-                                                    </div>
-                                                    <div class="step-text">
-                                                        <strong>{{ $step }}</strong>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+            @foreach ($steps as $index => $step)
+                <div class="timeline-step d-flex align-items-start">
+                    <div class="step-icon">
+                        <span>{{ $index + 1 }}</span>
+                    </div>
+                    <div class="step-content ms-4 p-3 shadow-sm rounded transition">
+                        <h5>{{ $step['title'] }}</h5>
+                        <p>{{ $step['desc'] }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
-                                <!-- 🔧 Styles -->
-                                <style>
-                                    .equal-height {
-                                        display: flex;
-                                        flex-direction: column;
-                                        height: 100%;
-                                    }
+    <style>
+        .timeline-wrapper {
+            border-left: 3px solid #ff7f00;
+            padding-left: 30px;
+            margin-left: 15px;
+        }
 
-                                    .package-box {
-                                        transition: all 0.3s ease;
-                                        min-height: 100%;
-                                    }
+        .timeline-step {
+            position: relative;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
 
-                                    .package-box:hover {
-                                        transform: translateY(-5px);
-                                        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-                                    }
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
 
-                                    .package-box ul {
-                                        padding-left: 1rem;
-                                    }
+        .step-icon {
+            position: absolute;
+            left: -52px;
+            top: 6px;
+            width: 40px;
+            height: 40px;
+            background-color: #ff7f00;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            box-shadow: 0 0 0 0 transparent;
+            transition: box-shadow 0.3s ease;
+        }
 
-                                    .package-box li {
-                                        margin-bottom: 6px;
-                                    }
+        /* Triangle Pointer at Bottom */
+        .step-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #ff7f00;
+        }
 
-                                    .steps-timeline::before {
-                                        content: '';
-                                        position: absolute;
-                                        left: 20px;
-                                        top: 0;
-                                        bottom: 0;
-                                        width: 3px;
-                                        background-color: #ccc;
-                                    }
 
-                                    .step-item {
-                                        position: relative;
-                                        margin-bottom: 30px;
-                                        padding-left: 50px;
-                                    }
+        .step-content {
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
 
-                                    .step-circle {
-                                        width: 40px;
-                                        height: 40px;
-                                        background: #fff;
-                                        border: 3px solid #ff7f00;
-                                        border-radius: 50%;
-                                        text-align: center;
-                                        font-weight: bold;
-                                        font-size: 16px;
-                                        color: #ff7f00;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        z-index: 1;
-                                    }
+        .step-content h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ff7f00;
+        }
 
-                                    .step-text {
-                                        padding-top: 8px;
-                                    }
-                                </style>
+        .step-content p {
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
 
-                            @endif
+        .timeline-step:hover .step-content {
+            background-color: #fff7f0;
+            box-shadow: 0 6px 20px rgba(255, 127, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .timeline-step:hover .step-icon {
+            box-shadow: 0 0 0 4px rgba(255, 127, 0, 0.3);
+        }
+    </style>
+@endif
+
+
+
 
                             @if ($service->name !== 'Digital Marketing')
                             <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
@@ -365,48 +395,7 @@
                                         <li class="mb-15"><i class="fa-solid fa-check"></i>Business Growth</li>
                                     </ul>
                             </div>
-                            <div class="item sub-bg mb-30">
-                                <h4 class="mb-20">Opening Hours</h4>
-                                <ul class="category">
-                                    <li class="primary-color justify-content-start gap-3">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10.8505 9.41291L8.61967 7.73979V4.3316C8.61967 3.98891 8.34266 3.71191 7.99998 3.71191C7.65729 3.71191 7.38029 3.98891 7.38029 4.3316V8.04966C7.38029 8.24485 7.47201 8.42892 7.62817 8.54541L10.1069 10.4044C10.2138 10.485 10.3441 10.5285 10.478 10.5284C10.667 10.5284 10.8529 10.4435 10.9744 10.2799C11.1802 10.0066 11.1244 9.61804 10.8505 9.41291Z"
-                                                fill="#3C72FC" />
-                                            <path
-                                                d="M8 0C3.58853 0 0 3.58853 0 8C0 12.4115 3.58853 16 8 16C12.4115 16 16 12.4115 16 8C16 3.58853 12.4115 0 8 0ZM8 14.7607C4.27266 14.7607 1.23934 11.7273 1.23934 8C1.23934 4.27266 4.27266 1.23934 8 1.23934C11.728 1.23934 14.7607 4.27266 14.7607 8C14.7607 11.7273 11.7273 14.7607 8 14.7607Z"
-                                                fill="#3C72FC" />
-                                        </svg>
-                                        Mon - Fri: 8.00 AM - 6.00 PM
-                                    </li>
-                                    
-                                    <li class="primary-color justify-content-start gap-3">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10.8505 9.41291L8.61967 7.73979V4.3316C8.61967 3.98891 8.34266 3.71191 7.99998 3.71191C7.65729 3.71191 7.38029 3.98891 7.38029 4.3316V8.04966C7.38029 8.24485 7.47201 8.42892 7.62817 8.54541L10.1069 10.4044C10.2138 10.485 10.3441 10.5285 10.478 10.5284C10.667 10.5284 10.8529 10.4435 10.9744 10.2799C11.1802 10.0066 11.1244 9.61804 10.8505 9.41291Z"
-                                                fill="#3C72FC" />
-                                            <path
-                                                d="M8 0C3.58853 0 0 3.58853 0 8C0 12.4115 3.58853 16 8 16C12.4115 16 16 12.4115 16 8C16 3.58853 12.4115 0 8 0ZM8 14.7607C4.27266 14.7607 1.23934 11.7273 1.23934 8C1.23934 4.27266 4.27266 1.23934 8 1.23934C11.728 1.23934 14.7607 4.27266 14.7607 8C14.7607 11.7273 11.7273 14.7607 8 14.7607Z"
-                                                fill="#3C72FC" />
-                                        </svg>
-                                        Sat - Sun: Closed
-                                    </li>
-                                    <li class="primary-color justify-content-start gap-3">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10.8505 9.41291L8.61967 7.73979V4.3316C8.61967 3.98891 8.34266 3.71191 7.99998 3.71191C7.65729 3.71191 7.38029 3.98891 7.38029 4.3316V8.04966C7.38029 8.24485 7.47201 8.42892 7.62817 8.54541L10.1069 10.4044C10.2138 10.485 10.3441 10.5285 10.478 10.5284C10.667 10.5284 10.8529 10.4435 10.9744 10.2799C11.1802 10.0066 11.1244 9.61804 10.8505 9.41291Z"
-                                                fill="#3C72FC" />
-                                            <path
-                                                d="M8 0C3.58853 0 0 3.58853 0 8C0 12.4115 3.58853 16 8 16C12.4115 16 16 12.4115 16 8C16 3.58853 12.4115 0 8 0ZM8 14.7607C4.27266 14.7607 1.23934 11.7273 1.23934 8C1.23934 4.27266 4.27266 1.23934 8 1.23934C11.728 1.23934 14.7607 4.27266 14.7607 8C14.7607 11.7273 11.7273 14.7607 8 14.7607Z"
-                                                fill="#3C72FC" />
-                                        </svg>
-                                        Emergency: 24 hours
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -415,100 +404,200 @@
         <!-- Service area end here -->
 
 
-        <!-- Full-width pricing section for Digital Marketing -->
         @if ($service->name === 'Digital Marketing')
-            <!-- Pricing area start here -->
-            <section class="pricing-area pt-10 pb-120" style="margin-top:-20px;">
-                <div class="container">
-                    <div class="section-header text-center mb-60">
-                        <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
-                            PRICE PLANS
-                        </h5>
-                        <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Flexible Pricing Plans</h2>
-                    </div>
+<section class="pricing-area pt-10 pb-120" style="margin-top:-20px;">
+    <div class="container">
+        <div class="section-header text-center mb-60">
+            <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
+                OUR PLANS
+            </h5>
+            <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Flexible Ditital Marketing Plans</h2>
+        </div>
 
-                    <div class="row g-4">
-                        @php
-                            $packages = [
-                                [
-                                    'title' => 'Silver Plan',
-                                    'price' => 'Rs. 65,000',
-                                    
-                                    'icon' => 'pricing-icon1.png',
-                                    'delay' => '00ms',
-                                    'features' => [
-                                        'Manage 2 Social Channels',
-                                        '4 Relevant Posts per Month',
-                                        'Advertising Campaigns',
-                                        'Brand Building & Engagement',
-                                        'Monthly Reporting & Analysis',
-                                        'Social Media Competitor Analysis'
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Gold Plan',
-                                    'price' => 'Rs. 95,000',
-                                    
-                                    'icon' => 'pricing-icon2.png',
-                                    'delay' => '200ms',
-                                    'features' => [
-                                        'Manage 2 Social Channels',
-                                        '6 Relevant Posts per Month',
-                                        'Advertising Campaigns',
-                                        'Profile Design & Optimization',
-                                        'Monthly Reporting & Analysis',
-                                        'Social Media Competitor Analysis'
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Platinum Plan',
-                                    'price' => 'Rs. 130,000',
-                                    
-                                    'icon' => 'pricing-icon3.png',
-                                    'delay' => '400ms',
-                                    'features' => [
-                                        'Manage 3 Social Channels',
-                                        '8 Relevant Posts per Month',
-                                        'Content Calendar Planning',
-                                        'Advanced Targeting',
-                                        'Creative Design Support',
-                                        'Competitor Insights'
-                                    ],
-                                ],
-                                
-                            ];
-                        @endphp
+        <div class="row g-4">
+            @php
+                $plans = [
+                    [
+                        'title' => 'SILVER PLAN',
+                        'price' => 'Rs. 65,000',
+                        'delay' => '00ms',
+                        'icon' => 'pricing-icon1.png',
+                        'features' => [
+                            'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                            '4 Posts per Month',
+                            'Advertising Campaigns',
+                            'Brand Building & Engagement',
+                            'Monthly Reporting & Analysis',
+                            'Social Media Competitor Analysis'
+                        ],
+                        'additional' => [
+                            '🎬 1 video (30 seconds)'
+                        ]
+                    ],
+                    [
+                        'title' => 'GOLD PLAN',
+                        'price' => 'Rs. 95,000',
+                        'delay' => '200ms',
+                        'icon' => 'pricing-icon2.png',
+                        'features' => [
+                            'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                            '6 Posts per Month',
+                            'Advertising Campaigns',
+                            'Brand Building & Engagement',
+                            'Monthly Reporting & Analysis',
+                            'Social Media Competitor Analysis'
+                        ],
+                        'additional' => [
+                            '✨ Brand Building Package',
+                            '🎬 2 video clips (15s & 30s)'
+                        ]
+                    ],
+                    [
+                        'title' => 'PLATINUM PLAN',
+                        'price' => 'Rs. 130,000',
+                        'delay' => '400ms',
+                        'icon' => 'pricing-icon3.png',
+                        'features' => [
+                            'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                            '8 Posts per Month',
+                            'Advertising Campaigns',
+                            'Brand Building & Engagement',
+                            'Monthly Reporting & Analysis',
+                            'Social Media Competitor Analysis'
+                        ],
+                        'additional' => [
+                            '✨ Brand Building Package',
+                            '🎬 3 video reels (15s, 30s, 45–90s)'
+                        ]
+                    ],
+                ];
+            @endphp
 
-                        @foreach ($packages as $package)
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ $package['delay'] }}" data-wow-duration="1500ms">
-                                <div class="pricing__item">
-                                    <div class="item-shape">
-                                        <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
-                                    </div>
-                                    <div class="pricing-head">
-                                        <div>
-                                            <h4 class="text-white mb-10">{{ $package['title'] }}</h4>
-                                            <h2><span class="text-decoration-line-through text-muted small me-1"></span>{{ $package['price'] }}</h2>
-                                        </div>
-                                        <div class="pricing-icon" data-background="{{ asset('frontend/assets/images/shape/pricing-icon-bg.png') }}">
-                                            <img src="{{ asset('frontend/assets/images/icon/' . $package['icon']) }}" alt="icon">
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        @foreach ($package['features'] as $feature)
-                                            <li>{{ $feature }}</li>
-                                        @endforeach
-                                    </ul>
-                                    <a  class="btn-one d-block text-center">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
-                                </div>
+            @foreach ($plans as $plan)
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ $plan['delay'] }}" data-wow-duration="1500ms">
+                    <div class="pricing__item d-flex flex-column justify-content-between h-100 position-relative">
+                        <div class="item-shape">
+                            <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
+                        </div>
+                        <div class="pricing-head mb-3">
+                            <div>
+                                <h4 class="text-white mb-10">{{ $plan['title'] }}</h4>
+                                <h2>{{ $plan['price'] }}</h2>
                             </div>
-                        @endforeach
+                        </div>
+
+                        <ul class="mb-3 ps-4 position-relative">
+                            @foreach ($plan['features'] as $feature)
+                             <li class="position-relative ps-4">{!! $feature !!}</li>
+                            @endforeach
+                        </ul>
+
+                        @if(count($plan['additional']))
+                            <div class="additional-features">
+                                <h6 class="text-white mt-3 mb-2">Additional Features:</h6>
+                                <ul class="ps-4 position-relative">
+                                    @foreach ($plan['additional'] as $addon)
+                                        <li class="position-relative ps-4">{!! $addon !!}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <a class="btn-one d-block text-center mt-auto">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
                     </div>
                 </div>
-            </section>
-            <!-- Pricing area end here -->
-        @endif
+            @endforeach
+        </div>
+
+        <!-- 🔶 Special Plans CTA -->
+        <div class="row mt-80">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="special-plan-box text-center p-5 rounded shadow bg-light">
+                    <h4 class="mb-3 text-dark">Do You Need Customized Plan?</h4>
+                    <p class="mb-4">We can build <strong>customized marketing plans</strong> based on your business goals and industry requirements.</p>
+                    <a href="{{ route('contact') }}" class="btn btn-outline-primary">Request Custom Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🔧 Styling -->
+<style>
+    .pricing__item {
+        background: #007793;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        color: #fff;
+        position: relative;
+        transition: all 0.3s ease;
+        min-height: 100%;
+    }
+
+    .pricing__item:hover {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
+    }
+
+    .pricing-head h4,
+    .pricing-head h2 {
+        color: #fff;
+    }
+
+    .pricing__item ul li {
+        color: #fff;
+        margin-bottom: 6px;
+        font-size: 15px;
+        list-style: none;
+        position: relative;
+    }
+
+    .pricing__item ul li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #ffb84d;
+        font-weight: bold;
+    }
+
+    .additional-features ul li::before {
+        content: "➕";
+        color: #fff;
+    }
+
+    .item-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        opacity: 0.1;
+    }
+
+    .special-plan-box {
+        background: #fffefb;
+        border: 2px dashed #ff7f00;
+    }
+
+    .btn-one {
+        background-color: #ff7f00;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-one:hover {
+        background-color: #d96600;
+        color: #fff;
+    }
+</style>
+@endif
+
+
+
+
 
     </main>
 
