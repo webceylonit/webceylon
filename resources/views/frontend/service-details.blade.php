@@ -433,8 +433,8 @@
                             $packages = [
                                 [
                                     'title' => 'Silver Plan',
-                                    'price' => 'Rs. 10,000',
-                                    'price_strike' => 'Rs. 15,000',
+                                    'price' => 'Rs. 65,000',
+                                    
                                     'icon' => 'pricing-icon1.png',
                                     'delay' => '00ms',
                                     'features' => [
@@ -448,8 +448,8 @@
                                 ],
                                 [
                                     'title' => 'Gold Plan',
-                                    'price' => 'Rs. 15,000',
-                                    'price_strike' => 'Rs. 20,000',
+                                    'price' => 'Rs. 95,000',
+                                    
                                     'icon' => 'pricing-icon2.png',
                                     'delay' => '200ms',
                                     'features' => [
@@ -463,8 +463,8 @@
                                 ],
                                 [
                                     'title' => 'Platinum Plan',
-                                    'price' => 'Rs. 20,000',
-                                    'price_strike' => 'Rs. 25,000',
+                                    'price' => 'Rs. 130,000',
+                                    
                                     'icon' => 'pricing-icon3.png',
                                     'delay' => '400ms',
                                     'features' => [
@@ -500,7 +500,7 @@
                                             <li>{{ $feature }}</li>
                                         @endforeach
                                     </ul>
-                                    <a href="tel:0779860207" class="btn-one d-block text-center">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
+                                    <a  class="btn-one d-block text-center">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
                                 </div>
                             </div>
                         @endforeach
