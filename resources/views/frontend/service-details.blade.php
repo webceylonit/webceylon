@@ -489,7 +489,7 @@
                                     <div class="pricing-head">
                                         <div>
                                             <h4 class="text-white mb-10">{{ $package['title'] }}</h4>
-                                            <h2><span class="text-decoration-line-through text-muted small me-1">{{ $package['price_strike'] }}</span>{{ $package['price'] }}</h2>
+                                            <h2><span class="text-decoration-line-through text-muted small me-1"></span>{{ $package['price'] }}</h2>
                                         </div>
                                         <div class="pricing-icon" data-background="{{ asset('frontend/assets/images/shape/pricing-icon-bg.png') }}">
                                             <img src="{{ asset('frontend/assets/images/icon/' . $package['icon']) }}" alt="icon">
