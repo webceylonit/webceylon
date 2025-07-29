@@ -81,7 +81,7 @@
                             </div>
 
                             @if ($service->name === 'ERP System Development')
-                                <div class="custom-erp-section mt-10">
+                                <div class="custom-erp-section mt-10" style="margin-top:-20px;">
                                     <h3 class="title mb-30">Our ERP Systems</h3>
 
                                     <div class="row g-4">
@@ -125,7 +125,7 @@
                                                 ],
                                                 [
                                                     'title' => 'Invoicing Systems',
-                                                    'desc' => 'Simple inventory tracking and control for SMEs.',
+                                                    'desc' => 'Generate and manage invoices, track payments, send reminders, and streamline your cash flow with real-time reporting.',
                                                     'url' => 'http://ehirs.ceylonbp.com/'
                                                 ],
                                             ];
@@ -418,7 +418,7 @@
         <!-- Full-width pricing section for Digital Marketing -->
         @if ($service->name === 'Digital Marketing')
             <!-- Pricing area start here -->
-            <section class="pricing-area pt-10 pb-120">
+            <section class="pricing-area pt-10 pb-120" style="margin-top:-20px;">
                 <div class="container">
                     <div class="section-header text-center mb-60">
                         <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
