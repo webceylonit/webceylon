@@ -418,7 +418,7 @@
         <!-- Full-width pricing section for Digital Marketing -->
         @if ($service->name === 'Digital Marketing')
             <!-- Pricing area start here -->
-            <section class="pricing-area pt-50 pb-120">
+            <section class="pricing-area pt-10 pb-120">
                 <div class="container">
                     <div class="section-header text-center mb-60">
                         <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
