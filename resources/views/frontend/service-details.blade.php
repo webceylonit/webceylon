@@ -79,6 +79,89 @@
                                     @endif
                                 </ul>
                             </div>
+
+                            @if ($service->name === 'ERP System Development')
+                            <div class="custom-erp-section mt-50">
+                                <h3 class="title mb-30">Our ERP Systems</h3>
+
+                                <div class="row">
+                                    <!-- HR & ePayroll System -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://ehirs.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 HR & ePayroll System</h5>
+                                            <p class="text-muted small">Manage employees, payroll, attendance, and more.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Budgeting System -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://budget.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Budgeting System</h5>
+                                            <p class="text-muted small">Plan and control financial resources efficiently.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Inventory Management System -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://inventory.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Inventory Management System</h5>
+                                            <p class="text-muted small">Track stock levels, orders, and deliveries.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Sales Dashboards -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://sales.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Sales Dashboards</h5>
+                                            <p class="text-muted small">Visualize and manage your sales performance.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Fixed Assets Registers -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://assets.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Fixed Assets Registers</h5>
+                                            <p class="text-muted small">Track your company’s physical assets and depreciation.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Accounting Systems -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://accounting.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Accounting Systems</h5>
+                                            <p class="text-muted small">Handle accounts, ledgers, invoices, and more.</p>
+                                        </a>
+                                    </div>
+
+                                    <!-- Inventory System (Extra one) -->
+                                    <div class="col-md-6 col-lg-4 mb-4">
+                                        <a href="http://inventory.ceylonbp.com/" target="_blank" class="erp-box d-block text-center p-4 shadow-sm border rounded h-100 text-decoration-none">
+                                            <h5 class="mb-2">🎯 Inventory System</h5>
+                                            <p class="text-muted small">Simple inventory tracking and management.</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <style>
+                                .erp-box {
+                                    background-color: #f9f9f9;
+                                    border: 1px solid #eee;
+                                    transition: 0.3s ease;
+                                }
+                                .erp-box:hover {
+                                    background-color: #ff7f00;
+                                    color: white;
+                                    transform: translateY(-3px);
+                                    border-color: transparent;
+                                }
+                                .erp-box:hover h5,
+                                .erp-box:hover p {
+                                    color: white;
+                                }
+                            </style>
+                        @endif
+
               
                             <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
                                 <p class="mb-30">Below are some of the most frequently asked questions from our clients. If you have any other questions, feel free to contact us!</p>
@@ -152,10 +235,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                   
-
-                                
                             </div>
                         </div>
                     </div>
