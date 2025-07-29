@@ -81,102 +81,202 @@
                             </div>
 
                             @if ($service->name === 'ERP System Development')
-    <div class="custom-erp-section mt-50">
-        <h3 class="title mb-30">Our ERP Systems</h3>
+                                <div class="custom-erp-section mt-10">
+                                    <h3 class="title mb-30">Our ERP Systems</h3>
 
-        <div class="row g-4">
-            <!-- Example Box -->
-            @php
-                $erpModules = [
-                    [
-                        'title' => 'HR & ePayroll System',
-                        'desc' => 'Manage employees, payroll, attendance, and more.',
-                        'url' => 'http://ehirs.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Budgeting System',
-                        'desc' => 'Plan and control financial resources efficiently.',
-                        'url' => 'http://budget.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Inventory Management System',
-                        'desc' => 'Track stock levels, orders, and deliveries.',
-                        'url' => 'http://inventory.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Sales Dashboards',
-                        'desc' => 'Visualize and manage your sales performance.',
-                        'url' => 'http://sales.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Fixed Assets Registers',
-                        'desc' => 'Track your company’s physical assets and depreciation.',
-                        'url' => 'http://assets.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Accounting Systems',
-                        'desc' => 'Handle accounts, ledgers, invoices, and more.',
-                        'url' => 'http://accounting.ceylonbp.com/'
-                    ],
-                    [
-                        'title' => 'Inventory Systems',
-                        'desc' => 'Simple inventory tracking and control for SMEs.',
-                        'url' => 'http://inventory.ceylonbp.com/'
-                    ],
-                ];
-            @endphp
+                                    <div class="row g-4">
+                                        <!-- Example Box -->
+                                        @php
+                                            $erpModules = [
+                                                [
+                                                    'title' => 'HR & ePayroll System',
+                                                    'desc' => 'Manage employees, payroll, attendance, and more.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Budgeting System',
+                                                    'desc' => 'Plan and control financial resources efficiently.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Inventory Management System',
+                                                    'desc' => 'Track stock levels, orders, and deliveries.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Sales Dashboards',
+                                                    'desc' => 'Visualize and manage your sales performance.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Fixed Assets Registers',
+                                                    'desc' => 'Track your company’s physical assets and depreciation.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Accounting Systems',
+                                                    'desc' => 'Handle accounts, ledgers, invoices, and more.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Inventory Systems',
+                                                    'desc' => 'Simple inventory tracking and control for SMEs.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                                [
+                                                    'title' => 'Invoicing Systems',
+                                                    'desc' => 'Simple inventory tracking and control for SMEs.',
+                                                    'url' => 'http://ehirs.ceylonbp.com/'
+                                                ],
+                                            ];
+                                        @endphp
 
-            @foreach ($erpModules as $module)
-                <div class="col-md-6 col-lg-4">
-                    <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded equal-height">
-                        <div>
-                            <h5 class="mb-2">🎯 {{ $module['title'] }}</h5>
-                            <p class="text-muted small">{{ $module['desc'] }}</p>
-                        </div>
-                        <div class="mt-3">
-                            <a href="{{ $module['url'] }}" target="_blank" class="btn btn-outline-primary btn-sm erp-btn">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
+                                        @foreach ($erpModules as $module)
+                                            <div class="col-md-6 col-lg-4">
+                                                <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded equal-height">
+                                                    <div>
+                                                        <h5 class="mb-2">🎯 {{ $module['title'] }}</h5>
+                                                        <p class="text-muted small">{{ $module['desc'] }}</p>
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <a href="{{ $module['url'] }}" target="_blank" class="btn btn-outline-primary btn-sm erp-btn">Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
 
-    <style>
-        .erp-box {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-            height: 100%;
-            min-height: 220px;
-        }
+                                <style>
+                                    .erp-box {
+                                        background-color: #ffffff;
+                                        border: 1px solid #ddd;
+                                        transition: all 0.3s ease;
+                                        height: 100%;
+                                        min-height: 220px;
+                                    }
 
-        .erp-box:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-        }
+                                    .erp-box:hover {
+                                        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+                                        transform: translateY(-3px);
+                                    }
 
-        .erp-btn {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+                                    .erp-btn {
+                                        transition: background-color 0.3s ease, color 0.3s ease;
+                                    }
 
-        .erp-btn:hover {
-            background-color: #ff7f00;
-            color: #fff;
-            border-color: #ff7f00;
-        }
+                                    .erp-btn:hover {
+                                        background-color: #ff7f00;
+                                        color: #fff;
+                                        border-color: #ff7f00;
+                                    }
 
-        .equal-height {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-    </style>
-@endif
+                                    .equal-height {
+                                        display: flex;
+                                        flex-direction: column;
+                                        height: 100%;
+                                    }
+                                </style>
+                            @endif
 
+                            @if ($service->name === 'Digital Marketing')
+                                <div class="custom-dm-section mt-10">
+                                    <h3 class="title mb-30">Our Digital Marketing Process</h3>
 
+                                    <!-- 📍 Step-by-Step Marketing Process -->
+                                    <div class="step-process-wrapper mb-5">
+                                        @php
+                                            $steps = [
+                                                'Study and Research',
+                                                'Voice and Content Creation',
+                                                'Execution',
+                                                'Reputation Management',
+                                                'Analysis and Reporting',
+                                            ];
+                                        @endphp
 
-              
+                                        <div class="steps-timeline position-relative">
+                                            @foreach ($steps as $index => $step)
+                                                <div class="step-item d-flex">
+                                                    <div class="step-circle me-3">
+                                                        <span>{{ $index + 1 }}</span>
+                                                    </div>
+                                                    <div class="step-text">
+                                                        <strong>{{ $step }}</strong>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- 🔧 Styles -->
+                                <style>
+                                    .equal-height {
+                                        display: flex;
+                                        flex-direction: column;
+                                        height: 100%;
+                                    }
+
+                                    .package-box {
+                                        transition: all 0.3s ease;
+                                        min-height: 100%;
+                                    }
+
+                                    .package-box:hover {
+                                        transform: translateY(-5px);
+                                        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+                                    }
+
+                                    .package-box ul {
+                                        padding-left: 1rem;
+                                    }
+
+                                    .package-box li {
+                                        margin-bottom: 6px;
+                                    }
+
+                                    .steps-timeline::before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 20px;
+                                        top: 0;
+                                        bottom: 0;
+                                        width: 3px;
+                                        background-color: #ccc;
+                                    }
+
+                                    .step-item {
+                                        position: relative;
+                                        margin-bottom: 30px;
+                                        padding-left: 50px;
+                                    }
+
+                                    .step-circle {
+                                        width: 40px;
+                                        height: 40px;
+                                        background: #fff;
+                                        border: 3px solid #ff7f00;
+                                        border-radius: 50%;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 16px;
+                                        color: #ff7f00;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        z-index: 1;
+                                    }
+
+                                    .step-text {
+                                        padding-top: 8px;
+                                    }
+                                </style>
+
+                            @endif
+
+                            @if ($service->name !== 'Digital Marketing')
                             <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
                                 <p class="mb-30">Below are some of the most frequently asked questions from our clients. If you have any other questions, feel free to contact us!</p>
                                 <div class="accordion" id="accordionExample">
@@ -250,6 +350,7 @@
                                         </div>
                                     </div>
                             </div>
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-4 order-1 order-lg-2">
@@ -312,6 +413,103 @@
             </div>
         </section>
         <!-- Service area end here -->
+
+
+        <!-- Full-width pricing section for Digital Marketing -->
+        @if ($service->name === 'Digital Marketing')
+            <!-- Pricing area start here -->
+            <section class="pricing-area pt-50 pb-120">
+                <div class="container">
+                    <div class="section-header text-center mb-60">
+                        <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
+                            PRICE PLANS
+                        </h5>
+                        <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Flexible Pricing Plans</h2>
+                    </div>
+
+                    <div class="row g-4">
+                        @php
+                            $packages = [
+                                [
+                                    'title' => 'Silver Plan',
+                                    'price' => 'Rs. 10,000',
+                                    'price_strike' => 'Rs. 15,000',
+                                    'icon' => 'pricing-icon1.png',
+                                    'delay' => '00ms',
+                                    'features' => [
+                                        'Manage 2 Social Channels',
+                                        '4 Relevant Posts per Month',
+                                        'Advertising Campaigns',
+                                        'Brand Building & Engagement',
+                                        'Monthly Reporting & Analysis',
+                                        'Social Media Competitor Analysis'
+                                    ],
+                                ],
+                                [
+                                    'title' => 'Gold Plan',
+                                    'price' => 'Rs. 15,000',
+                                    'price_strike' => 'Rs. 20,000',
+                                    'icon' => 'pricing-icon2.png',
+                                    'delay' => '200ms',
+                                    'features' => [
+                                        'Manage 2 Social Channels',
+                                        '6 Relevant Posts per Month',
+                                        'Advertising Campaigns',
+                                        'Profile Design & Optimization',
+                                        'Monthly Reporting & Analysis',
+                                        'Social Media Competitor Analysis'
+                                    ],
+                                ],
+                                [
+                                    'title' => 'Platinum Plan',
+                                    'price' => 'Rs. 20,000',
+                                    'price_strike' => 'Rs. 25,000',
+                                    'icon' => 'pricing-icon3.png',
+                                    'delay' => '400ms',
+                                    'features' => [
+                                        'Manage 3 Social Channels',
+                                        '8 Relevant Posts per Month',
+                                        'Content Calendar Planning',
+                                        'Advanced Targeting',
+                                        'Creative Design Support',
+                                        'Competitor Insights'
+                                    ],
+                                ],
+                                
+                            ];
+                        @endphp
+
+                        @foreach ($packages as $package)
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ $package['delay'] }}" data-wow-duration="1500ms">
+                                <div class="pricing__item">
+                                    <div class="item-shape">
+                                        <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
+                                    </div>
+                                    <div class="pricing-head">
+                                        <div>
+                                            <h4 class="text-white mb-10">{{ $package['title'] }}</h4>
+                                            <h2><span class="text-decoration-line-through text-muted small me-1">{{ $package['price_strike'] }}</span>{{ $package['price'] }}</h2>
+                                        </div>
+                                        <div class="pricing-icon" data-background="{{ asset('frontend/assets/images/shape/pricing-icon-bg.png') }}">
+                                            <img src="{{ asset('frontend/assets/images/icon/' . $package['icon']) }}" alt="icon">
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        @foreach ($package['features'] as $feature)
+                                            <li>{{ $feature }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <a href="tel:0779860207" class="btn-one d-block text-center">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+            <!-- Pricing area end here -->
+        @endif
+
     </main>
 
 @endsection
