@@ -37,7 +37,7 @@
                 <img class="sway__animationX" src="{{ asset('frontend/assets/images/banner/inner-banner-shape3.png') }}" alt="shape">
             </div>
             <div class="container">
-                <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Service Details</h2>
+                <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{{ $service->name }}</h2>
                 <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <a href="{{ route('index') }}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Service Details</span>
                 </div>
@@ -346,7 +346,7 @@
                                         'Social Media Competitor Analysis'
                                     ],
                                     'additional' => [
-                                        '🎬 1 video (30 seconds)'
+                                        '🎬 1 AI video'
                                     ]
                                 ],
                                 [
@@ -364,7 +364,8 @@
                                     ],
                                     'additional' => [
                                         '✨ Brand Building Package',
-                                        '🎬 2 video clips (15s & 30s)'
+                                        '🎬 Ai Video ',
+                                        '🎬 Voice Over Video ',
                                     ]
                                 ],
                                 [
@@ -382,7 +383,9 @@
                                     ],
                                     'additional' => [
                                         '✨ Brand Building Package',
-                                        '🎬 3 video reels (15s, 30s, 45–90s)'
+                                        '🎬 Ai Video ',
+                                        '🎬 Voice Over Video ',
+                                        '🎬 Live Present Video '
                                     ]
                                 ],
                             ];
@@ -394,11 +397,9 @@
                                     <div class="item-shape">
                                         <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
                                     </div>
-                                    <div class="pricing-head mb-3">
+                                    <div class="pricing-head mb-1">
                                         <div>
-                                            
-                                            <h4 class="mb-10">{{ $plan['price'] }}</h4>
-                                            <h2 style="font-size: 30px;" class="text-white ">{{ $plan['title'] }}</h2>
+                                            <h2 style="font-size: 30px;" class="text-white text-center">{{ $plan['title'] }}</h2>
                                         </div>
                                     </div>
 
@@ -410,8 +411,8 @@
 
                                     @if(count($plan['additional']))
                                         <div class="additional-features">
-                                            <h6 class="text-white mt-3 mb-2">Additional Features:</h6>
-                                            <ul class="ps-4 position-relative">
+                                            <h6 class="text-white mt-1 mb-1">Additional Features:</h6>
+                                            <ul class="ps-2 position-relative">
                                                 @foreach ($plan['additional'] as $addon)
                                                     <li class="position-relative ps-4">{!! $addon !!}</li>
                                                 @endforeach
@@ -419,7 +420,14 @@
                                         </div>
                                     @endif
 
+                                    
+                                        
+                                    
                                     <a class="btn-one d-block text-center mt-auto">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
+
+                                    <div class="pricing-price text-center mt-3">
+                                            <span class="price-amount">{{ $plan['price'] }}</span>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -429,7 +437,7 @@
                     <div class="row mt-80">
                         <div class="col-lg-10 offset-lg-1">
                             <div class="special-plan-box text-center p-5 rounded shadow bg-light">
-                                <h4 class="mb-3 text-dark">Do You Need Customized Plan?</h4>
+                                <h4 class="mb-3 text-dark">Do You Need a Customized Plan?</h4>
                                 <p class="mb-4">We can build <strong>customized marketing plans</strong> based on your business goals and industry requirements.</p>
                                 <a href="{{ route('contact') }}" class="btn btn-outline-primary">Request Custom Plan</a>
                             </div>
@@ -459,11 +467,12 @@
                 .pricing-head h4,
                 .pricing-head h2 {
                     color: #fff;
+                    text-align:center;
                 }
 
                 .pricing__item ul li {
                     color: #fff;
-                    margin-bottom: 6px;
+                    margin-bottom: 2px;
                     font-size: 15px;
                     list-style: none;
                     position: relative;
@@ -507,6 +516,23 @@
                     background-color: #d96600;
                     color: #fff;
                 }
+
+                .pricing-price .price-amount {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #ffffff;
+                    
+                    padding: 8px 20px;
+                    border-radius: 30px;
+                    display: inline-block;
+                    margin-top: 10px;
+                    transition: all 0.3s ease;
+                }
+
+                .pricing__item:hover .pricing-price .price-amount {
+                    background-color: #d96600;
+                }
+
             </style>
         @endif
 
