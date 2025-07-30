@@ -46,7 +46,7 @@
         <!-- Page banner area end here -->
 
          <!-- Service area start here -->
-        <section class="service-single-area pt-50 pb-120">
+        <section class="service-single-area pt-50 pb-50">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-8 order-2 order-lg-1">
