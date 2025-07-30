@@ -80,98 +80,7 @@
                                 </ul>
                             </div>
 
-                            @if ($service->name === 'ERP System Development')
-                                <div class="custom-erp-section mt-4">
-                                    <h3 class="title mb-30">Our ERP Systems</h3>
-
-                                    <div class="row g-4">
-                                        @php
-                                            $erpModules = [
-                                                [
-                                                    'title' => 'HR & ePayroll System',
-                                                    'desc' => 'Manage employees, payroll, attendance, and more.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Budgeting System',
-                                                    'desc' => 'Plan and control financial resources efficiently.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Inventory Management System',
-                                                    'desc' => 'Track stock levels, orders, and deliveries.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Sales Dashboards',
-                                                    'desc' => 'Visualize and manage your sales performance.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Fixed Assets Registers',
-                                                    'desc' => 'Track your company’s physical assets and depreciation.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Accounting Systems',
-                                                    'desc' => 'Handle accounts, ledgers, invoices, and more.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Project Management Systems',
-                                                    'desc' => 'Plan, track, and collaborate on tasks and projects with timelines, milestones, file sharing, and real-time team updates.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                                [
-                                                    'title' => 'Invoicing Systems',
-                                                    'desc' => 'Generate and manage invoices, track payments, send reminders, and streamline your cash flow with real-time reporting.',
-                                                    'url' => 'http://ehirs.ceylonbp.com/'
-                                                ],
-                                            ];
-                                        @endphp
-
-                                        @foreach ($erpModules as $module)
-                                            <div class="col-md-6 col-lg-4">
-                                                <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded h-100">
-                                                    <div>
-                                                        <h5 class="mb-2">🎯 {{ $module['title'] }}</h5>
-                                                        <p class="text-muted small">{{ $module['desc'] }}</p>
-                                                    </div>
-                                                    <div class="mt-3">
-                                                        <a href="{{ $module['url'] }}" target="_blank" class="btn btn-outline-primary btn-sm erp-btn">Explore</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-
-                                <style>
-                                    .erp-box {
-                                        background-color: #ffffff;
-                                        border: 1px solid #ddd;
-                                        transition: all 0.3s ease;
-                                        height: 100%;
-                                        min-height: 220px;
-                                    }
-
-                                    .erp-box:hover {
-                                        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-                                        transform: translateY(-3px);
-                                    }
-
-                                    .erp-btn {
-                                        transition: background-color 0.3s ease, color 0.3s ease;
-                                    }
-
-                                    .erp-btn:hover {
-                                        background-color: #ff7f00;
-                                        color: #fff;
-                                        border-color: #ff7f00;
-                                    }
-                                </style>
-                            @endif
-
+                            
 
                             @if ($service->name === 'Digital Marketing')
                                 <div class="custom-dm-section mt-10">
@@ -300,8 +209,8 @@
 
 
 
-                            @if ($service->name !== 'Digital Marketing')
-                            <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
+                            @if ($service->name !== 'Digital Marketing' && $service->name !== 'ERP System Development')
+                                <h3 class="title mb-30 mt-50">Most Asked Questions?</h3>
                                 <p class="mb-30">Below are some of the most frequently asked questions from our clients. If you have any other questions, feel free to contact us!</p>
                                 <div class="accordion" id="accordionExample">
                                     <!-- Question 1 -->
@@ -373,7 +282,7 @@
                                             </div>
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -409,200 +318,272 @@
         </section>
         <!-- Service area end here -->
 
-
         @if ($service->name === 'Digital Marketing')
-        <section class="pricing-area pt-10 pb-120" style="margin-top:-20px;">
-            <div class="container">
-                <div class="section-header text-center mb-60">
-                    <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
-                        OUR PLANS
-                    </h5>
-                    <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Flexible Ditital Marketing Plans</h2>
-                </div>
+            <section class="pricing-area pt-10 pb-120" style="margin-top:-20px;">
+                <div class="container">
+                    <div class="section-header text-center mb-60">
+                        <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
+                            OUR PLANS
+                        </h5>
+                        <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Flexible Ditital Marketing Plans</h2>
+                    </div>
 
-                <div class="row g-4">
-                    @php
-                        $plans = [
-                            [
-                                'title' => 'SILVER PLAN',
-                                'price' => 'Rs. 65,000',
-                                'delay' => '00ms',
-                                'icon' => 'pricing-icon1.png',
-                                'features' => [
-                                    'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
-                                    '4 Posts per Month',
-                                    'Advertising Campaigns',
-                                    'Brand Building & Engagement',
-                                    'Monthly Reporting & Analysis',
-                                    'Social Media Competitor Analysis'
+                    <div class="row g-4">
+                        @php
+                            $plans = [
+                                [
+                                    'title' => 'SILVER PLAN',
+                                    'price' => 'Rs. 65,000',
+                                    'delay' => '00ms',
+                                    'icon' => 'pricing-icon1.png',
+                                    'features' => [
+                                        'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                                        '4 Posts per Month',
+                                        'Advertising Campaigns',
+                                        'Brand Building & Engagement',
+                                        'Monthly Reporting & Analysis',
+                                        'Social Media Competitor Analysis'
+                                    ],
+                                    'additional' => [
+                                        '🎬 1 video (30 seconds)'
+                                    ]
                                 ],
-                                'additional' => [
-                                    '🎬 1 video (30 seconds)'
-                                ]
-                            ],
-                            [
-                                'title' => 'GOLD PLAN',
-                                'price' => 'Rs. 95,000',
-                                'delay' => '200ms',
-                                'icon' => 'pricing-icon2.png',
-                                'features' => [
-                                    'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
-                                    '6 Posts per Month',
-                                    'Advertising Campaigns',
-                                    'Brand Building & Engagement',
-                                    'Monthly Reporting & Analysis',
-                                    'Social Media Competitor Analysis'
+                                [
+                                    'title' => 'GOLD PLAN',
+                                    'price' => 'Rs. 95,000',
+                                    'delay' => '200ms',
+                                    'icon' => 'pricing-icon2.png',
+                                    'features' => [
+                                        'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                                        '6 Posts per Month',
+                                        'Advertising Campaigns',
+                                        'Brand Building & Engagement',
+                                        'Monthly Reporting & Analysis',
+                                        'Social Media Competitor Analysis'
+                                    ],
+                                    'additional' => [
+                                        '✨ Brand Building Package',
+                                        '🎬 2 video clips (15s & 30s)'
+                                    ]
                                 ],
-                                'additional' => [
-                                    '✨ Brand Building Package',
-                                    '🎬 2 video clips (15s & 30s)'
-                                ]
-                            ],
-                            [
-                                'title' => 'PLATINUM PLAN',
-                                'price' => 'Rs. 130,000',
-                                'delay' => '400ms',
-                                'icon' => 'pricing-icon3.png',
-                                'features' => [
-                                    'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
-                                    '8 Posts per Month',
-                                    'Advertising Campaigns',
-                                    'Brand Building & Engagement',
-                                    'Monthly Reporting & Analysis',
-                                    'Social Media Competitor Analysis'
+                                [
+                                    'title' => 'PLATINUM PLAN',
+                                    'price' => 'Rs. 130,000',
+                                    'delay' => '400ms',
+                                    'icon' => 'pricing-icon3.png',
+                                    'features' => [
+                                        'Manage Digital Platforms<br><small>(Google Ads, Meta Ads: Facebook, Instagram, TikTok, YouTube)</small>',
+                                        '8 Posts per Month',
+                                        'Advertising Campaigns',
+                                        'Brand Building & Engagement',
+                                        'Monthly Reporting & Analysis',
+                                        'Social Media Competitor Analysis'
+                                    ],
+                                    'additional' => [
+                                        '✨ Brand Building Package',
+                                        '🎬 3 video reels (15s, 30s, 45–90s)'
+                                    ]
                                 ],
-                                'additional' => [
-                                    '✨ Brand Building Package',
-                                    '🎬 3 video reels (15s, 30s, 45–90s)'
-                                ]
-                            ],
-                        ];
-                    @endphp
+                            ];
+                        @endphp
 
-                    @foreach ($plans as $plan)
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ $plan['delay'] }}" data-wow-duration="1500ms">
-                            <div class="pricing__item d-flex flex-column justify-content-between h-100 position-relative">
-                                <div class="item-shape">
-                                    <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
-                                </div>
-                                <div class="pricing-head mb-3">
-                                    <div>
-                                        
-                                        <h4 class="mb-10">{{ $plan['price'] }}</h4>
-                                        <h2 style="font-size: 30px;" class="text-white ">{{ $plan['title'] }}</h2>
+                        @foreach ($plans as $plan)
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ $plan['delay'] }}" data-wow-duration="1500ms">
+                                <div class="pricing__item d-flex flex-column justify-content-between h-100 position-relative">
+                                    <div class="item-shape">
+                                        <img src="{{ asset('frontend/assets/images/shape/pricing-item-shape.png') }}" alt="shape">
                                     </div>
-                                </div>
-
-                                <ul class="mb-3 ps-4 position-relative">
-                                    @foreach ($plan['features'] as $feature)
-                                    <li class="position-relative ps-4">{!! $feature !!}</li>
-                                    @endforeach
-                                </ul>
-
-                                @if(count($plan['additional']))
-                                    <div class="additional-features">
-                                        <h6 class="text-white mt-3 mb-2">Additional Features:</h6>
-                                        <ul class="ps-4 position-relative">
-                                            @foreach ($plan['additional'] as $addon)
-                                                <li class="position-relative ps-4">{!! $addon !!}</li>
-                                            @endforeach
-                                        </ul>
+                                    <div class="pricing-head mb-3">
+                                        <div>
+                                            
+                                            <h4 class="mb-10">{{ $plan['price'] }}</h4>
+                                            <h2 style="font-size: 30px;" class="text-white ">{{ $plan['title'] }}</h2>
+                                        </div>
                                     </div>
-                                @endif
 
-                                <a class="btn-one d-block text-center mt-auto">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
+                                    <ul class="mb-3 ps-4 position-relative">
+                                        @foreach ($plan['features'] as $feature)
+                                        <li class="position-relative ps-4">{!! $feature !!}</li>
+                                        @endforeach
+                                    </ul>
+
+                                    @if(count($plan['additional']))
+                                        <div class="additional-features">
+                                            <h6 class="text-white mt-3 mb-2">Additional Features:</h6>
+                                            <ul class="ps-4 position-relative">
+                                                @foreach ($plan['additional'] as $addon)
+                                                    <li class="position-relative ps-4">{!! $addon !!}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+                                    <a class="btn-one d-block text-center mt-auto">Choose Plan <i class="fa-regular fa-arrow-right-long"></i></a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
 
-                <!-- 🔶 Special Plans CTA -->
-                <div class="row mt-80">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="special-plan-box text-center p-5 rounded shadow bg-light">
-                            <h4 class="mb-3 text-dark">Do You Need Customized Plan?</h4>
-                            <p class="mb-4">We can build <strong>customized marketing plans</strong> based on your business goals and industry requirements.</p>
-                            <a href="{{ route('contact') }}" class="btn btn-outline-primary">Request Custom Plan</a>
+                    <!-- 🔶 Special Plans CTA -->
+                    <div class="row mt-80">
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="special-plan-box text-center p-5 rounded shadow bg-light">
+                                <h4 class="mb-3 text-dark">Do You Need Customized Plan?</h4>
+                                <p class="mb-4">We can build <strong>customized marketing plans</strong> based on your business goals and industry requirements.</p>
+                                <a href="{{ route('contact') }}" class="btn btn-outline-primary">Request Custom Plan</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 🔧 Styling -->
-        <style>
-            .pricing__item {
-                background: #007793;
-                padding: 30px;
-                border-radius: 12px;
-                border: 1px solid #eee;
-                color: #fff;
-                position: relative;
-                transition: all 0.3s ease;
-                min-height: 100%;
-            }
+            <!-- 🔧 Styling -->
+            <style>
+                .pricing__item {
+                    background: #007793;
+                    padding: 30px;
+                    border-radius: 12px;
+                    border: 1px solid #eee;
+                    color: #fff;
+                    position: relative;
+                    transition: all 0.3s ease;
+                    min-height: 100%;
+                }
 
-            .pricing__item:hover {
-                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-                transform: translateY(-5px);
-            }
+                .pricing__item:hover {
+                    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+                    transform: translateY(-5px);
+                }
 
-            .pricing-head h4,
-            .pricing-head h2 {
-                color: #fff;
-            }
+                .pricing-head h4,
+                .pricing-head h2 {
+                    color: #fff;
+                }
 
-            .pricing__item ul li {
-                color: #fff;
-                margin-bottom: 6px;
-                font-size: 15px;
-                list-style: none;
-                position: relative;
-            }
+                .pricing__item ul li {
+                    color: #fff;
+                    margin-bottom: 6px;
+                    font-size: 15px;
+                    list-style: none;
+                    position: relative;
+                }
 
-            .pricing__item ul li::before {
-                content: "✔";
-                position: absolute;
-                left: 0;
-                color: #ffb84d;
-                font-weight: bold;
-            }
+                .pricing__item ul li::before {
+                    content: "✔";
+                    position: absolute;
+                    left: 0;
+                    color: #ffb84d;
+                    font-weight: bold;
+                }
 
-            .additional-features ul li::before {
-                content: "➕";
-                color: #fff;
-            }
+                .additional-features ul li::before {
+                    content: "➕";
+                    color: #fff;
+                }
 
-            .item-shape {
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 0;
-                opacity: 0.1;
-            }
+                .item-shape {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 0;
+                    opacity: 0.1;
+                }
 
-            .special-plan-box {
-                background: #fffefb;
-                border: 2px dashed #ff7f00;
-            }
+                .special-plan-box {
+                    background: #fffefb;
+                    border: 2px dashed #ff7f00;
+                }
 
-            .btn-one {
-                background-color: #ff7f00;
-                color: #fff;
-                padding: 10px 25px;
-                border-radius: 6px;
-                transition: all 0.3s ease;
-            }
+                .btn-one {
+                    background-color: #ff7f00;
+                    color: #fff;
+                    padding: 10px 25px;
+                    border-radius: 6px;
+                    transition: all 0.3s ease;
+                }
 
-            .btn-one:hover {
-                background-color: #d96600;
-                color: #fff;
-            }
-        </style>
+                .btn-one:hover {
+                    background-color: #d96600;
+                    color: #fff;
+                }
+            </style>
         @endif
 
 
+        @if ($service->name === 'ERP System Development')
+            <section class="custom-erp-section pt-10 pb-120" style="margin-top:-20px;">
+                <div class="container">
+                    <div class="section-header text-center mb-60">
+                        <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <img class="me-1" src="{{ asset('frontend/assets/images/icon/section-title.png') }}" alt="icon">
+                            Our Systems
+                        </h5>
+                        <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Enterprise ERP Systems</h2>
+                    </div>
+
+                    <div class="row g-4">
+                        @php
+                            $erpModules = [
+                                ['title' => 'HR & ePayroll System', 'desc' => 'Manage employees, payroll, attendance, and more.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Budgeting System', 'desc' => 'Plan and control financial resources efficiently.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Inventory Management System', 'desc' => 'Track stock levels, orders, and deliveries.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Sales Dashboards', 'desc' => 'Visualize and manage your sales performance.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Fixed Assets Registers', 'desc' => 'Track physical assets and depreciation.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Accounting Systems', 'desc' => 'Handle accounts, ledgers, invoices, and more.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Project Management Systems', 'desc' => 'Plan, track, and collaborate on tasks and projects with milestones, file sharing, and real-time team updates.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'Invoicing Systems', 'desc' => 'Generate and manage invoices, track payments, send reminders, and streamline your cash flow with real-time reporting.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                            ];
+                        @endphp
+
+                        @foreach ($erpModules as $module)
+                            <div class="col-md-6 col-lg-4">
+                                <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded equal-height">
+                                    <div>
+                                        <h4 class="mb-2">🎯 {{ $module['title'] }}</h4>
+                                        <p class="text-muted small">{{ $module['desc'] }}</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="{{ $module['url'] }}" target="_blank" class="btn btn-outline-primary btn-sm erp-btn">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .erp-box {
+                    background-color: #ffffff;
+                    border: 1px solid #ddd;
+                    transition: all 0.3s ease;
+                    height: 100%;
+                    min-height: 220px;
+                }
+
+                .erp-box:hover {
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+                    transform: translateY(-3px);
+                }
+
+                .erp-btn {
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                }
+
+                .erp-btn:hover {
+                    background-color: #ff7f00;
+                    color: #fff;
+                    border-color: #ff7f00;
+                }
+
+                .equal-height {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                }
+            </style>
+        @endif
 
 
 
