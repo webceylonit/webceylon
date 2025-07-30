@@ -81,11 +81,10 @@
                             </div>
 
                             @if ($service->name === 'ERP System Development')
-                                <div class="custom-erp-section mt-10" style="margin-top:-20px;">
+                                <div class="custom-erp-section mt-4">
                                     <h3 class="title mb-30">Our ERP Systems</h3>
 
                                     <div class="row g-4">
-                                        <!-- Example Box -->
                                         @php
                                             $erpModules = [
                                                 [
@@ -132,8 +131,8 @@
                                         @endphp
 
                                         @foreach ($erpModules as $module)
-                                            <div class="col-md-12 col-lg-4">
-                                                <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded equal-height">
+                                            <div class="col-md-6 col-lg-4">
+                                                <div class="erp-box d-flex flex-column justify-content-between text-center p-4 shadow-sm border rounded h-100">
                                                     <div>
                                                         <h5 class="mb-2">🎯 {{ $module['title'] }}</h5>
                                                         <p class="text-muted small">{{ $module['desc'] }}</p>
@@ -170,14 +169,9 @@
                                         color: #fff;
                                         border-color: #ff7f00;
                                     }
-
-                                    .equal-height {
-                                        display: flex;
-                                        flex-direction: column;
-                                        height: 100%;
-                                    }
                                 </style>
                             @endif
+
 
                             @if ($service->name === 'Digital Marketing')
                                 <div class="custom-dm-section mt-10">
