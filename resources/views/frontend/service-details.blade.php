@@ -494,8 +494,9 @@
                                 </div>
                                 <div class="pricing-head mb-3">
                                     <div>
-                                        <h4 class="text-white mb-10">{{ $plan['title'] }}</h4>
-                                        <h2>{{ $plan['price'] }}</h2>
+                                        
+                                        <h4 class="mb-10">{{ $plan['price'] }}</h4>
+                                        <h2 style="font-size: 30px;" class="text-white ">{{ $plan['title'] }}</h2>
                                     </div>
                                 </div>
 
