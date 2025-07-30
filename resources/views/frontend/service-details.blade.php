@@ -512,7 +512,7 @@
 
 
         @if ($service->name === 'ERP System Development')
-            <section class="custom-erp-section pt-10 pb-120" style="margin-top:-20px;">
+            <section class="custom-erp-section pb-120" style="margin-top:-50px;">
                 <div class="container">
                     <div class="section-header text-center mb-60">
                         <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
