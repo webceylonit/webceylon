@@ -551,7 +551,7 @@
                     <div class="row g-4">
                         @php
                             $erpModules = [
-                                ['title' => 'HR & ePayroll System', 'desc' => 'Manage employees, payroll, attendance, and more.', 'url' => 'http://ehirs.ceylonbp.com/'],
+                                ['title' => 'HR & ePayroll System', 'desc' => 'Manage employees, payroll, attendance, and more.', 'url' => 'http://ehris.lk/'],
                                 ['title' => 'Budgeting System', 'desc' => 'Plan and control financial resources efficiently.', 'url' => 'http://ehirs.ceylonbp.com/'],
                                 ['title' => 'Inventory Management System', 'desc' => 'Track stock levels, orders, and deliveries.', 'url' => 'http://ehirs.ceylonbp.com/'],
                                 ['title' => 'Sales Dashboards', 'desc' => 'Visualize and manage your sales performance.', 'url' => 'http://ehirs.ceylonbp.com/'],
